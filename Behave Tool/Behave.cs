@@ -18,6 +18,7 @@ namespace Behave_Tool
         private const int HT_CLIENT = 1;
         private const int HT_CAPTION = 2;
         public static bool loadComplete = false;
+
         public Behave()
         {
             InitializeComponent();
@@ -29,7 +30,6 @@ namespace Behave_Tool
             startupProceedure();
             loadComplete = true;
             MessageBox.Show("Double Click Storage to disable the disgusting flickery. Will improve in the future.");
-
         }
 
         public class MySR : ToolStripSystemRenderer
@@ -358,8 +358,6 @@ namespace Behave_Tool
 
         private void Load_Settings()
         {
-            
-
             var colour1 = ColorTranslator.FromHtml(Properties.Settings.Default.Text1_Colour);
             var colour2 = ColorTranslator.FromHtml(Properties.Settings.Default.Text2_Colour);
             Menu.ForeColor = colour1;
@@ -373,7 +371,7 @@ namespace Behave_Tool
             TotalSessionTime.ForeColor = colour2;
 
             ToolBar.Renderer = new MySR();
-           
+
             FormBorderStyle = FormBorderStyle.None;
             StartPosition = FormStartPosition.Manual;
             Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Width) / 2, 0);
@@ -388,7 +386,6 @@ namespace Behave_Tool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void preset1ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -397,15 +394,13 @@ namespace Behave_Tool
             {
                 preset1ToolStripMenuItem.Checked = true;
                 new SystemLiveInformation().Show();
-
             }
             else
             {
                 preset1ToolStripMenuItem.Checked = false;
                 foreach (Form form in Application.OpenForms)
                 {
-                    
-                    if (form.Name == "SystemLiveInformation" )
+                    if (form.Name == "SystemLiveInformation")
                     {
                         form.Close();
                     }
@@ -416,6 +411,16 @@ namespace Behave_Tool
         private void openPortScannerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Local_Port_Scanner().Show();
+        }
+
+        private void tCPConnectionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ActiveTcpConnections().Show();
+        }
+
+        private void localHostScannerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new LocalHostScanner().Show();
         }
     }
 }

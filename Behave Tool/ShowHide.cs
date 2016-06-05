@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Behave_Tool
@@ -15,7 +8,6 @@ namespace Behave_Tool
         public ShowHide()
         {
             InitializeComponent();
-            
         }
 
         private void checkBox1_Checked_Changed(object sender, EventArgs e)
@@ -29,7 +21,6 @@ namespace Behave_Tool
             {
                 checkBox1.Checked = false;
                 ParentForm.Width = 23;
-
             }
         }
 
@@ -37,7 +28,6 @@ namespace Behave_Tool
         {
             switch (e.Button)
             {
-
                 case MouseButtons.Left:
                     // Left click
                     break;

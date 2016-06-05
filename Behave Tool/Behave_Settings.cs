@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Behave_Tool;
+
 namespace Behave_Tool
 {
     public partial class Behave_Settings : Form
@@ -35,7 +35,7 @@ namespace Behave_Tool
             {
                 Properties.Settings.Default.KeepWindowOnTop = true;
             }
-            else 
+            else
             {
                 Properties.Settings.Default.KeepWindowOnTop = false;
             }
@@ -45,11 +45,9 @@ namespace Behave_Tool
         public void trackBar1_Scroll(object sender, EventArgs e)
         {
             double op = Properties.Settings.Default.BehaveOpacity;
-            
+
             Opacity = trackBar1.Value * 0.1;
             Properties.Settings.Default["BehaveOpacity"] = trackBar1.Value;
-
         }
-
     }
 }

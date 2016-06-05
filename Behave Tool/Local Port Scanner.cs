@@ -1,15 +1,16 @@
-﻿using System.Windows.Forms;
-using System.Threading;
-using System;
-using System.Net.Sockets;
-using System.IO;
+﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Net.Sockets;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Behave_Tool
 {
     public partial class Local_Port_Scanner : Form
     {
         private bool _stopScan;
+
         public Local_Port_Scanner()
         {
             InitializeComponent();
@@ -27,10 +28,8 @@ namespace Behave_Tool
             new Thread(new ThreadStart(AllOpenPorts)).Start();
         }
 
-
         public void AllOpenPorts()
         {
-
             ScanStatus.Text = "Scanning";
             int num1 = 0;
             int num2 = 0;
@@ -67,7 +66,6 @@ namespace Behave_Tool
                 ScanStatus.Text = "Idle";
             }
             Console.WriteLine("Port Scan Complete");
-
         }
 
         private void StopScan_Click(object sender, EventArgs e)
@@ -78,11 +76,10 @@ namespace Behave_Tool
 
         private void ScanSingle_Click(object sender, EventArgs e)
         {
-
             using (TcpClient tcpClient = new TcpClient())
             {
                 int port = 0;
-                
+
                 try
                 {
                     port = Convert.ToInt32(SinglePort.Text);
@@ -105,7 +102,7 @@ namespace Behave_Tool
                     Thread.Sleep(1000);
                 }
             }
-            
+
             ScanStatus.Text = "Idle";
         }
 
@@ -140,7 +137,7 @@ namespace Behave_Tool
                     }
                 }
                 Process.Start(savefile.FileName);
-            } 
+            }
         }
     }
 }

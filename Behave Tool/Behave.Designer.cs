@@ -73,6 +73,8 @@
             this.Storage_Label = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tCPConnectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localHostScannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -140,7 +142,9 @@
             this.LocalNetworkToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.LocalNetworkToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LocalNetworkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openPortScannerToolStripMenuItem});
+            this.tCPConnectionsToolStripMenuItem,
+            this.openPortScannerToolStripMenuItem,
+            this.localHostScannerToolStripMenuItem});
             this.LocalNetworkToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.LocalNetworkToolStripMenuItem.Name = "LocalNetworkToolStripMenuItem";
             this.LocalNetworkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -154,7 +158,7 @@
             this.openPortScannerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.openPortScannerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.openPortScannerToolStripMenuItem.Name = "openPortScannerToolStripMenuItem";
-            this.openPortScannerToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.openPortScannerToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.openPortScannerToolStripMenuItem.Text = "Open Port Scanner";
             this.openPortScannerToolStripMenuItem.Click += new System.EventHandler(this.openPortScannerToolStripMenuItem_Click);
             // 
@@ -179,7 +183,7 @@
             this.entertainMeToolStripMenuItem.Enabled = false;
             this.entertainMeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.entertainMeToolStripMenuItem.Name = "entertainMeToolStripMenuItem";
-            this.entertainMeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.entertainMeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.entertainMeToolStripMenuItem.Text = "Entertain Me";
             // 
             // systemToolStripMenuItem
@@ -591,6 +595,30 @@
             this.panel1.Size = new System.Drawing.Size(249, 128);
             this.panel1.TabIndex = 11;
             // 
+            // tCPConnectionsToolStripMenuItem
+            // 
+            this.tCPConnectionsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.tCPConnectionsToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.tCPConnectionsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tCPConnectionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.tCPConnectionsToolStripMenuItem.Name = "tCPConnectionsToolStripMenuItem";
+            this.tCPConnectionsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
+            this.tCPConnectionsToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
+            this.tCPConnectionsToolStripMenuItem.Text = "TCP Connections";
+            this.tCPConnectionsToolStripMenuItem.Click += new System.EventHandler(this.tCPConnectionsToolStripMenuItem_Click);
+            // 
+            // localHostScannerToolStripMenuItem
+            // 
+            this.localHostScannerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.localHostScannerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.localHostScannerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.localHostScannerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.localHostScannerToolStripMenuItem.Name = "localHostScannerToolStripMenuItem";
+            this.localHostScannerToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
+            this.localHostScannerToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
+            this.localHostScannerToolStripMenuItem.Text = "Local Host Scanner";
+            this.localHostScannerToolStripMenuItem.Click += new System.EventHandler(this.localHostScannerToolStripMenuItem_Click);
+            // 
             // Behave
             // 
             this.AccessibleName = "Main";
@@ -666,6 +694,8 @@
         private System.Windows.Forms.ToolStripMenuItem performanceMonitorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preset1ToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem localHostScannerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tCPConnectionsToolStripMenuItem;
     }
 }
 

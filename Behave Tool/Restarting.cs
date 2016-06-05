@@ -13,7 +13,6 @@ namespace Behave_Tool
 
         public static void restartNow()
         {
-            
             List<Form> openForms = new List<Form>();
             foreach (Form f in Application.OpenForms)
                 openForms.Add(f);
@@ -23,7 +22,7 @@ namespace Behave_Tool
                 //if (f.Name != "Behave")
                 f.Close();
             }
-            
+
             Program.restart = true;
         }
 

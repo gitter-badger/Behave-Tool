@@ -124,6 +124,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveTcpConnections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActiveTcpConnections.Designer.cs">
+      <DependentUpon>ActiveTcpConnections.cs</DependentUpon>
+    </Compile>
     <Compile Include="Behave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="Local Port Scanner.Designer.cs">
       <DependentUpon>Local Port Scanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalHostScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalHostScanner.Designer.cs">
+      <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -188,6 +200,9 @@
     <Compile Include="Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActiveTcpConnections.resx">
+      <DependentUpon>ActiveTcpConnections.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Behave.resx">
       <DependentUpon>Behave.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Local Port Scanner.resx">
       <DependentUpon>Local Port Scanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalHostScanner.resx">
+      <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
