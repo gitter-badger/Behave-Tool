@@ -30,16 +30,16 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Text2_Label = new System.Windows.Forms.Label();
             this.Text2_Colour = new System.Windows.Forms.TextBox();
             this.Text1_Label = new System.Windows.Forms.Label();
             this.Text1_Colour = new System.Windows.Forms.TextBox();
             this.SaveSettings = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -54,7 +54,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
-            this.tabPage2.Controls.Add(this.trackBar1);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.checkBox1);
             this.tabPage2.Controls.Add(this.Text2_Label);
             this.tabPage2.Controls.Add(this.Text2_Colour);
@@ -66,6 +67,19 @@
             this.tabPage2.Size = new System.Drawing.Size(514, 191);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Personalise";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(21, 110);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(90, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Keep On Top";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Text2_Label
             // 
@@ -115,30 +129,27 @@
             this.SaveSettings.UseVisualStyleBackColor = true;
             this.SaveSettings.Click += new System.EventHandler(this.SaveSettings_Click);
             // 
-            // checkBox1
+            // label1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(21, 110);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(90, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Keep On Top";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(282, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Opacity";
             // 
-            // trackBar1
+            // textBox1
             // 
-            this.trackBar1.Enabled = false;
-            this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(404, 150);
-            this.trackBar1.Minimum = 3;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(104, 45);
-            this.trackBar1.TabIndex = 10;
-            this.trackBar1.Value = 3;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.textBox1.BackColor = System.Drawing.Color.Black;
+            this.textBox1.Enabled = false;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(331, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // Behave_Settings
             // 
@@ -153,7 +164,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,6 +178,7 @@
         private System.Windows.Forms.TextBox Text1_Colour;
         private System.Windows.Forms.Button SaveSettings;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.UserName = new System.Windows.Forms.TextBox();
@@ -191,6 +192,7 @@
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Opacity = 0.9D;
             this.Text = "Login";
@@ -208,7 +210,7 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox PassWord;
         public System.Windows.Forms.TextBox UserName;
-        private System.Windows.Forms.Button Close;
+        private new System.Windows.Forms.Button Close;
         private System.Windows.Forms.Label AttemptCount;
         private System.Windows.Forms.Label Error;
         private System.Windows.Forms.PictureBox pictureBox1;

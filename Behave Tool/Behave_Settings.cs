@@ -42,12 +42,24 @@ namespace Behave_Tool
             Properties.Settings.Default.Save();
         }
 
-        public void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            double op = Properties.Settings.Default.BehaveOpacity;
 
-            Opacity = trackBar1.Value * 0.1;
-            Properties.Settings.Default["BehaveOpacity"] = trackBar1.Value;
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textBox1.MaxLength = 1;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+               // int durationMilliseconds = 10000;
+               // ToolTip1.Show(ToolTip1.GetToolTip(PictureBox1), PictureBox1, durationMilliseconds);
+
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

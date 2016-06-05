@@ -34,7 +34,9 @@
             this.Menu = new System.Windows.Forms.ToolStripDropDownButton();
             this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LocalNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tCPConnectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openPortScannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localHostScannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entertainMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,8 +75,6 @@
             this.Storage_Label = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tCPConnectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localHostScannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -151,6 +151,18 @@
             this.LocalNetworkToolStripMenuItem.Text = "Local Network";
             this.LocalNetworkToolStripMenuItem.Click += new System.EventHandler(this.localPortScannerToolStripMenuItem_Click);
             // 
+            // tCPConnectionsToolStripMenuItem
+            // 
+            this.tCPConnectionsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.tCPConnectionsToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.tCPConnectionsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tCPConnectionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.tCPConnectionsToolStripMenuItem.Name = "tCPConnectionsToolStripMenuItem";
+            this.tCPConnectionsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
+            this.tCPConnectionsToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
+            this.tCPConnectionsToolStripMenuItem.Text = "TCP Connections";
+            this.tCPConnectionsToolStripMenuItem.Click += new System.EventHandler(this.tCPConnectionsToolStripMenuItem_Click);
+            // 
             // openPortScannerToolStripMenuItem
             // 
             this.openPortScannerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
@@ -161,6 +173,18 @@
             this.openPortScannerToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.openPortScannerToolStripMenuItem.Text = "Open Port Scanner";
             this.openPortScannerToolStripMenuItem.Click += new System.EventHandler(this.openPortScannerToolStripMenuItem_Click);
+            // 
+            // localHostScannerToolStripMenuItem
+            // 
+            this.localHostScannerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.localHostScannerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.localHostScannerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.localHostScannerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.localHostScannerToolStripMenuItem.Name = "localHostScannerToolStripMenuItem";
+            this.localHostScannerToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
+            this.localHostScannerToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
+            this.localHostScannerToolStripMenuItem.Text = "Local Host Scanner";
+            this.localHostScannerToolStripMenuItem.Click += new System.EventHandler(this.localHostScannerToolStripMenuItem_Click);
             // 
             // toysToolStripMenuItem
             // 
@@ -218,9 +242,10 @@
             this.preset1ToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.preset1ToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.preset1ToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.preset1ToolStripMenuItem.Enabled = false;
             this.preset1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.preset1ToolStripMenuItem.Name = "preset1ToolStripMenuItem";
-            this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.preset1ToolStripMenuItem.Text = "Preset 1";
             this.preset1ToolStripMenuItem.Click += new System.EventHandler(this.preset1ToolStripMenuItem_Click);
             // 
@@ -376,6 +401,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -401,7 +427,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(212, 119);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(215, 119);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // cpuUsage
@@ -580,11 +606,12 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(217, 125);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(221, 125);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // panel1
@@ -592,32 +619,8 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(0, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 128);
+            this.panel1.Size = new System.Drawing.Size(232, 214);
             this.panel1.TabIndex = 11;
-            // 
-            // tCPConnectionsToolStripMenuItem
-            // 
-            this.tCPConnectionsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.tCPConnectionsToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
-            this.tCPConnectionsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tCPConnectionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.tCPConnectionsToolStripMenuItem.Name = "tCPConnectionsToolStripMenuItem";
-            this.tCPConnectionsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.tCPConnectionsToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
-            this.tCPConnectionsToolStripMenuItem.Text = "TCP Connections";
-            this.tCPConnectionsToolStripMenuItem.Click += new System.EventHandler(this.tCPConnectionsToolStripMenuItem_Click);
-            // 
-            // localHostScannerToolStripMenuItem
-            // 
-            this.localHostScannerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.localHostScannerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
-            this.localHostScannerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.localHostScannerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.localHostScannerToolStripMenuItem.Name = "localHostScannerToolStripMenuItem";
-            this.localHostScannerToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.localHostScannerToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
-            this.localHostScannerToolStripMenuItem.Text = "Local Host Scanner";
-            this.localHostScannerToolStripMenuItem.Click += new System.EventHandler(this.localHostScannerToolStripMenuItem_Click);
             // 
             // Behave
             // 
@@ -643,7 +646,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -652,10 +657,10 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip ToolBar;
-        private System.Windows.Forms.ToolStripDropDownButton Menu;
+        private new System.Windows.Forms.ToolStripDropDownButton Menu;
         private System.Windows.Forms.ToolStripMenuItem stuffToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton Close;
+        private new System.Windows.Forms.ToolStripButton Close;
         private System.Windows.Forms.ToolStripButton Minimize;
         private System.Windows.Forms.ToolStripButton IPrefresh;
         internal System.Windows.Forms.ToolStripSplitButton IPdisplay;
