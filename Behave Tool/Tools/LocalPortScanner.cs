@@ -30,7 +30,15 @@ namespace Behave_Tool
 
         public void AllOpenPorts()
         {
+            _stopScan = false;
             ScanStatus.Text = "Scanning";
+            string ipBase = string.Empty;
+            string gate = IP.getGateway();
+
+            if (gate != "Failed")
+            {
+                ipBase = gate.Substring(0, gate.Length - 1);
+            }
             int num1 = 0;
             int num2 = 0;
             try
@@ -49,11 +57,11 @@ namespace Behave_Tool
                     ScanStatus.Text = "Scanning Port " + port;
                     try
                     {
-                        tcpClient.Connect("127.0.0.1", port);
+                        tcpClient.Connect(gate, port);
                         listBox1.Items.Add(port);
                         Console.WriteLine("Port {0} is open", port);
                     }
-                    catch (Exception)
+                    catch (System.Net.Sockets.SocketException)
                     {
                         // listBox2.Items.Add(port);
                         Console.WriteLine("Port {0} is closed", port);
@@ -71,11 +79,19 @@ namespace Behave_Tool
         private void StopScan_Click(object sender, EventArgs e)
         {
             _stopScan = true;
-            ScanStatus.Text = "Idle";
+            ScanStatus.Text = "stopping";
         }
 
         private void ScanSingle_Click(object sender, EventArgs e)
         {
+            string ipBase = string.Empty;
+            string gate = IP.getGateway();
+
+            if (gate != "Failed")
+            {
+                ipBase = gate.Substring(0, gate.Length - 1);
+            }
+
             using (TcpClient tcpClient = new TcpClient())
             {
                 int port = 0;
@@ -90,7 +106,7 @@ namespace Behave_Tool
                 ScanStatus.Text = "Scanning Port " + port;
                 try
                 {
-                    tcpClient.Connect("127.0.0.1", port);
+                    tcpClient.Connect(gate, port);
                     listBox1.Items.Add(port);
                     Console.WriteLine("Port {0} is Open", port);
                 }

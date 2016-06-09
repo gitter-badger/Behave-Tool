@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Security.Principal;
 using System.Windows.Forms;
 
@@ -15,6 +17,7 @@ namespace Behave_Tool
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            // Application.Run(new Behave());
             while (true)
             {
                 restart = false;
@@ -38,7 +41,31 @@ namespace Behave_Tool
                     }
                     else
                     {
-                        Application.Run(new Behave());
+                        try
+                        {
+                            Application.Run(new Behave());
+                        }
+                        catch (Exception ex)
+                        {
+                            Properties.Settings.Default.Reset();
+                            MessageBox.Show("Behave has crashed. \n Settings have been reset. \nPlease choose a location to save the error log and send it to COOP");
+                            SaveFileDialog savefile = new SaveFileDialog();
+                            // set a default file name
+                            savefile.FileName = "Behave_Error.txt";
+                            // set filters - this can be done in properties as well
+                            savefile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+                            if (savefile.ShowDialog() == DialogResult.OK)
+                            {
+                                
+                                using (StreamWriter sw = new StreamWriter(savefile.FileName))
+                                {
+                                        sw.WriteLine(ex);                    
+                                }
+                                Process.Start(savefile.FileName);
+                            }
+                            
+                        }
                     }
                 }
                 else
@@ -51,6 +78,10 @@ namespace Behave_Tool
                 }
                 Application.Exit();
             }
+        }
+        public static void errorToTxt()
+        {
+            
         }
     }
 }

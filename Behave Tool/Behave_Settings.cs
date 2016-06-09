@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -21,6 +22,7 @@ namespace Behave_Tool
 
         private void SaveSettings_Click(object sender, EventArgs e)
         {
+
             Properties.Settings.Default["Text1_Colour"] = Text1_Colour.Text;
             Properties.Settings.Default["Text2_Colour"] = Text2_Colour.Text;
 
@@ -42,7 +44,6 @@ namespace Behave_Tool
             Properties.Settings.Default.Save();
         }
 
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             textBox1.MaxLength = 1;
@@ -50,9 +51,8 @@ namespace Behave_Tool
         (e.KeyChar != '.'))
             {
                 e.Handled = true;
-               // int durationMilliseconds = 10000;
-               // ToolTip1.Show(ToolTip1.GetToolTip(PictureBox1), PictureBox1, durationMilliseconds);
-
+                // int durationMilliseconds = 10000;
+                // ToolTip1.Show(ToolTip1.GetToolTip(PictureBox1), PictureBox1, durationMilliseconds);
             }
 
             // only allow one decimal point
@@ -60,6 +60,11 @@ namespace Behave_Tool
             {
                 e.Handled = true;
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(e.Link.LinkData as string);
         }
     }
 }

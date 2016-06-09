@@ -34,6 +34,8 @@
             this.ClearList = new System.Windows.Forms.Button();
             this.SaveToTxt = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
+            this.label = new System.Windows.Forms.Label();
+            this.Status = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -111,12 +113,36 @@
             this.Close.UseVisualStyleBackColor = false;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.ForeColor = System.Drawing.Color.White;
+            this.label.Location = new System.Drawing.Point(13, 25);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(40, 13);
+            this.label.TabIndex = 40;
+            this.label.Text = "Status:";
+            this.label.Visible = false;
+            // 
+            // Status
+            // 
+            this.Status.AutoSize = true;
+            this.Status.ForeColor = System.Drawing.Color.Lime;
+            this.Status.Location = new System.Drawing.Point(59, 25);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(24, 13);
+            this.Status.TabIndex = 41;
+            this.Status.Text = "Idle";
+            this.Status.Visible = false;
+            // 
             // LocalHostScanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(533, 284);
+            this.Controls.Add(this.Status);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.SaveToTxt);
             this.Controls.Add(this.ClearList);
@@ -126,6 +152,7 @@
             this.Name = "LocalHostScanner";
             this.Text = "LocalHostScanner";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -137,5 +164,7 @@
         private System.Windows.Forms.Button ClearList;
         private System.Windows.Forms.Button SaveToTxt;
         private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label Status;
     }
 }

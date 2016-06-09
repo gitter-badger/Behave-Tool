@@ -108,6 +108,7 @@
             this.Close.TabIndex = 43;
             this.Close.Text = "X";
             this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // ActiveTcpConnections
             // 

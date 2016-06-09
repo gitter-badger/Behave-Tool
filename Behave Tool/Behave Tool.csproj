@@ -46,6 +46,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -54,14 +56,16 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>behave_vcs_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>A16ABF70374B5017E9B91460A6C9FCCF6AC3B98D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Behave Tool_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Behave_Tool.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
@@ -106,10 +110,10 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveTcpConnections.cs">
+    <Compile Include="Tools\ActiveTcpConnections.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActiveTcpConnections.Designer.cs">
+    <Compile Include="Tools\ActiveTcpConnections.Designer.cs">
       <DependentUpon>ActiveTcpConnections.cs</DependentUpon>
     </Compile>
     <Compile Include="Behave.cs">
@@ -124,16 +128,17 @@
     <Compile Include="Behave_Settings.Designer.cs">
       <DependentUpon>Behave_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="IPinfo.cs">
+    <Compile Include="Tools\BruteForce.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IPinfo.Designer.cs">
-      <DependentUpon>IPinfo.cs</DependentUpon>
+    <Compile Include="Tools\BruteForce.Designer.cs">
+      <DependentUpon>BruteForce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network.Designer.cs">
+      <DependentUpon>Network.cs</DependentUpon>
     </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
@@ -141,16 +146,16 @@
     <Compile Include="Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalPortScanner.cs">
+    <Compile Include="Tools\LocalPortScanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LocalPortScanner.Designer.cs">
+    <Compile Include="Tools\LocalPortScanner.Designer.cs">
       <DependentUpon>LocalPortScanner.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalHostScanner.cs">
+    <Compile Include="Tools\LocalHostScanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LocalHostScanner.Designer.cs">
+    <Compile Include="Tools\LocalHostScanner.Designer.cs">
       <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -199,7 +204,7 @@
     <Compile Include="Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ActiveTcpConnections.resx">
+    <EmbeddedResource Include="Tools\ActiveTcpConnections.resx">
       <DependentUpon>ActiveTcpConnections.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Behave.resx">
@@ -208,16 +213,19 @@
     <EmbeddedResource Include="Behave_Settings.resx">
       <DependentUpon>Behave_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IPinfo.resx">
-      <DependentUpon>IPinfo.cs</DependentUpon>
+    <EmbeddedResource Include="Tools\BruteForce.resx">
+      <DependentUpon>BruteForce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network.resx">
+      <DependentUpon>Network.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalPortScanner.resx">
+    <EmbeddedResource Include="Tools\LocalPortScanner.resx">
       <DependentUpon>LocalPortScanner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalHostScanner.resx">
+    <EmbeddedResource Include="Tools\LocalHostScanner.resx">
       <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
@@ -251,17 +259,6 @@
     <EmbeddedResource Include="Usage_Agreement.resx">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

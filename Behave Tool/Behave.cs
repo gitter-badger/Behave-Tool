@@ -3,7 +3,6 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading;
 using System.Windows.Forms;
@@ -16,9 +15,11 @@ namespace Behave_Tool
         private static bool networkTrafficMonitoring = true;
         private static bool systemUsageOn = true;
         private const int WM_NCHITTEST = 132;
+
         //private const int HT_CLIENT = 1;
         //private const int HT_CAPTION = 2;
         public static bool loadComplete = false;
+
         protected override void WndProc(ref Message m)
         {
             const int wmNcHitTest = 0x84;
@@ -36,8 +37,6 @@ namespace Behave_Tool
                     return;
                 }
             }
-
-
 
             base.WndProc(ref m);
             if (m.Msg != 132)
@@ -63,16 +62,13 @@ namespace Behave_Tool
         {
             public MySR()
             {
-                
             }
 
             protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
             {
-                
                 base.OnRenderToolStripBorder(e);
             }
         }
-
 
         private void startupProceedure()
         {
@@ -111,7 +107,7 @@ namespace Behave_Tool
             {
                 NetworkTrafficDown.Text = Math.Round((float)(performanceCounter2.NextValue() / 1024.0), 2) + " kb/s";
                 NetworkTrafficUp.Text = Math.Round((float)(performanceCounter1.NextValue() / 1024.0), 2) + " kb/s";
-                Console.WriteLine("Down: " + (float)(performanceCounter2.NextValue() / 1024.0) + " | Up: " + (float)(performanceCounter1.NextValue() / 1024.0));
+                //Console.WriteLine("Down: " + (float)(performanceCounter2.NextValue() / 1024.0) + " | Up: " + (float)(performanceCounter1.NextValue() / 1024.0));
                 Thread.Sleep(2000);
             }
         }
@@ -406,22 +402,29 @@ namespace Behave_Tool
 
         private void preset1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (preset1ToolStripMenuItem.Checked == false)
+            try
             {
-                preset1ToolStripMenuItem.Checked = true;
-                new SystemLiveInformation().Show();
-            }
-            else
-            {
-                preset1ToolStripMenuItem.Checked = false;
-                foreach (Form form in Application.OpenForms)
+                if (preset1ToolStripMenuItem.Checked == false)
                 {
-                    SystemLiveInformation.ActiveForm.Close();
-                    //if (form.Name == "SystemLiveInformation")
-                    //{
-                    //    form.Close();
-                    //}
+                    preset1ToolStripMenuItem.Checked = true;
+                    new SystemLiveInformation().Show();
                 }
+                else
+                {
+                    preset1ToolStripMenuItem.Checked = false;
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        SystemLiveInformation.ActiveForm.Close();
+                        //if (form.Name == "SystemLiveInformation")
+                        //{
+                        //    form.Close();
+                        //}
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -440,7 +443,6 @@ namespace Behave_Tool
             new LocalHostScanner().Show();
         }
 
-
         private void SearchBar_KeyUp(object sender, KeyEventArgs e)
         {
             foreach (string t in _tools)
@@ -452,13 +454,11 @@ namespace Behave_Tool
                     SearchBar.Items.Add(value1);
                 }
             }
-
-
         }
 
         private void IPdisplay_ButtonClick(object sender, EventArgs e)
         {
-            new IPinfo().Show();
+            new Network().Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)

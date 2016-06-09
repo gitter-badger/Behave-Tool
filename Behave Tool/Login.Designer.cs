@@ -140,7 +140,7 @@
             this.pictureBox1.InitialImage = global::Behave_Tool.Properties.Resources.Behave;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(159, 109);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -182,14 +182,17 @@
             // 
             // serverStatus
             // 
+            this.serverStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.serverStatus.AutoSize = true;
             this.serverStatus.BackColor = System.Drawing.Color.Transparent;
             this.serverStatus.ForeColor = System.Drawing.Color.White;
-            this.serverStatus.Location = new System.Drawing.Point(25, 117);
+            this.serverStatus.Location = new System.Drawing.Point(35, 117);
             this.serverStatus.Name = "serverStatus";
-            this.serverStatus.Size = new System.Drawing.Size(107, 13);
+            this.serverStatus.Size = new System.Drawing.Size(68, 13);
             this.serverStatus.TabIndex = 10;
-            this.serverStatus.Text = "Connection to Server";
+            this.serverStatus.Text = "ServerStatus";
+            this.serverStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.serverStatus.TextChanged += new System.EventHandler(this.serverStatus_TextChanged);
             // 
             // Close
             // 

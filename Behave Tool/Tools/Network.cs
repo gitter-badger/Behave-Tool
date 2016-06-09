@@ -1,97 +1,99 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace Behave_Tool
 {
-    public partial class IPinfo : Form
+    public partial class Network : Form
     {
-        public IPinfo()
+        public Network()
         {
             InitializeComponent();
         }
+
         protected override void WndProc(ref Message m)
         {
-           
             base.WndProc(ref m);
             if (m.Msg != 132)
                 return;
             m.Result = (IntPtr)2;
         }
 
-
         private void startupProcedure()
         {
             new Thread(new ThreadStart(getWebConnect)) { IsBackground = true }.Start();
             new Thread(new ThreadStart(getPublicIP)) { IsBackground = true }.Start();
+            new Thread(new ThreadStart(getGateway)) { IsBackground = true }.Start();
             new Thread(new ThreadStart(getIPv4)) { IsBackground = true }.Start();
             new Thread(new ThreadStart(getIPv6)) { IsBackground = true }.Start();
             new Thread(new ThreadStart(getMAC)) { IsBackground = true }.Start();
+            
         }
+
         private void IndepthIPinfo_Load(object sender, EventArgs e)
         {
             new Thread(new ThreadStart(startupProcedure)) { IsBackground = true }.Start();
-
         }
+
         private void getPublicIP()
         {
-            IP.Text = "Searching...";
+            IP.Text = "Getting...";
 
             IP.Text = Behave_Tool.IP.getPublicIP();
-
         }
+
         private void getIPv6()
         {
-            IPv6.Text = "Searching...";
+            IPv6.Text = "Getting...";
 
             IPv6.Text = Behave_Tool.IP.getIPv6();
-
         }
+
         private void getWebConnect()
         {
-            WebConnection.Text = "Searching...";
+            WebConnection.Text = "Ping'ing...";
 
             WebConnection.Text = Behave_Tool.IP.getConnectionStatus();
-
         }
+
         private void getIPv4()
         {
-            IPv4.Text = "Searching...";
+            IPv4.Text = "Getting...";
 
             IPv4.Text = Behave_Tool.IP.getIPv4();
-
         }
+
         private void getMAC()
         {
-            MAC.Text = "Searching...";
+            MAC.Text = "Getting...";
 
             MAC.Text = Behave_Tool.IP.getMAC();
-
         }
+        private void getGateway()
+        {
+            gateway.Text = "Getting...";
+            gateway.Text = Behave_Tool.IP.getGateway();
+        }
+
         private void recheckAll()
         {
-
             startupProcedure();
-
         }
+
         private void WebConnection_TextChanged(object sender, EventArgs e)
         {
-            if (WebConnection.Text == "Connected")
+            if (WebConnection.Text == "Success")
             {
                 WebConnection.ForeColor = Color.Green;
             }
-            else if (WebConnection.Text == "Searching..." ) { WebConnection.ForeColor = Color.Yellow; }
-            else { WebConnection.ForeColor = Color.Green; }
+            else if (WebConnection.Text == "Ping'ing...") { WebConnection.ForeColor = Color.Yellow; }
+            else { WebConnection.ForeColor = Color.Red; }
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -101,9 +103,7 @@ namespace Behave_Tool
 
         private void ALL_Refresh_Click(object sender, EventArgs e)
         {
-            
             new Thread(new ThreadStart(recheckAll)) { IsBackground = true }.Start();
-            
         }
 
         private void Web_Refresh_Click(object sender, EventArgs e)
@@ -130,6 +130,76 @@ namespace Behave_Tool
         {
             new Thread(new ThreadStart(getMAC)) { IsBackground = true }.Start();
         }
+
+        private void gateway_Refresh_Click(object sender, EventArgs e)
+        {
+            new Thread(new ThreadStart(getGateway)) { IsBackground = true }.Start();
+        }
+
+        private void MAC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MAC_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IPv6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IPv4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Ipv4Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gateLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gateway_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WebLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WebConnection_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class IP
@@ -143,16 +213,14 @@ namespace Behave_Tool
                 {
                     using (var stream = client.OpenRead("http://www.google.com"))
                     {
-
-                        return "Connected";
+                        return "Success";
                     }
                 }
             }
             catch
             {
-                return "Disconnected";
+                return "Failed";
             }
-
         }
 
         public static string getPublicIP()
@@ -161,13 +229,13 @@ namespace Behave_Tool
             try
             {
                 string ip = new StreamReader(WebRequest.Create("http://checkip.dyndns.org").GetResponse().GetResponseStream()).ReadToEnd().Trim().Split(':')[1].Substring(1).Split('<')[0];
-                
+
                 Console.WriteLine("=GetPublicIP= Returned " + ip);
                 return ip;
             }
             catch (Exception)
             {
-                Console.WriteLine("=GetPublicIP= Failed To return IP");
+                Console.WriteLine("=GetPublicIP= Failed");
                 return "Failed";
             }
         }
@@ -175,15 +243,21 @@ namespace Behave_Tool
         public static string getIPv4()
         {
             Console.WriteLine("=getIPV4= Start");
-            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            try
             {
-                socket.Connect("10.0.2.4", 65530);
-                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
-                Console.WriteLine("=getIPV4= Returned " + endPoint.Address.ToString());
-                return endPoint.Address.ToString(); //ipv4
+                using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+                {
+                    socket.Connect("10.0.2.4", 65530);
+                    IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                    Console.WriteLine("=getIPV4= Returned " + endPoint.Address.ToString());
+                    return endPoint.Address.ToString(); //ipv4
+                }
             }
-
-
+            catch (Exception)
+            {
+                Console.WriteLine("=GetIPv4= Failed");
+                return "Failed";
+            }
         }
 
         public static string getIPv6()
@@ -200,25 +274,42 @@ namespace Behave_Tool
             }
             else
             {
-                return string.Empty;
+                return "Failed";
             }
-
         }
 
         public static string getMAC()
         {
-            NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
-            String sMacAddress = string.Empty;
-            foreach (NetworkInterface adapter in nics)
+            try
             {
-                if (sMacAddress == string.Empty)
+                NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+                String sMacAddress = string.Empty;
+                foreach (NetworkInterface adapter in nics)
                 {
-                    IPInterfaceProperties properties = adapter.GetIPProperties();
-                    sMacAddress = adapter.GetPhysicalAddress().ToString();
+                    if (sMacAddress == string.Empty)
+                    {
+                        IPInterfaceProperties properties = adapter.GetIPProperties();
+                        sMacAddress = adapter.GetPhysicalAddress().ToString();
+                    }
                 }
+                return sMacAddress;
             }
-            return sMacAddress;
+            catch(Exception)
+            {
+                return "Failed";
+            }
+        }
+        public static string getGateway()
+        {
+            try
+            {
+                var gateway = NetworkInterface.GetAllNetworkInterfaces().Where(e => e.OperationalStatus == OperationalStatus.Up).SelectMany(e => e.GetIPProperties().GatewayAddresses).FirstOrDefault();
+                return gateway.Address.ToString();
+
+            } catch(Exception)
+            {
+                return "Failed";
+            }
         }
     }
-
 }

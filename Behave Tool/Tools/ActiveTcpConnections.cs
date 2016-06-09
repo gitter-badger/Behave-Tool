@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net.NetworkInformation;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -20,7 +14,6 @@ namespace Behave_Tool
             InitializeComponent();
             TopMost = true;
         }
-
 
         public void ShowActiveTcpConnections()
         {
@@ -63,6 +56,11 @@ namespace Behave_Tool
         private void Scan_Click(object sender, EventArgs e)
         {
             new Thread(ShowActiveTcpConnections).Start();
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
