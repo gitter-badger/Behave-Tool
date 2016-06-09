@@ -12,18 +12,45 @@ namespace Behave_Tool
 {
     public partial class Behave : Form
     {
+        public string[] _tools = new string[] { "Local Host Scanner" };
         private static bool networkTrafficMonitoring = true;
         private static bool systemUsageOn = true;
         private const int WM_NCHITTEST = 132;
-        private const int HT_CLIENT = 1;
-        private const int HT_CAPTION = 2;
+        //private const int HT_CLIENT = 1;
+        //private const int HT_CAPTION = 2;
         public static bool loadComplete = false;
+        protected override void WndProc(ref Message m)
+        {
+            const int wmNcHitTest = 0x84;
+            const int htBottomLeft = 16;
+            const int htBottomRight = 17;
+            if (m.Msg == wmNcHitTest)
+            {
+                int x = (int)(m.LParam.ToInt64() & 0xFFFF);
+                int y = (int)((m.LParam.ToInt64() & 0xFFFF0000) >> 16);
+                Point pt = PointToClient(new Point(x, y));
+                Size clientSize = ClientSize;
+                if (pt.X >= clientSize.Width - 16 && pt.Y >= clientSize.Height - 16 && clientSize.Height >= 16)
+                {
+                    m.Result = (IntPtr)(IsMirrored ? htBottomLeft : htBottomRight);
+                    return;
+                }
+            }
+
+
+
+            base.WndProc(ref m);
+            if (m.Msg != 132)
+                return;
+            m.Result = (IntPtr)2;
+        }
 
         public Behave()
         {
             InitializeComponent();
             this.Opacity = 0;
-
+            //ControlBox = false;
+            //Text = "";
             //new Loading().Show();
 
             Load_Settings();
@@ -36,21 +63,16 @@ namespace Behave_Tool
         {
             public MySR()
             {
+                
             }
 
             protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
             {
-                //base.OnRenderToolStripBorder(e);
+                
+                base.OnRenderToolStripBorder(e);
             }
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg != 132)
-                return;
-            m.Result = (IntPtr)2;
-        }
 
         private void startupProceedure()
         {
@@ -73,7 +95,10 @@ namespace Behave_Tool
             {
                 IsBackground = true
             }.Start();
-            new Thread(new ThreadStart(AvailableDrives)).Start();
+            new Thread(new ThreadStart(AvailableDrives))
+            {
+                IsBackground = true
+            }.Start();
         }
 
         private void ShowNetworkTraffic()
@@ -107,30 +132,15 @@ namespace Behave_Tool
             }
         }
 
-        public string GetPublicIP()
-        {
-            Console.WriteLine("=Start= GetPublicIP");
-            try
-            {
-                return "Public IP: " + new StreamReader(WebRequest.Create("http://checkip.dyndns.org").GetResponse().GetResponseStream()).ReadToEnd().Trim().Split(':')[1].Substring(1).Split('<')[0];
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("=Fail= GetPublicIP => Retrieve Public IP ");
-                return "Failed To Retrieve Public IP";
-            }
-        }
-
         public void UpdatePublicIP()
         {
+            Console.WriteLine("=UpdatePublicIP= Start");
             IPrefresh.Image = Properties.Resources.Loading_Gif;
-            Console.WriteLine("=Start= UpdatePublicIP");
 
             IPdisplay.Text = "Checking IP...";
-            IPdisplay.Text = GetPublicIP();
-            Console.WriteLine("=Done= GetPublicIP");
-            Console.WriteLine("=Done= UpdatePublicIP");
+            IPdisplay.Text = "Public IP: " + Behave_Tool.IP.getPublicIP();
             IPrefresh.Image = Properties.Resources.Behave;
+            Console.WriteLine("=Done= UpdatePublicIP");
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -164,8 +174,14 @@ namespace Behave_Tool
 
         public void systemUsage()
         {
-            new Thread(new ThreadStart(getCPUusage)).Start();
-            new Thread(new ThreadStart(getRamUsage)).Start();
+            new Thread(new ThreadStart(getCPUusage))
+            {
+                IsBackground = true
+            }.Start();
+            new Thread(new ThreadStart(getRamUsage))
+            {
+                IsBackground = true
+            }.Start();
         }
 
         private void Minimize_Click(object sender, EventArgs e)
@@ -400,10 +416,11 @@ namespace Behave_Tool
                 preset1ToolStripMenuItem.Checked = false;
                 foreach (Form form in Application.OpenForms)
                 {
-                    if (form.Name == "SystemLiveInformation")
-                    {
-                        form.Close();
-                    }
+                    SystemLiveInformation.ActiveForm.Close();
+                    //if (form.Name == "SystemLiveInformation")
+                    //{
+                    //    form.Close();
+                    //}
                 }
             }
         }
@@ -421,6 +438,32 @@ namespace Behave_Tool
         private void localHostScannerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new LocalHostScanner().Show();
+        }
+
+
+        private void SearchBar_KeyUp(object sender, KeyEventArgs e)
+        {
+            foreach (string t in _tools)
+            {
+                string value1 = Array.Find(_tools, element => element.StartsWith(Text, StringComparison.Ordinal));
+                if (value1.Contains(Text))
+                {
+                    SearchBar.Items.Clear();
+                    SearchBar.Items.Add(value1);
+                }
+            }
+
+
+        }
+
+        private void IPdisplay_ButtonClick(object sender, EventArgs e)
+        {
+            new IPinfo().Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            new Test().Show();
         }
     }
 }

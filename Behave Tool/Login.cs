@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Net;
+using System.Net.NetworkInformation;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -23,13 +27,20 @@ namespace Behave_Tool
         public Login()
         {
             InitializeComponent();
-
+            this.PassWord.PasswordChar = this.randChar();
             CheckForIllegalCrossThreadCalls = false;
             StartPosition = FormStartPosition.Manual;
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+
+            new Thread(new ThreadStart(this.getServerStatus)) { IsBackground = true }.Start();
         }
 
+        private char randChar()
+        {
+            string[] strArray = new string[] { "≡", "☻", "£", "ƒ", "⌛", "◙", "§", "Θ", "✌" };
+            return Convert.ToChar(strArray[new Random().Next(0, strArray.Length)]);
+        }
         private bool loginSuccess()
         {
             if (user == "admin" && pass == "ddr3")
@@ -42,33 +53,60 @@ namespace Behave_Tool
             }
         }
 
-        private void Log_In_Click(object sender, EventArgs e)
+        private void startLoading()
         {
-            user = UserName.Text;
-            pass = PassWord.Text;
+            this.loading.BackgroundImage = Properties.Resources.Loading_Gif;
+        }
 
-            attempts += 1;
+        private void stopLoading()
+        {
+            this.loading.BackgroundImage = null;
+        }
 
-            if (loginSuccess() == false)
+        private void login()
+        {
+            new Thread(new ThreadStart(this.startLoading))
             {
-                Error.Visible = true;
-                if (attempts <= 2)
+                IsBackground = true
+            }.Start();
+            this.user = this.UserName.Text;
+            this.pass = this.PassWord.Text;
+            ++Login.attempts;
+            if (!this.loginSuccess())
+            {
+                this.Error.Visible = true;
+                if (Login.attempts <= 2)
                 {
-                    new Thread(new ThreadStart(err)) { IsBackground = true }.Start();
-                    AttemptCount.Text = "Attempts left: " + (3 - attempts);
+                    new Thread(new ThreadStart(this.err))
+                    {
+                        IsBackground = true
+                    }.Start();
+                    this.AttemptCount.Text = "Attempts left: " + (object)(3 - Login.attempts);
+                    this.loading.Visible = false;
+                    new Thread(new ThreadStart(this.stopLoading))
+                    {
+                        IsBackground = true
+                    }.Start();
                 }
-                else // if attempts is more than 3
+                else
                 {
-                    MessageBox.Show("You have ran out of attempts!");
+                    int num = (int)MessageBox.Show("You have ran out of attempts!");
                     Program.failLogin = true;
-                    Close();
+                    this.Close();
                 }
             }
-            else // allow to login
+            else
             {
                 Program.failLogin = false;
-                Close();
+                this.Close();
             }
+        }
+        private void Log_In_Click(object sender, EventArgs e)
+        {
+            new Thread(new ThreadStart(this.login))
+            {
+                IsBackground = true
+            }.Start();
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -82,6 +120,75 @@ namespace Behave_Tool
             Error.Visible = true;
             Thread.Sleep(3000);
             Error.Visible = false;
+        }
+        private void PassWord_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue != 13)
+                return;
+            this.login();
+        }
+
+        private bool sqlConnect()
+        {
+            bool flag = false;
+            SqlConnection connection = new SqlConnection("server=mysql1.000webhost.com;database=a6007078_behave;user id=a6007078_sqlcon;password=sd98sda7;Trusted_Connection=yes;connection timeout=10");
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                int num = (int)MessageBox.Show(ex.ToString());
+            }
+            if (connection != null && connection.State == ConnectionState.Closed)
+            {
+                flag = false;
+            }
+            else
+            {
+                SqlDataReader sqlDataReader = new SqlCommand("SELECT * FROM users WHERE username='" + this.UserName.Text + "' AND password='" + this.PassWord.Text + "'", connection).ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    if (sqlDataReader.HasRows)
+                    {
+                        int num = (int)MessageBox.Show("Login Successfully Done");
+                        flag = true;
+                    }
+                }
+                if (!sqlDataReader.HasRows)
+                {
+                    int num = (int)MessageBox.Show("Access Denied, password username mismatched");
+                    flag = false;
+                }
+                try
+                {
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+            return flag;
+        }
+
+        private void getServerStatus()
+        {
+            this.serverStatus.Text = "Checking Server";
+            if (new Ping().Send(IPAddress.Parse("31.170.162.63")).Status == IPStatus.Success)
+                this.serverStatus.Text = "Online";
+            else
+                this.serverStatus.Text = "No Connection";
+        }
+
+        private void serverStatus_TextChanged(object sender, EventArgs e)
+        {
+            if (this.serverStatus.Text == "Online")
+                this.serverStatus.ForeColor = Color.Green;
+            else if (this.serverStatus.Text == "Checking Server")
+                this.serverStatus.ForeColor = Color.Yellow;
+            else
+                this.serverStatus.ForeColor = Color.Red;
         }
     }
 }

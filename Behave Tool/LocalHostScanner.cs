@@ -24,29 +24,39 @@ namespace Behave_Tool
 
         public void program()
         {
+            Scan.Text = "Scanning";
             countdown = new CountdownEvent(1);
             Stopwatch sw = new Stopwatch();
             sw.Start();
             string ipBase = "100.72.196.";
-            for (int i = 1; i < 255; i++)
+            try
             {
-                string ip = ipBase + i.ToString();
+                for (int i = 1; i < 255; i++)
+                {
+                    string ip = ipBase + i.ToString();
 
-                Ping p = new Ping();
-                p.PingCompleted += new PingCompletedEventHandler(p_PingCompleted);
-                countdown.AddCount();
-                p.SendAsync(ip, 100, ip);
+                    Ping p = new Ping();
+                    p.PingCompleted += new PingCompletedEventHandler(p_PingCompleted);
+                    countdown.AddCount();
+                    p.SendAsync(ip, 100, ip);
+                }
+                countdown.Signal();
+                countdown.Wait();
+                sw.Stop();
+                TimeSpan span = new TimeSpan(sw.ElapsedTicks);
+                //Console.WriteLine("Took {0} milliseconds. {1} hosts active.", sw.ElapsedMilliseconds, upCount);
+                //Console.ReadLine();
             }
-            countdown.Signal();
-            countdown.Wait();
-            sw.Stop();
-            TimeSpan span = new TimeSpan(sw.ElapsedTicks);
-            Console.WriteLine("Took {0} milliseconds. {1} hosts active.", sw.ElapsedMilliseconds, upCount);
-            Console.ReadLine();
+            catch (Exception)
+            {
+                listBox1.Items.Add("You are not connected to the net");
+            }
+            Scan.Text = "Scan";
         }
 
         private void p_PingCompleted(object sender, PingCompletedEventArgs e)
         {
+
             string ip = (string)e.UserState;
             string response;
             if (e.Reply != null && e.Reply.Status == IPStatus.Success)
@@ -67,12 +77,12 @@ namespace Behave_Tool
                     listBox1.Items.Add(response);
                     //Console.WriteLine("{0} ({1}) is up: ({2} ms)", ip, name, e.Reply.RoundtripTime);
                 }
-                else
-                {
-                    response = (ip + " is up: (" + e.Reply.RoundtripTime + " ms)");
-                    listBox1.Items.Add(response);
-                    Console.WriteLine("{0} is up: ({1} ms)", ip, e.Reply.RoundtripTime);
-                }
+                //else
+                //{
+                //    response = (ip + " is up: (" + e.Reply.RoundtripTime + " ms)");
+                //    listBox1.Items.Add(response);
+                //    Console.WriteLine("{0} is up: ({1} ms)", ip, e.Reply.RoundtripTime);
+                //}
                 lock (lockObj)
                 {
                     upCount++;
@@ -81,6 +91,7 @@ namespace Behave_Tool
             else if (e.Reply == null)
             {
             }
+
         }
 
         private void Scan_Click(object sender, EventArgs e)
@@ -116,6 +127,11 @@ namespace Behave_Tool
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

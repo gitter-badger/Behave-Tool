@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.UserName = new System.Windows.Forms.TextBox();
             this.PassWord = new System.Windows.Forms.TextBox();
             this.Log_In = new System.Windows.Forms.Button();
-            this.Close = new System.Windows.Forms.Button();
             this.AttemptCount = new System.Windows.Forms.Label();
             this.Error = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.loading = new System.Windows.Forms.PictureBox();
+            this.serverStatus = new System.Windows.Forms.Label();
+            this.Close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(8, 6);
+            this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
@@ -61,7 +63,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 32);
+            this.label2.Location = new System.Drawing.Point(9, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
@@ -73,7 +75,7 @@
             this.UserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserName.ForeColor = System.Drawing.Color.White;
-            this.UserName.Location = new System.Drawing.Point(79, 6);
+            this.UserName.Location = new System.Drawing.Point(79, 9);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(94, 13);
             this.UserName.TabIndex = 2;
@@ -84,7 +86,7 @@
             this.PassWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PassWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PassWord.ForeColor = System.Drawing.Color.White;
-            this.PassWord.Location = new System.Drawing.Point(79, 32);
+            this.PassWord.Location = new System.Drawing.Point(79, 40);
             this.PassWord.Name = "PassWord";
             this.PassWord.Size = new System.Drawing.Size(94, 13);
             this.PassWord.TabIndex = 3;
@@ -93,10 +95,11 @@
             // 
             this.Log_In.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Log_In.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Log_In.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Log_In.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Log_In.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Log_In.ForeColor = System.Drawing.Color.White;
             this.Log_In.Image = global::Behave_Tool.Properties.Resources.Button;
-            this.Log_In.Location = new System.Drawing.Point(88, 73);
+            this.Log_In.Location = new System.Drawing.Point(88, 90);
             this.Log_In.Name = "Log_In";
             this.Log_In.Size = new System.Drawing.Size(75, 23);
             this.Log_In.TabIndex = 4;
@@ -104,28 +107,13 @@
             this.Log_In.UseVisualStyleBackColor = true;
             this.Log_In.Click += new System.EventHandler(this.Log_In_Click);
             // 
-            // Close
-            // 
-            this.Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Close.BackColor = System.Drawing.Color.Transparent;
-            this.Close.BackgroundImage = global::Behave_Tool.Properties.Resources.Close;
-            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Close.Location = new System.Drawing.Point(353, 0);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(24, 24);
-            this.Close.TabIndex = 5;
-            this.Close.UseVisualStyleBackColor = false;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
-            // 
             // AttemptCount
             // 
             this.AttemptCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AttemptCount.AutoSize = true;
             this.AttemptCount.BackColor = System.Drawing.Color.Transparent;
             this.AttemptCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.AttemptCount.Location = new System.Drawing.Point(87, 54);
+            this.AttemptCount.Location = new System.Drawing.Point(87, 67);
             this.AttemptCount.Name = "AttemptCount";
             this.AttemptCount.Size = new System.Drawing.Size(77, 13);
             this.AttemptCount.TabIndex = 6;
@@ -137,7 +125,7 @@
             this.Error.AutoSize = true;
             this.Error.BackColor = System.Drawing.Color.Transparent;
             this.Error.ForeColor = System.Drawing.Color.Red;
-            this.Error.Location = new System.Drawing.Point(4, 78);
+            this.Error.Location = new System.Drawing.Point(4, 95);
             this.Error.Name = "Error";
             this.Error.Size = new System.Drawing.Size(64, 13);
             this.Error.TabIndex = 7;
@@ -152,7 +140,7 @@
             this.pictureBox1.InitialImage = global::Behave_Tool.Properties.Resources.Behave;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(159, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -163,6 +151,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.loading, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.Error, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.UserName, 1, 0);
@@ -175,10 +164,47 @@
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 117);
             this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // loading
+            // 
+            this.loading.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loading.Location = new System.Drawing.Point(21, 65);
+            this.loading.Name = "loading";
+            this.loading.Size = new System.Drawing.Size(30, 18);
+            this.loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.loading.TabIndex = 11;
+            this.loading.TabStop = false;
+            // 
+            // serverStatus
+            // 
+            this.serverStatus.AutoSize = true;
+            this.serverStatus.BackColor = System.Drawing.Color.Transparent;
+            this.serverStatus.ForeColor = System.Drawing.Color.White;
+            this.serverStatus.Location = new System.Drawing.Point(25, 117);
+            this.serverStatus.Name = "serverStatus";
+            this.serverStatus.Size = new System.Drawing.Size(107, 13);
+            this.serverStatus.TabIndex = 10;
+            this.serverStatus.Text = "Connection to Server";
+            // 
+            // Close
+            // 
+            this.Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Close.BackColor = System.Drawing.Color.Transparent;
+            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Close.Location = new System.Drawing.Point(353, 0);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(24, 24);
+            this.Close.TabIndex = 40;
+            this.Close.Text = "X";
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // Login
             // 
@@ -186,20 +212,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(377, 121);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(377, 151);
             this.Controls.Add(this.Close);
+            this.Controls.Add(this.serverStatus);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Opacity = 0.9D;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -210,10 +238,12 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox PassWord;
         public System.Windows.Forms.TextBox UserName;
-        private new System.Windows.Forms.Button Close;
         private System.Windows.Forms.Label AttemptCount;
         private System.Windows.Forms.Label Error;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label serverStatus;
+        private System.Windows.Forms.PictureBox loading;
+        private System.Windows.Forms.Button Close;
     }
 }

@@ -77,34 +77,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Nito.AsyncEx, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Nito.AsyncEx.Concurrent, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Nito.AsyncEx.Enlightenment, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,6 +93,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="websocket-sharp, Version=1.0.2.36589, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
       <HintPath>..\packages\WebSocketSharp.1.0.3-rc9\lib\websocket-sharp.dll</HintPath>
       <Private>True</Private>
@@ -122,6 +102,8 @@
       <HintPath>..\packages\WebSocket4Net.0.14.1\lib\net45\WebSocket4Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActiveTcpConnections.cs">
@@ -142,17 +124,28 @@
     <Compile Include="Behave_Settings.Designer.cs">
       <DependentUpon>Behave_Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IPinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IPinfo.Designer.cs">
+      <DependentUpon>IPinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
-    <Compile Include="Local Port Scanner.cs">
+    <Compile Include="LocalPortScanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Local Port Scanner.Designer.cs">
-      <DependentUpon>Local Port Scanner.cs</DependentUpon>
+    <Compile Include="LocalPortScanner.Designer.cs">
+      <DependentUpon>LocalPortScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="LocalHostScanner.cs">
       <SubType>Form</SubType>
@@ -194,6 +187,12 @@
     <Compile Include="SystemLiveInformation.Designer.cs">
       <DependentUpon>SystemLiveInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usage_Agreement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,11 +208,14 @@
     <EmbeddedResource Include="Behave_Settings.resx">
       <DependentUpon>Behave_Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IPinfo.resx">
+      <DependentUpon>IPinfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Local Port Scanner.resx">
-      <DependentUpon>Local Port Scanner.cs</DependentUpon>
+    <EmbeddedResource Include="LocalPortScanner.resx">
+      <DependentUpon>LocalPortScanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalHostScanner.resx">
       <DependentUpon>LocalHostScanner.cs</DependentUpon>
@@ -243,10 +245,206 @@
     <EmbeddedResource Include="SystemLiveInformation.resx">
       <DependentUpon>SystemLiveInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usage_Agreement.resx">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\DevExpress.Data.ShellHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.IPredefinedToastNotification.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.IPredefinedToastNotificationContent.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.IPredefinedToastNotificationContentFactory.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.IPredefinedToastNotificationInfo.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.ToastNotificationFailedException.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.ComFunctions+RO_INIT_TYPE.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.ComFunctions.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.ErrorHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.EventRegistrationToken.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.IInspectable.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.IToastNotificationAdapter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.ToastNotificationManager.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Window.Data.Xml.Dom.IXmlDocument.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Window.Data.Xml.Dom.IXmlElement.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Window.Data.Xml.Dom.IXmlNamedNodeMap.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Window.Data.Xml.Dom.IXmlNode.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Window.Data.Xml.Dom.IXmlNodeList.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Window.Data.Xml.Dom.IXmlNodeSerializer.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Window.Data.Xml.Dom.IXmlText.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Windows.UI.Notifications.IToastDismissedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Windows.UI.Notifications.IToastFailedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Windows.UI.Notifications.IToastNotification.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Windows.UI.Notifications.ITypedEventHandler_IToastNotification_Activated.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Windows.UI.Notifications.ITypedEventHandler_IToastNotification_Dismissed.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinApi.Windows.UI.Notifications.ITypedEventHandler_IToastNotification_Failed.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Internal.WinRTToastNotificationFactory.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ApplicationJumpItem.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ApplicationJumpItemCollection.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ApplicationJumpListService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ApplicationJumpPath.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ApplicationJumpTask.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.BooleanNegationConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.BooleanNegationConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.BooleanToObjectConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.BooleanToObjectConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.BooleanToVisibilityConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.BooleanToVisibilityConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.CommandItem.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.CommandsCollection.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.CompositeCommandBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ConfirmationBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.CurrentWindowService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.CustomApplicationJumpTaskLauncher.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DefaultBooleanToBooleanConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DefaultBooleanToBooleanConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DependencyPropertyBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DispatcherService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DocumentUIServiceBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DXSplashScreen+SplashScreenContainer+SplashScreenInfo.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DXSplashScreen+SplashScreenContainer.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DXSplashScreen.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.DXSplashScreenService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.EnumerableConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.EnumerableConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.EnumItemsSourceBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.EnumMemberInfoPresenter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.EventToCommand.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.EventToCommandBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FileDialogServiceBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FileInfoWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FocusBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FolderBrowserDialogService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FormatStringConverter+TextCaseFormat.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FormatStringConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FormatStringConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FunctionBindingBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.FunctionBindingBehaviorBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.IconStorage.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.IEventArgsConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.IIconStorage.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.AttachableObjectBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.Behavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.BehaviorCollection.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.EventTrigger.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.IAttachableObject.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.Interaction.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.Internal.InteractionHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.TargetTypeAttribute.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.TriggerBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Interactivity.TriggerCollection.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ISplashScreen.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ItemsControlMouseEventArgsConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.IViewLocator.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.KeyToCommand.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.LayoutTreeHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.LoadingDecorator.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.MapItem.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.MessageBoxService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.MethodToCommandBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.AnotherEventHandlerUtils.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ApplicationJumpItemCollectionInternal.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ApplicationJumpItemWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ApplicationJumpList.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ApplicationJumpPathWrap.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ApplicationJumpTaskWrap.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.CurrentProcess.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.CustomNotification.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.CustomNotifier.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.DependencyObjectExt.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.IApplicationJumpListImplementation.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ICurrentProcess.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.IgnoreDependencyPropertiesConsistencyCheckerAttribute.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.IJumpAction.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.IJumpActionsManager.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ImageLoader2.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.INativeJumpList.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.IScreen.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.IWindowSurrogate.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.JumpActionsManager.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.JumpActionsManagerBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.JumpActionsManagerClient.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.LayoutHelper+ElementHandler.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.LayoutHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.LogicalTreeEnumerator.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.NativeJumpList.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.NativeResourceManager.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.NestedObjectEnumeratorBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.NotificationServiceTemplatesHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ObjectPropertyHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.PredefinedToastNotificationVewModel.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.PrimaryScreen.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.SerializationEnumerator.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.SingleObjectEnumerator.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.StreamHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.TaskbarThumbButtonInfoWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ToastContentControl.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ToastTemplateSelector.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.ToastWindow.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.VisualTreeEnumerator.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.VisualTreeEnumeratorWithConditionalStop.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.WindowProxy.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.Native.WpfToastNotificationFactory.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.NotificationService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.NotSupportedCollectionException.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.NumericToBooleanConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.NumericToBooleanConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.NumericToVisibilityConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.NumericToVisibilityConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ObjectToBooleanConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ObjectToBooleanConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ObjectToObjectConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.OpenFileDialogService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ReflectionConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ReflectionConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.SaveFileDialogService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ServiceBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.SplashScreenOwner.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.SplashScreenViewModel.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.StringToBooleanConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.StringToBooleanConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.TaskbarButtonService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.TaskbarThumbButtonInfoCollection.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.TypeCastConverter.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.TypeCastConverterExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ValidationErrorsHostBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewHelper+DocumentOwnerWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewHelper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjection.ContentControlWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjection.ContentPresenterWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjection.IStrategy.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjection.IStrategyManager.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjection.ItemsControlWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjection.PanelWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjection.SelectorWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjection.TabControlWrapper.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewInjectionService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewLocator.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewLocatorBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewLocatorExtensions+FallbackView.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewLocatorExtensions.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewModelExtensions.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.ViewModelSourceExtension.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.WaitIndicator.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.WaitIndicatorContainer.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.WindowAwareServiceBase.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.WindowedDocumentUIService+WindowDocument.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.WindowedDocumentUIService.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.WindowFadeAnimationBehavior.datasource" />
+    <None Include="Properties\DataSources\DevExpress.Mvvm.UI.WindowService.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

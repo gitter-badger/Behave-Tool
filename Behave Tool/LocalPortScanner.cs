@@ -139,5 +139,10 @@ namespace Behave_Tool
                 Process.Start(savefile.FileName);
             }
         }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

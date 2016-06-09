@@ -42,8 +42,9 @@
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.performanceMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preset1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soundcloudDownloaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.IPrefresh = new System.Windows.Forms.ToolStripButton();
             this.IPdisplay = new System.Windows.Forms.ToolStripSplitButton();
             this.releaseIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renewIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,8 @@
             this.Minimize = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Settings = new System.Windows.Forms.ToolStripButton();
+            this.SearchBar = new System.Windows.Forms.ToolStripComboBox();
+            this.IPrefresh = new System.Windows.Forms.ToolStripButton();
             this.SessionTimer = new System.Windows.Forms.Label();
             this.TotalSessionTime = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -75,11 +78,14 @@
             this.Storage_Label = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tabControlWrapperBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.ToolBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlWrapperBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ToolBar
@@ -90,13 +96,14 @@
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu,
             this.toolStripSeparator1,
-            this.IPrefresh,
             this.IPdisplay,
             this.Close,
             this.MaximizeNormalize,
             this.Minimize,
             this.toolStripSeparator2,
-            this.Settings});
+            this.Settings,
+            this.SearchBar,
+            this.IPrefresh});
             this.ToolBar.Location = new System.Drawing.Point(0, 0);
             this.ToolBar.Name = "ToolBar";
             this.ToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -112,7 +119,8 @@
             this.Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stuffToolStripMenuItem,
             this.toysToolStripMenuItem,
-            this.systemToolStripMenuItem});
+            this.systemToolStripMenuItem,
+            this.otherToolStripMenuItem});
             this.Menu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu.ForeColor = System.Drawing.Color.White;
             this.Menu.Image = ((System.Drawing.Image)(resources.GetObject("Menu.Image")));
@@ -133,7 +141,7 @@
             this.stuffToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
             this.stuffToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
+            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.stuffToolStripMenuItem.Text = "Network";
             // 
             // LocalNetworkToolStripMenuItem
@@ -147,7 +155,7 @@
             this.localHostScannerToolStripMenuItem});
             this.LocalNetworkToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.LocalNetworkToolStripMenuItem.Name = "LocalNetworkToolStripMenuItem";
-            this.LocalNetworkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.LocalNetworkToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.LocalNetworkToolStripMenuItem.Text = "Local Network";
             this.LocalNetworkToolStripMenuItem.Click += new System.EventHandler(this.localPortScannerToolStripMenuItem_Click);
             // 
@@ -197,7 +205,7 @@
             this.toysToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.toysToolStripMenuItem.Name = "toysToolStripMenuItem";
             this.toysToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.toysToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
+            this.toysToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.toysToolStripMenuItem.Text = "Toys";
             // 
             // entertainMeToolStripMenuItem
@@ -207,7 +215,7 @@
             this.entertainMeToolStripMenuItem.Enabled = false;
             this.entertainMeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.entertainMeToolStripMenuItem.Name = "entertainMeToolStripMenuItem";
-            this.entertainMeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entertainMeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.entertainMeToolStripMenuItem.Text = "Entertain Me";
             // 
             // systemToolStripMenuItem
@@ -221,7 +229,7 @@
             this.systemToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             this.systemToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.systemToolStripMenuItem.Text = "System";
             // 
             // performanceMonitorToolStripMenuItem
@@ -242,28 +250,35 @@
             this.preset1ToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.preset1ToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.preset1ToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.preset1ToolStripMenuItem.Enabled = false;
             this.preset1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.preset1ToolStripMenuItem.Name = "preset1ToolStripMenuItem";
-            this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.preset1ToolStripMenuItem.Text = "Preset 1";
             this.preset1ToolStripMenuItem.Click += new System.EventHandler(this.preset1ToolStripMenuItem_Click);
+            // 
+            // otherToolStripMenuItem
+            // 
+            this.otherToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.otherToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.otherToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.soundcloudDownloaderToolStripMenuItem});
+            this.otherToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.otherToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.otherToolStripMenuItem.Text = "Other";
+            // 
+            // soundcloudDownloaderToolStripMenuItem
+            // 
+            this.soundcloudDownloaderToolStripMenuItem.Name = "soundcloudDownloaderToolStripMenuItem";
+            this.soundcloudDownloaderToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.soundcloudDownloaderToolStripMenuItem.Text = "Soundcloud Downloader";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
-            // 
-            // IPrefresh
-            // 
-            this.IPrefresh.AutoSize = false;
-            this.IPrefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.IPrefresh.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.IPrefresh.Image = global::Behave_Tool.Properties.Resources.Behave;
-            this.IPrefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.IPrefresh.Name = "IPrefresh";
-            this.IPrefresh.Size = new System.Drawing.Size(26, 31);
-            this.IPrefresh.Click += new System.EventHandler(this.IPrefresh_Click);
             // 
             // IPdisplay
             // 
@@ -276,6 +291,7 @@
             this.IPdisplay.Name = "IPdisplay";
             this.IPdisplay.Size = new System.Drawing.Size(72, 31);
             this.IPdisplay.Text = "Public IP:";
+            this.IPdisplay.ButtonClick += new System.EventHandler(this.IPdisplay_ButtonClick);
             // 
             // releaseIPToolStripMenuItem
             // 
@@ -306,11 +322,18 @@
             // Close
             // 
             this.Close.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.Close.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Close.Image = global::Behave_Tool.Properties.Resources.Close;
+            this.Close.AutoToolTip = false;
+            this.Close.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Close.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Close.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Close.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Close.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(23, 31);
+            this.Close.Text = "X";
+            this.Close.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // MaximizeNormalize
@@ -328,11 +351,16 @@
             // Minimize
             // 
             this.Minimize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.Minimize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Minimize.Image = global::Behave_Tool.Properties.Resources.Minimize;
+            this.Minimize.AutoToolTip = false;
+            this.Minimize.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.Minimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Minimize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Minimize.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.Minimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Minimize.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Minimize.Name = "Minimize";
             this.Minimize.Size = new System.Drawing.Size(23, 31);
+            this.Minimize.Text = "__";
             this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
             // 
             // toolStripSeparator2
@@ -352,6 +380,27 @@
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             this.Settings.MouseLeave += new System.EventHandler(this.Settings_MouseLeave);
             this.Settings.MouseHover += new System.EventHandler(this.Settings_MouseHover);
+            // 
+            // SearchBar
+            // 
+            this.SearchBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.SearchBar.BackColor = System.Drawing.Color.Black;
+            this.SearchBar.ForeColor = System.Drawing.Color.White;
+            this.SearchBar.Name = "SearchBar";
+            this.SearchBar.Size = new System.Drawing.Size(160, 34);
+            this.SearchBar.Text = "Quick Search";
+            this.SearchBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchBar_KeyUp);
+            // 
+            // IPrefresh
+            // 
+            this.IPrefresh.AutoSize = false;
+            this.IPrefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.IPrefresh.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.IPrefresh.Image = global::Behave_Tool.Properties.Resources.Behave;
+            this.IPrefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.IPrefresh.Name = "IPrefresh";
+            this.IPrefresh.Size = new System.Drawing.Size(26, 31);
+            this.IPrefresh.Click += new System.EventHandler(this.IPrefresh_Click);
             // 
             // SessionTimer
             // 
@@ -622,6 +671,17 @@
             this.panel1.Size = new System.Drawing.Size(232, 214);
             this.panel1.TabIndex = 11;
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(484, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Behave
             // 
             this.AccessibleName = "Main";
@@ -631,6 +691,7 @@
             this.BackgroundImage = global::Behave_Tool.Properties.Resources.Background_OrangeCore1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1003, 345);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.ToolBar);
@@ -639,6 +700,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Behave";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.ToolBar.ResumeLayout(false);
             this.ToolBar.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -649,6 +711,7 @@
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlWrapperBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -701,6 +764,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem localHostScannerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tCPConnectionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox SearchBar;
+        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soundcloudDownloaderToolStripMenuItem;
+        private System.Windows.Forms.BindingSource tabControlWrapperBindingSource;
+        private System.Windows.Forms.Button button1;
     }
 }
 

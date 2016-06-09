@@ -10,6 +10,7 @@ namespace Behave_Tool
         {
             InitializeComponent();
             Location = new Point(0, Screen.PrimaryScreen.WorkingArea.Height / 2);
+            showHide1.BackColor = Color.FromArgb(0, 0, 0, 0);
         }
 
         private void SystemLiveInformation_Load(object sender, EventArgs e)
