@@ -57,14 +57,12 @@ namespace Behave_Tool
 
                             if (savefile.ShowDialog() == DialogResult.OK)
                             {
-                                
                                 using (StreamWriter sw = new StreamWriter(savefile.FileName))
                                 {
-                                        sw.WriteLine(ex);                    
+                                    sw.WriteLine(ex);
                                 }
                                 Process.Start(savefile.FileName);
                             }
-                            
                         }
                     }
                 }
@@ -78,10 +76,6 @@ namespace Behave_Tool
                 }
                 Application.Exit();
             }
-        }
-        public static void errorToTxt()
-        {
-            
         }
     }
 }

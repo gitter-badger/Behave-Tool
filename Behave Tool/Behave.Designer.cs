@@ -37,6 +37,10 @@
             this.tCPConnectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openPortScannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localHostScannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.externalNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.urlToIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.htmlDownloaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.htmlHeaderScraperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entertainMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,20 +82,18 @@
             this.Storage_Label = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControlWrapperBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.ToolBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControlWrapperBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ToolBar
             // 
-            this.ToolBar.BackColor = System.Drawing.Color.Black;
-            this.ToolBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ToolBar.BackColor = System.Drawing.Color.Transparent;
+            this.ToolBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu,
@@ -106,8 +108,9 @@
             this.IPrefresh});
             this.ToolBar.Location = new System.Drawing.Point(0, 0);
             this.ToolBar.Name = "ToolBar";
-            this.ToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.ToolBar.Size = new System.Drawing.Size(1003, 34);
+            this.ToolBar.Padding = new System.Windows.Forms.Padding(1);
+            this.ToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.ToolBar.Size = new System.Drawing.Size(1003, 36);
             this.ToolBar.TabIndex = 0;
             this.ToolBar.Text = "toolStrip1";
             // 
@@ -136,7 +139,8 @@
             this.stuffToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.stuffToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.stuffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LocalNetworkToolStripMenuItem});
+            this.LocalNetworkToolStripMenuItem,
+            this.externalNetworkToolStripMenuItem});
             this.stuffToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stuffToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
@@ -155,7 +159,7 @@
             this.localHostScannerToolStripMenuItem});
             this.LocalNetworkToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.LocalNetworkToolStripMenuItem.Name = "LocalNetworkToolStripMenuItem";
-            this.LocalNetworkToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.LocalNetworkToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.LocalNetworkToolStripMenuItem.Text = "Local Network";
             this.LocalNetworkToolStripMenuItem.Click += new System.EventHandler(this.localPortScannerToolStripMenuItem_Click);
             // 
@@ -193,6 +197,55 @@
             this.localHostScannerToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
             this.localHostScannerToolStripMenuItem.Text = "Local Host Scanner";
             this.localHostScannerToolStripMenuItem.Click += new System.EventHandler(this.localHostScannerToolStripMenuItem_Click);
+            // 
+            // externalNetworkToolStripMenuItem
+            // 
+            this.externalNetworkToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.externalNetworkToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.externalNetworkToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.externalNetworkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.urlToIPToolStripMenuItem,
+            this.htmlDownloaderToolStripMenuItem,
+            this.htmlHeaderScraperToolStripMenuItem});
+            this.externalNetworkToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.externalNetworkToolStripMenuItem.Name = "externalNetworkToolStripMenuItem";
+            this.externalNetworkToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.externalNetworkToolStripMenuItem.Text = "External Network";
+            // 
+            // urlToIPToolStripMenuItem
+            // 
+            this.urlToIPToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.urlToIPToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.urlToIPToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.urlToIPToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.urlToIPToolStripMenuItem.Name = "urlToIPToolStripMenuItem";
+            this.urlToIPToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.urlToIPToolStripMenuItem.Text = "Url To IP";
+            this.urlToIPToolStripMenuItem.Click += new System.EventHandler(this.urlToIPToolStripMenuItem_Click);
+            // 
+            // htmlDownloaderToolStripMenuItem
+            // 
+            this.htmlDownloaderToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.htmlDownloaderToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.htmlDownloaderToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.htmlDownloaderToolStripMenuItem.Enabled = false;
+            this.htmlDownloaderToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.htmlDownloaderToolStripMenuItem.Name = "htmlDownloaderToolStripMenuItem";
+            this.htmlDownloaderToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.htmlDownloaderToolStripMenuItem.Text = "Html Downloader";
+            this.htmlDownloaderToolStripMenuItem.Click += new System.EventHandler(this.htmlDownloaderToolStripMenuItem_Click);
+            // 
+            // htmlHeaderScraperToolStripMenuItem
+            // 
+            this.htmlHeaderScraperToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.htmlHeaderScraperToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.htmlHeaderScraperToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.htmlHeaderScraperToolStripMenuItem.Enabled = false;
+            this.htmlHeaderScraperToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.htmlHeaderScraperToolStripMenuItem.Name = "htmlHeaderScraperToolStripMenuItem";
+            this.htmlHeaderScraperToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.htmlHeaderScraperToolStripMenuItem.Text = "Html Header Scraper";
+            this.htmlHeaderScraperToolStripMenuItem.Click += new System.EventHandler(this.htmlHeaderScraperToolStripMenuItem_Click);
             // 
             // toysToolStripMenuItem
             // 
@@ -271,6 +324,11 @@
             // 
             // soundcloudDownloaderToolStripMenuItem
             // 
+            this.soundcloudDownloaderToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.soundcloudDownloaderToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.soundcloudDownloaderToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.soundcloudDownloaderToolStripMenuItem.Enabled = false;
+            this.soundcloudDownloaderToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.soundcloudDownloaderToolStripMenuItem.Name = "soundcloudDownloaderToolStripMenuItem";
             this.soundcloudDownloaderToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.soundcloudDownloaderToolStripMenuItem.Text = "Soundcloud Downloader";
@@ -282,7 +340,7 @@
             // 
             // IPdisplay
             // 
-            this.IPdisplay.BackColor = System.Drawing.Color.Black;
+            this.IPdisplay.BackColor = System.Drawing.Color.Transparent;
             this.IPdisplay.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.releaseIPToolStripMenuItem,
             this.renewIPToolStripMenuItem});
@@ -385,6 +443,7 @@
             // 
             this.SearchBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.SearchBar.BackColor = System.Drawing.Color.Black;
+            this.SearchBar.Enabled = false;
             this.SearchBar.ForeColor = System.Drawing.Color.White;
             this.SearchBar.Name = "SearchBar";
             this.SearchBar.Size = new System.Drawing.Size(160, 34);
@@ -440,7 +499,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.TotalSessionTime, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.SessionTimer, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(856, 33);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(856, 37);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -660,7 +719,7 @@
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(221, 125);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(221, 153);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // panel1
@@ -668,18 +727,19 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(0, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(232, 214);
+            this.panel1.Size = new System.Drawing.Size(232, 167);
             this.panel1.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(484, 104);
+            this.button1.Location = new System.Drawing.Point(928, 321);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Behave
@@ -711,7 +771,6 @@
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControlWrapperBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -767,8 +826,11 @@
         private System.Windows.Forms.ToolStripComboBox SearchBar;
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soundcloudDownloaderToolStripMenuItem;
-        private System.Windows.Forms.BindingSource tabControlWrapperBindingSource;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem externalNetworkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem urlToIPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem htmlDownloaderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem htmlHeaderScraperToolStripMenuItem;
     }
 }
 

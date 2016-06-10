@@ -33,7 +33,6 @@ namespace Behave_Tool
             new Thread(new ThreadStart(getIPv4)) { IsBackground = true }.Start();
             new Thread(new ThreadStart(getIPv6)) { IsBackground = true }.Start();
             new Thread(new ThreadStart(getMAC)) { IsBackground = true }.Start();
-            
         }
 
         private void IndepthIPinfo_Load(object sender, EventArgs e)
@@ -75,6 +74,7 @@ namespace Behave_Tool
 
             MAC.Text = Behave_Tool.IP.getMAC();
         }
+
         private void getGateway()
         {
             gateway.Text = "Getting...";
@@ -138,67 +138,54 @@ namespace Behave_Tool
 
         private void MAC_Click(object sender, EventArgs e)
         {
-
         }
 
         private void MAC_Label_Click(object sender, EventArgs e)
         {
-
         }
 
         private void IPv6_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void IPv4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void Ipv4Label_Click(object sender, EventArgs e)
         {
-
         }
 
         private void gateLabel_Click(object sender, EventArgs e)
         {
-
         }
 
         private void gateway_Click(object sender, EventArgs e)
         {
-
         }
 
         private void IP_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void WebLabel_Click(object sender, EventArgs e)
         {
-
         }
 
         private void WebConnection_Click(object sender, EventArgs e)
         {
-
         }
     }
 
@@ -294,19 +281,20 @@ namespace Behave_Tool
                 }
                 return sMacAddress;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return "Failed";
             }
         }
+
         public static string getGateway()
         {
             try
             {
                 var gateway = NetworkInterface.GetAllNetworkInterfaces().Where(e => e.OperationalStatus == OperationalStatus.Up).SelectMany(e => e.GetIPProperties().GatewayAddresses).FirstOrDefault();
                 return gateway.Address.ToString();
-
-            } catch(Exception)
+            }
+            catch (Exception)
             {
                 return "Failed";
             }

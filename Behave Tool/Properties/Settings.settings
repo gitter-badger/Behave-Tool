@@ -20,5 +20,11 @@
     <Setting Name="BehaveOpacity" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0.9</Value>
     </Setting>
+    <Setting Name="BackgroundImg" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OrangeCore1</Value>
+    </Setting>
+    <Setting Name="Sign_In" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%*#(@</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

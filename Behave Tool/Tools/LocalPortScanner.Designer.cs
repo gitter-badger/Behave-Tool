@@ -331,6 +331,6 @@
         private System.Windows.Forms.Button SaveToTxt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Button Close;
+        private new System.Windows.Forms.Button Close;
     }
 }

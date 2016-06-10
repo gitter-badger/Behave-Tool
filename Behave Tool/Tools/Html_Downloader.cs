@@ -2,9 +2,9 @@
 
 namespace Behave_Tool
 {
-    public partial class BruteForce : Form
+    public partial class Html_Downloader : Form
     {
-        public BruteForce()
+        public Html_Downloader()
         {
             InitializeComponent();
         }

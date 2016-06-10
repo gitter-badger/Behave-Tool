@@ -2,9 +2,9 @@
 
 namespace Behave_Tool
 {
-    public partial class BruteForce : Form
+    public partial class Html_Header_Scraper : Form
     {
-        public BruteForce()
+        public Html_Header_Scraper()
         {
             InitializeComponent();
         }

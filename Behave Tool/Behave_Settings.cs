@@ -20,9 +20,16 @@ namespace Behave_Tool
             checkBox1.Checked = Properties.Settings.Default.KeepWindowOnTop;
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            if (m.Msg != 132)
+                return;
+            m.Result = (IntPtr)2;
+        }
+
         private void SaveSettings_Click(object sender, EventArgs e)
         {
-
             Properties.Settings.Default["Text1_Colour"] = Text1_Colour.Text;
             Properties.Settings.Default["Text2_Colour"] = Text2_Colour.Text;
 
@@ -44,27 +51,41 @@ namespace Behave_Tool
             Properties.Settings.Default.Save();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            textBox1.MaxLength = 1;
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-        (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-                // int durationMilliseconds = 10000;
-                // ToolTip1.Show(ToolTip1.GetToolTip(PictureBox1), PictureBox1, durationMilliseconds);
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(e.Link.LinkData as string);
+        }
+
+        private void backgroundSelecter_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            MessageBox.Show(backgroundSelecter.SelectedIndex.ToString());
+            switch (backgroundSelecter.SelectedIndex)
+            {
+                case 0:
+                    Properties.Settings.Default["BackgroundImg"] = "OrangeCore1";
+                    pictureBox1.BackgroundImage = Properties.Resources.Background_OrangeCore1;
+                    break;
+
+                case 1:
+                    Properties.Settings.Default["BackgroundImg"] = "SnowFlake1";
+                    pictureBox1.BackgroundImage = Properties.Resources.Background_SnowFlake1;
+                    break;
+
+                case 2:
+                    Properties.Settings.Default["BackgroundImg"] = "GlassWindows1";
+                    pictureBox1.BackgroundImage = Properties.Resources.Background_GlassWindows1;
+                    break;
+
+                case 3:
+                    Properties.Settings.Default["BackgroundImg"] = "FireFlower1";
+                    pictureBox1.BackgroundImage = Properties.Resources.Background_FireFlower1;
+                    break;
+            }
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

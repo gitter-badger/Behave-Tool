@@ -94,5 +94,29 @@ namespace Behave_Tool.Properties {
                 this["BehaveOpacity"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("OrangeCore1")]
+        public string BackgroundImg {
+            get {
+                return ((string)(this["BackgroundImg"]));
+            }
+            set {
+                this["BackgroundImg"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("%*#(@")]
+        public string Sign_In {
+            get {
+                return ((string)(this["Sign_In"]));
+            }
+            set {
+                this["Sign_In"] = value;
+            }
+        }
     }
 }

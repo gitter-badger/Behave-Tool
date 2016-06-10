@@ -41,11 +41,12 @@
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.Color.Black;
-            this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 44);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(418, 225);
+            this.listBox1.Size = new System.Drawing.Size(418, 223);
             this.listBox1.TabIndex = 24;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -73,7 +74,7 @@
             this.ClearList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClearList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearList.ForeColor = System.Drawing.Color.White;
-            this.ClearList.Location = new System.Drawing.Point(435, 84);
+            this.ClearList.Location = new System.Drawing.Point(436, 84);
             this.ClearList.Name = "ClearList";
             this.ClearList.Size = new System.Drawing.Size(87, 23);
             this.ClearList.TabIndex = 26;
@@ -163,7 +164,7 @@
         private System.Windows.Forms.Button Scan;
         private System.Windows.Forms.Button ClearList;
         private System.Windows.Forms.Button SaveToTxt;
-        private System.Windows.Forms.Button Close;
+        private new System.Windows.Forms.Button Close;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label Status;
     }

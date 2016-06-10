@@ -39,7 +39,6 @@ namespace Behave_Tool
             {
                 for (int i = 1; i <= 254; i++)
                 {
-
                     string ip = ipBase + i.ToString();
 
                     Ping p = new Ping();
@@ -47,23 +46,21 @@ namespace Behave_Tool
                     countdown.AddCount();
                     p.SendAsync(ip, 100, ip);
                 }
-                
+
                 countdown.Signal();
-                
+
                 countdown.Wait();
 
                 sw.Stop();
                 TimeSpan span = new TimeSpan(sw.ElapsedTicks);
-                listBox1.Items.Add("Took " + sw.ElapsedMilliseconds + " ms. " + upCount + " hosts active." );
+                listBox1.Items.Add("Took " + sw.ElapsedMilliseconds + " ms. " + upCount + " hosts active.");
                 //Console.ReadLine();
                 Status.Text = "Complete";
-
             }
             catch (Exception)
             {
                 listBox1.Items.Add("No Network");
             }
-            
         }
 
         private void p_PingCompleted(object sender, PingCompletedEventArgs e)
@@ -88,14 +85,8 @@ namespace Behave_Tool
                     response = (ip + " (" + name + ") " + " is up: (" + e.Reply.RoundtripTime + " ms)").ToString();
                     listBox1.Items.Add(response);
                     //Console.WriteLine("{0} ({1}) is up: ({2} ms)", ip, name, e.Reply.RoundtripTime);
+                }
 
-                }
-                else
-                {
-                    response = (ip + " is up: (" + e.Reply.RoundtripTime + " ms)");
-                    listBox1.Items.Add(response);
-                    Console.WriteLine("{0} is up: ({1} ms)", ip, e.Reply.RoundtripTime);
-                }
                 lock (lockObj)
                 {
                     upCount++;
@@ -104,7 +95,6 @@ namespace Behave_Tool
             else if (e.Reply == null)
             {
             }
-            
         }
 
         private void Scan_Click(object sender, EventArgs e)

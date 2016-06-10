@@ -175,11 +175,16 @@ namespace Behave_Tool
 
         private void getServerStatus()
         {
-            this.serverStatus.Text = "Checking Server...";
-            if (new Ping().Send(IPAddress.Parse("31.170.162.63")).Status == IPStatus.Success)
-                this.serverStatus.Text = "Online";
-            else
-                this.serverStatus.Text = "No Connection";
+            try
+            {
+                serverStatus.Text = "Checking Server...";
+                if (new Ping().Send(IPAddress.Parse("31.170.162.63")).Status == IPStatus.Success)
+                    this.serverStatus.Text = "Online";
+                else
+                    this.serverStatus.Text = "No Connection";
+            }
+            catch (Exception)
+            { serverStatus.Text = "No Connection"; }
         }
 
         private void serverStatus_TextChanged(object sender, EventArgs e)
@@ -199,7 +204,6 @@ namespace Behave_Tool
                 this.serverStatus.ForeColor = Color.Red;
                 Thread.Sleep(20000);
                 new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
-
             }
         }
     }

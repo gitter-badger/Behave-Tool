@@ -56,7 +56,7 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>behave_vcs_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\behave_vcs_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>A16ABF70374B5017E9B91460A6C9FCCF6AC3B98D</ManifestCertificateThumbprint>
@@ -110,11 +110,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tools\ActiveTcpConnections.cs">
+    <Compile Include="Tools\Html_Header_Scraper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\ActiveTcpConnections.Designer.cs">
-      <DependentUpon>ActiveTcpConnections.cs</DependentUpon>
+    <Compile Include="Tools\Html_Header_Scraper.Designer.cs">
+      <DependentUpon>Html_Header_Scraper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Html_Downloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Html_Downloader.Designer.cs">
+      <DependentUpon>Html_Downloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\TcpConnections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\TcpConnections.Designer.cs">
+      <DependentUpon>TcpConnections.cs</DependentUpon>
     </Compile>
     <Compile Include="Behave.cs">
       <SubType>Form</SubType>
@@ -158,10 +170,10 @@
     <Compile Include="Tools\LocalHostScanner.Designer.cs">
       <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="PanelOptions.cs">
@@ -186,10 +198,10 @@
       <DependentUpon>ShowHide.cs</DependentUpon>
     </Compile>
     <Compile Include="System Info.cs" />
-    <Compile Include="SystemLiveInformation.cs">
+    <Compile Include="Tools\SystemLiveInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemLiveInformation.Designer.cs">
+    <Compile Include="Tools\SystemLiveInformation.Designer.cs">
       <DependentUpon>SystemLiveInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
@@ -198,14 +210,23 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usage_Agreement.cs">
+    <Compile Include="Tools\URLtoIP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usage_Agreement.Designer.cs">
+    <Compile Include="Tools\URLtoIP.Designer.cs">
+      <DependentUpon>URLtoIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Usage_Agreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Tools\ActiveTcpConnections.resx">
-      <DependentUpon>ActiveTcpConnections.cs</DependentUpon>
+    <EmbeddedResource Include="Tools\Html_Downloader.resx">
+      <DependentUpon>Html_Downloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\TcpConnections.resx">
+      <DependentUpon>TcpConnections.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Behave.resx">
       <DependentUpon>Behave.cs</DependentUpon>
@@ -228,7 +249,7 @@
     <EmbeddedResource Include="Tools\LocalHostScanner.resx">
       <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelOptions.resx">
@@ -250,13 +271,16 @@
     <EmbeddedResource Include="ShowHide.resx">
       <DependentUpon>ShowHide.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemLiveInformation.resx">
+    <EmbeddedResource Include="Tools\SystemLiveInformation.resx">
       <DependentUpon>SystemLiveInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usage_Agreement.resx">
+    <EmbeddedResource Include="Tools\URLtoIP.resx">
+      <DependentUpon>URLtoIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Usage_Agreement.resx">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config">
@@ -522,7 +546,7 @@
     <None Include="Resources\FireFlower.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="behave_vcs_icon.ico" />
+    <Content Include="Resources\behave_vcs_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

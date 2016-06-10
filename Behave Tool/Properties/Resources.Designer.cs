@@ -63,6 +63,26 @@ namespace Behave_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background_FireFlower1 {
+            get {
+                object obj = ResourceManager.GetObject("Background_FireFlower1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background_GlassWindows1 {
+            get {
+                object obj = ResourceManager.GetObject("Background_GlassWindows1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Background_OrangeCore1 {
             get {
                 object obj = ResourceManager.GetObject("Background_OrangeCore1", resourceCulture);
@@ -73,9 +93,9 @@ namespace Behave_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Background_Snowflake1 {
+        internal static System.Drawing.Bitmap Background_SnowFlake1 {
             get {
-                object obj = ResourceManager.GetObject("Background_Snowflake1", resourceCulture);
+                object obj = ResourceManager.GetObject("Background_SnowFlake1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,16 +136,6 @@ namespace Behave_Tool.Properties {
         internal static System.Drawing.Bitmap Close {
             get {
                 object obj = ResourceManager.GetObject("Close", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FireFlower {
-            get {
-                object obj = ResourceManager.GetObject("FireFlower", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,16 +186,6 @@ namespace Behave_Tool.Properties {
         internal static System.Drawing.Bitmap ToolBar {
             get {
                 object obj = ResourceManager.GetObject("ToolBar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Windows_Wallpaper {
-            get {
-                object obj = ResourceManager.GetObject("Windows_Wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -427,7 +427,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label WebLabel;
         private System.Windows.Forms.Label WebConnection;
-        private System.Windows.Forms.Button Close;
+        private new System.Windows.Forms.Button Close;
         private System.Windows.Forms.Button All_Refresh;
         private System.Windows.Forms.Button IPv6_Refresh;
         private System.Windows.Forms.Button IPv4_Refresh;
