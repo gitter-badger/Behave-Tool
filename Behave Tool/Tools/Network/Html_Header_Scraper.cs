@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Windows.Forms;
-using Behave_Tool.Tools;
 using System.Threading;
 
 namespace Behave_Tool
@@ -11,7 +10,7 @@ namespace Behave_Tool
         public Html_Header_Scraper()
         {
             InitializeComponent();
-            Control.CheckForIllegalCrossThreadCalls = false;
+            CheckForIllegalCrossThreadCalls = false;
         }
         protected override void WndProc(ref Message m)
         {
@@ -68,7 +67,7 @@ namespace Behave_Tool
 
         private void save_Click(object sender, EventArgs e)
         {
-            Misce.listBoxSaveTxt(listBox1);
+            Tools.Misce.listBoxSaveTxt(listBox1);
         }
     }
 }

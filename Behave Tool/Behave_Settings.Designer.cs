@@ -99,7 +99,7 @@
             "Orange Core",
             "Snow Flake",
             "Glass Windows",
-            "FireFlower"});
+            "Fire Flower"});
             this.backgroundSelecter.Location = new System.Drawing.Point(331, 47);
             this.backgroundSelecter.Name = "backgroundSelecter";
             this.backgroundSelecter.Size = new System.Drawing.Size(118, 21);

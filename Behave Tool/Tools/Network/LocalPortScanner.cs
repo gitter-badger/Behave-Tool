@@ -144,23 +144,7 @@ namespace Behave_Tool
 
         private void SaveToTxt_Click(object sender, EventArgs e)
         {
-            SaveFileDialog savefile = new SaveFileDialog();
-            // set a default file name
-            savefile.FileName = "OpenPorts.txt";
-            // set filters - this can be done in properties as well
-            savefile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-
-            if (savefile.ShowDialog() == DialogResult.OK)
-            {
-                using (StreamWriter sw = new StreamWriter(savefile.FileName))
-                {
-                    foreach (object port in listBox1.Items)
-                    {
-                        sw.WriteLine(port);
-                    }
-                }
-                Process.Start(savefile.FileName);
-            }
+            Tools.Misce.listBoxSaveTxt(listBox1);
         }
 
         private void Close_Click(object sender, EventArgs e)

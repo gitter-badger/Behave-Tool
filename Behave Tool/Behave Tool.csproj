@@ -167,10 +167,10 @@
     <Compile Include="Tools\BruteForce.Designer.cs">
       <DependentUpon>BruteForce.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Network.cs">
+    <Compile Include="Tools\Network\Network.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Network.Designer.cs">
+    <Compile Include="Tools\Network\Network.Designer.cs">
       <DependentUpon>Network.cs</DependentUpon>
     </Compile>
     <Compile Include="Loading.cs">
@@ -231,10 +231,10 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\URLtoIP.cs">
+    <Compile Include="Tools\Network\URLtoIP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\URLtoIP.Designer.cs">
+    <Compile Include="Tools\Network\URLtoIP.Designer.cs">
       <DependentUpon>URLtoIP.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Usage_Agreement.cs">
@@ -264,7 +264,7 @@
     <EmbeddedResource Include="Tools\BruteForce.resx">
       <DependentUpon>BruteForce.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Network.resx">
+    <EmbeddedResource Include="Tools\Network\Network.resx">
       <DependentUpon>Network.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
@@ -304,7 +304,7 @@
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\URLtoIP.resx">
+    <EmbeddedResource Include="Tools\Network\URLtoIP.resx">
       <DependentUpon>URLtoIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Usage_Agreement.resx">
