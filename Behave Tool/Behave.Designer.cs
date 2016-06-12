@@ -48,6 +48,7 @@
             this.preset1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundcloudDownloaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spotifyControllerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.IPdisplay = new System.Windows.Forms.ToolStripSplitButton();
             this.releaseIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -240,7 +241,6 @@
             this.htmlHeaderScraperToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.htmlHeaderScraperToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.htmlHeaderScraperToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.htmlHeaderScraperToolStripMenuItem.Enabled = false;
             this.htmlHeaderScraperToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.htmlHeaderScraperToolStripMenuItem.Name = "htmlHeaderScraperToolStripMenuItem";
             this.htmlHeaderScraperToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
@@ -315,7 +315,8 @@
             this.otherToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.otherToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.soundcloudDownloaderToolStripMenuItem});
+            this.soundcloudDownloaderToolStripMenuItem,
+            this.spotifyControllerToolStripMenuItem});
             this.otherToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.otherToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
@@ -332,6 +333,19 @@
             this.soundcloudDownloaderToolStripMenuItem.Name = "soundcloudDownloaderToolStripMenuItem";
             this.soundcloudDownloaderToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.soundcloudDownloaderToolStripMenuItem.Text = "Soundcloud Downloader";
+            this.soundcloudDownloaderToolStripMenuItem.Click += new System.EventHandler(this.soundcloudDownloaderToolStripMenuItem_Click);
+            // 
+            // spotifyControllerToolStripMenuItem
+            // 
+            this.spotifyControllerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.spotifyControllerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.spotifyControllerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.spotifyControllerToolStripMenuItem.Enabled = false;
+            this.spotifyControllerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.spotifyControllerToolStripMenuItem.Name = "spotifyControllerToolStripMenuItem";
+            this.spotifyControllerToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.spotifyControllerToolStripMenuItem.Text = "Spotify Controller";
+            this.spotifyControllerToolStripMenuItem.Click += new System.EventHandler(this.spotifyControllerToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -831,6 +845,7 @@
         private System.Windows.Forms.ToolStripMenuItem urlToIPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem htmlDownloaderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem htmlHeaderScraperToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spotifyControllerToolStripMenuItem;
     }
 }
 

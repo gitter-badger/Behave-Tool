@@ -236,13 +236,13 @@ namespace Behave_Tool
                 {
                     socket.Connect("10.0.2.4", 65530);
                     IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
-                    Console.WriteLine("=getIPV4= Returned " + endPoint.Address.ToString());
+                    Console.WriteLine("=GetIPv4= Done");
                     return endPoint.Address.ToString(); //ipv4
                 }
             }
             catch (Exception)
             {
-                Console.WriteLine("=GetIPv4= Failed");
+                Console.WriteLine("=GetIPv4= Done");
                 return "Failed";
             }
         }
@@ -250,23 +250,25 @@ namespace Behave_Tool
         public static string getIPv6()
         {
             Console.WriteLine("=getIPv6= Start");
-            string strHostName = System.Net.Dns.GetHostName(); ;
-            IPHostEntry ipEntry = System.Net.Dns.GetHostEntry(strHostName);
+            string strHostName = Dns.GetHostName(); ;
+            IPHostEntry ipEntry = Dns.GetHostEntry(strHostName);
             IPAddress[] addr = ipEntry.AddressList;
             Console.WriteLine(addr[addr.Length - 1].ToString());
-            if (addr[0].AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+            if (addr[0].AddressFamily == AddressFamily.InterNetworkV6)
             {
-                Console.WriteLine("=getIPV6= Returned " + addr[0].ToString());
+                Console.WriteLine("=getIPV6= Done");
                 return addr[0].ToString();
             }
             else
             {
+                Console.WriteLine("=getIPv6= Done");
                 return "Failed";
             }
         }
 
         public static string getMAC()
         {
+            Console.WriteLine("=getMAC= Start");
             try
             {
                 NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
@@ -279,23 +281,28 @@ namespace Behave_Tool
                         sMacAddress = adapter.GetPhysicalAddress().ToString();
                     }
                 }
+                Console.WriteLine("=getMAC= Done");
                 return sMacAddress;
             }
             catch (Exception)
             {
+                Console.WriteLine("=getMAC= Done");
                 return "Failed";
             }
         }
 
         public static string getGateway()
         {
+            Console.WriteLine("=getGateway= Start");
             try
             {
                 var gateway = NetworkInterface.GetAllNetworkInterfaces().Where(e => e.OperationalStatus == OperationalStatus.Up).SelectMany(e => e.GetIPProperties().GatewayAddresses).FirstOrDefault();
+                Console.WriteLine("=getGateway= Done");
                 return gateway.Address.ToString();
             }
             catch (Exception)
             {
+                Console.WriteLine("=getGateway= Done");
                 return "Failed";
             }
         }

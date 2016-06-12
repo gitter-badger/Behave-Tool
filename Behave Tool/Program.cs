@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Behave_Tool.Tools;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Principal;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Behave_Tool
@@ -47,22 +49,11 @@ namespace Behave_Tool
                         }
                         catch (Exception ex)
                         {
+                            int totaltime = Properties.Settings.Default.Total_Session_Time;
                             Properties.Settings.Default.Reset();
-                            MessageBox.Show("Behave has crashed. \n Settings have been reset. \nPlease choose a location to save the error log and send it to COOP");
-                            SaveFileDialog savefile = new SaveFileDialog();
-                            // set a default file name
-                            savefile.FileName = "Behave_Error.txt";
-                            // set filters - this can be done in properties as well
-                            savefile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-
-                            if (savefile.ShowDialog() == DialogResult.OK)
-                            {
-                                using (StreamWriter sw = new StreamWriter(savefile.FileName))
-                                {
-                                    sw.WriteLine(ex);
-                                }
-                                Process.Start(savefile.FileName);
-                            }
+                            Properties.Settings.Default["Total_Session_Time"] = totaltime;
+                            Properties.Settings.Default.Save();
+                            Misce.SaveError(ex.ToString());
                         }
                     }
                 }
@@ -77,5 +68,16 @@ namespace Behave_Tool
                 Application.Exit();
             }
         }
+        //static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
+        //{
+        //    MessageBox.Show(e.Exception.Message, "Unhandled Thread Exception");
+        //    // here you can log the exception ...
+        //}
+
+        //static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        //{
+        //    MessageBox.Show((e.ExceptionObject as Exception).Message, "Unhandled UI Exception");
+        //    // here you can log the exception ...
+        //}
     }
 }

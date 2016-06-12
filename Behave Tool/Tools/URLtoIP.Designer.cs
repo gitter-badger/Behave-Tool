@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(URLtoIP));
             this.saveToTXT = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +42,9 @@
             // saveToTXT
             // 
             this.saveToTXT.BackColor = System.Drawing.Color.Black;
-            this.saveToTXT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.saveToTXT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveToTXT.BackgroundImage")));
+            this.saveToTXT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.saveToTXT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.saveToTXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveToTXT.ForeColor = System.Drawing.Color.White;
             this.saveToTXT.Location = new System.Drawing.Point(237, 121);
@@ -55,7 +58,9 @@
             // Clear
             // 
             this.Clear.BackColor = System.Drawing.Color.Black;
-            this.Clear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Clear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Clear.BackgroundImage")));
+            this.Clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Clear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Clear.ForeColor = System.Drawing.Color.White;
             this.Clear.Location = new System.Drawing.Point(237, 92);
@@ -78,7 +83,9 @@
             // Resolve
             // 
             this.Resolve.BackColor = System.Drawing.Color.Black;
-            this.Resolve.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Resolve.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Resolve.BackgroundImage")));
+            this.Resolve.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Resolve.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Resolve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Resolve.ForeColor = System.Drawing.Color.White;
             this.Resolve.Location = new System.Drawing.Point(237, 55);

@@ -159,7 +159,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button ScanRange;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button Scan;
         private System.Windows.Forms.Button ClearList;

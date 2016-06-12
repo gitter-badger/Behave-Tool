@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Behave_Tool.Tools;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -30,12 +31,18 @@ namespace Behave_Tool
 
         private void SaveSettings_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default["Text1_Colour"] = Text1_Colour.Text;
-            Properties.Settings.Default["Text2_Colour"] = Text2_Colour.Text;
+            try
+            {
+                Properties.Settings.Default["Text1_Colour"] = Text1_Colour.Text;
+                Properties.Settings.Default["Text2_Colour"] = Text2_Colour.Text;
 
-            Properties.Settings.Default.Save();
-            new Restarting().Show();
-            Restarting.restartNow();
+                Properties.Settings.Default.Save();
+                new Restarting().Show();
+                Restarting.restartNow();
+            }catch(Exception ex)
+            {
+                Misce.SaveError(ex.ToString());
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -58,28 +65,36 @@ namespace Behave_Tool
 
         private void backgroundSelecter_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            MessageBox.Show(backgroundSelecter.SelectedIndex.ToString());
-            switch (backgroundSelecter.SelectedIndex)
+            try
             {
-                case 0:
-                    Properties.Settings.Default["BackgroundImg"] = "OrangeCore1";
-                    pictureBox1.BackgroundImage = Properties.Resources.Background_OrangeCore1;
-                    break;
+                switch (backgroundSelecter.SelectedIndex)
+                {
+                    case 0:
+                        //if (Properties.Settings.Default.BackgroundImg != "OrangeCore1")
+                       // {
+                            Properties.Settings.Default["BackgroundImg"] = "OrangeCore1";
+                       // }
+                        pictureBox1.BackgroundImage = Properties.Resources.Background_OrangeCore1;
+                        break;
 
-                case 1:
-                    Properties.Settings.Default["BackgroundImg"] = "SnowFlake1";
-                    pictureBox1.BackgroundImage = Properties.Resources.Background_SnowFlake1;
-                    break;
+                    case 1:
+                        Properties.Settings.Default["BackgroundImg"] = "SnowFlake1";
+                        pictureBox1.BackgroundImage = Properties.Resources.Background_SnowFlake1;
+                        break;
 
-                case 2:
-                    Properties.Settings.Default["BackgroundImg"] = "GlassWindows1";
-                    pictureBox1.BackgroundImage = Properties.Resources.Background_GlassWindows1;
-                    break;
+                    case 2:
+                        Properties.Settings.Default["BackgroundImg"] = "GlassWindows1";
+                        pictureBox1.BackgroundImage = Properties.Resources.Background_GlassWindows1;
+                        break;
 
-                case 3:
-                    Properties.Settings.Default["BackgroundImg"] = "FireFlower1";
-                    pictureBox1.BackgroundImage = Properties.Resources.Background_FireFlower1;
-                    break;
+                    case 3:
+                        Properties.Settings.Default["BackgroundImg"] = "FireFlower1";
+                        pictureBox1.BackgroundImage = Properties.Resources.Background_FireFlower1;
+                        break;
+                }
+            } catch(Exception ex)
+            {
+                Misce.SaveError(ex.ToString());
             }
         }
 

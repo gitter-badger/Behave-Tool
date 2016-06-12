@@ -81,8 +81,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="SpotifyAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpotifyAPI-NET.2.9.0\lib\SpotifyAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -110,22 +118,35 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tools\Html_Header_Scraper.cs">
+    <Compile Include="Tools\SoundcloudDownloader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Html_Header_Scraper.Designer.cs">
+    <Compile Include="Tools\SoundcloudDownloader.Designer.cs">
+      <DependentUpon>SoundcloudDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SpotifyController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SpotifyController.Designer.cs">
+      <DependentUpon>SpotifyController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\Html_Header_Scraper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\Html_Header_Scraper.Designer.cs">
       <DependentUpon>Html_Header_Scraper.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Html_Downloader.cs">
+    <Compile Include="Tools\Network\Html_Downloader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Html_Downloader.Designer.cs">
+    <Compile Include="Tools\Network\Html_Downloader.Designer.cs">
       <DependentUpon>Html_Downloader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\TcpConnections.cs">
+    <Compile Include="Misce.cs" />
+    <Compile Include="Tools\Network\TcpConnections.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\TcpConnections.Designer.cs">
+    <Compile Include="Tools\Network\TcpConnections.Designer.cs">
       <DependentUpon>TcpConnections.cs</DependentUpon>
     </Compile>
     <Compile Include="Behave.cs">
@@ -158,16 +179,16 @@
     <Compile Include="Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\LocalPortScanner.cs">
+    <Compile Include="Tools\Network\LocalPortScanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\LocalPortScanner.Designer.cs">
+    <Compile Include="Tools\Network\LocalPortScanner.Designer.cs">
       <DependentUpon>LocalPortScanner.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\LocalHostScanner.cs">
+    <Compile Include="Tools\Network\LocalHostScanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\LocalHostScanner.Designer.cs">
+    <Compile Include="Tools\Network\LocalHostScanner.Designer.cs">
       <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.cs">
@@ -222,10 +243,16 @@
     <Compile Include="Login\Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Tools\Html_Downloader.resx">
+    <EmbeddedResource Include="Tools\Network\Html_Header_Scraper.resx">
+      <DependentUpon>Html_Header_Scraper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SpotifyController.resx">
+      <DependentUpon>SpotifyController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\Html_Downloader.resx">
       <DependentUpon>Html_Downloader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\TcpConnections.resx">
+    <EmbeddedResource Include="Tools\Network\TcpConnections.resx">
       <DependentUpon>TcpConnections.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Behave.resx">
@@ -243,10 +270,10 @@
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\LocalPortScanner.resx">
+    <EmbeddedResource Include="Tools\Network\LocalPortScanner.resx">
       <DependentUpon>LocalPortScanner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\LocalHostScanner.resx">
+    <EmbeddedResource Include="Tools\Network\LocalHostScanner.resx">
       <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">

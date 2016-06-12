@@ -14,6 +14,13 @@ namespace Behave_Tool
             InitializeComponent();
             TopMost = true;
         }
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            if (m.Msg != 132)
+                return;
+            m.Result = (IntPtr)2;
+        }
 
         public void ShowActiveTcpConnections()
         {

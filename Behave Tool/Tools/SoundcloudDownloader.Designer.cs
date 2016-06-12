@@ -1,6 +1,6 @@
 ﻿namespace Behave_Tool
 {
-    partial class Html_Header_Scraper
+    partial class SoundcloudDownloader
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Html_Header_Scraper";
+            this.Text = "SoundcloudDownloader";
         }
 
         #endregion
