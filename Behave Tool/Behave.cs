@@ -507,7 +507,7 @@ namespace Behave_Tool
 
         private void spotifyControllerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Spotify_Controller().Show();
+            new SpotifyController().Show();
         }
 
         private void soundcloudDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
