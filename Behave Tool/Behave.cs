@@ -45,7 +45,8 @@ namespace Behave_Tool
                 DrivesList.HeaderStyle = ColumnHeaderStyle.None;
                 // Here we create a DataTable with four columns.
                 DataTable table = new DataTable();
-                table.Columns.Add("Drive:", typeof(string));
+
+                table.Columns.Add("Drive", typeof(string));
                 table.Columns.Add("Using", typeof(string));
                 table.Columns.Add("Total", typeof(string));
                 table.Columns.Add("seperator", typeof(string));
@@ -121,7 +122,7 @@ namespace Behave_Tool
             IPrefresh.Image = Properties.Resources.Loading_Gif;
 
             IPdisplay.Text = "Checking IP...";
-            IPdisplay.Text = "Public IP: " + Behave_Tool.IP.getPublicIP();
+            IPdisplay.Text = "Public IP: " + IP.getPublicIP();
             IPrefresh.Image = Properties.Resources.Behave;
             Console.WriteLine("=Done= UpdatePublicIP");
         }
@@ -169,12 +170,10 @@ namespace Behave_Tool
             new Test().Show();
         }
 
-        private void changeBackground()
-        {
-        }
 
         private void Close_Click(object sender, EventArgs e)
         {
+
             Environment.Exit(Environment.ExitCode);
         }
 
@@ -243,10 +242,7 @@ namespace Behave_Tool
 
         private void IPrefresh_Click(object sender, EventArgs e)
         {
-            new Thread(new ThreadStart(UpdatePublicIP))
-            {
-                IsBackground = true
-            }.Start();
+            new Thread(new ThreadStart(UpdatePublicIP)) { IsBackground = true }.Start();
         }
 
         private void label5_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -485,23 +481,34 @@ namespace Behave_Tool
 
         private void setBackground()
         {
-            switch (Properties.Settings.Default.BackgroundImg)
+            try
             {
-                case "OrangeCore1":
-                    BackgroundImage = Properties.Resources.Background_OrangeCore1;
-                    return;
+                switch (Properties.Settings.Default.BackgroundImg)
+                {
+                    case "OrangeCore1":
+                        BackgroundImage = Properties.Resources.Background_OrangeCore1;
+                        return;
 
-                case "SnowFlake1":
-                    BackgroundImage = Properties.Resources.Background_SnowFlake1;
-                    return;
+                    case "SnowFlake1":
+                        BackgroundImage = Properties.Resources.Background_SnowFlake1;
+                        return;
 
-                case "GlassWindows1":
-                    BackgroundImage = Properties.Resources.Background_GlassWindows1;
-                    return;
+                    case "GlassWindows1":
+                        BackgroundImage = Properties.Resources.Background_GlassWindows1;
+                        return;
 
-                case "FireFlower1":
-                    BackgroundImage = Properties.Resources.Background_FireFlower1;
-                    return;
+                    case "FireFlower1":
+                        BackgroundImage = Properties.Resources.Background_FireFlower1;
+                        return;
+
+                    case "SnowFlake2":
+                        BackgroundImage = Properties.Resources.Background_SnowFlake2;
+                        return;
+                }
+            }
+            catch (Exception ex)
+            {
+                Misc.SaveError(ex.ToString());
             }
         }
 
@@ -512,7 +519,24 @@ namespace Behave_Tool
 
         private void soundcloudDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             new SoundcloudDownloader().Show();
+
+        }
+
+        private void socketListenerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Network_Socket_Listener().Show();
+        }
+
+        private void sandboxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Sandbox().Show();
+        }
+
+        private void softwareInstallerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FreshSystemStarter().Show();
         }
     }
 }

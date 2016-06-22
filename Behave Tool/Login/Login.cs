@@ -162,7 +162,7 @@ namespace Behave_Tool
 
         private void serverStatus_TextChanged(object sender, EventArgs e)
         {
-            if (this.serverStatus.Text == "Online")
+            if (serverStatus.Text == "Online")
             {
                 this.serverStatus.ForeColor = Color.Green;
                 Thread.Sleep(20000);
@@ -183,7 +183,7 @@ namespace Behave_Tool
         private bool sqlConnect()
         {
             bool success = false;
-            SqlConnection connection = new SqlConnection("server=server9.000webhost.com;database=a6007078_behave;user id=a6007078_sqlcon;password=sd98sda7;Trusted_Connection=yes;connection timeout=10");
+            SqlConnection connection = new SqlConnection("server=mysql2.gear.host;database=behave;user id=behave423;password=vYcB487Dd8eWZFGb^;Trusted_Connection=yes;connection timeout=10");
             try
             {
                 connection.Open();

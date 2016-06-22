@@ -116,7 +116,7 @@ namespace Behave_Tool
 
         private void SaveToTxt_Click(object sender, EventArgs e)
         {
-            Tools.Misce.listBoxSaveTxt(listBox1);
+            Tools.Misc.listBoxSaveTxt(listBox1);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

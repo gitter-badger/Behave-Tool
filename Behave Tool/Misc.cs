@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Behave_Tool.Tools
 {
-    class Misce
+    class Misc
     {
 
         public static void SaveError(string ex)

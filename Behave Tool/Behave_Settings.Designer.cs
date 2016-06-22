@@ -97,7 +97,8 @@
             this.backgroundSelecter.FormattingEnabled = true;
             this.backgroundSelecter.Items.AddRange(new object[] {
             "Orange Core",
-            "Snow Flake",
+            "Snow Flake 1",
+            "Snow Flake 2",
             "Glass Windows",
             "Fire Flower"});
             this.backgroundSelecter.Location = new System.Drawing.Point(331, 47);

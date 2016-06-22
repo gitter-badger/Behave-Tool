@@ -51,7 +51,7 @@ namespace Behave_Tool.Tools
 
         private void saveToTXT_Click(object sender, EventArgs e)
         {
-            Misce.listBoxSaveTxt(listBox1);
+            Misc.listBoxSaveTxt(listBox1);
         }
 
         private void Close_Click(object sender, EventArgs e)

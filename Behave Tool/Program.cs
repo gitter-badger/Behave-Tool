@@ -53,7 +53,7 @@ namespace Behave_Tool
                             Properties.Settings.Default.Reset();
                             Properties.Settings.Default["Total_Session_Time"] = totaltime;
                             Properties.Settings.Default.Save();
-                            Misce.SaveError(ex.ToString());
+                            Misc.SaveError(ex.ToString());
                         }
                     }
                 }

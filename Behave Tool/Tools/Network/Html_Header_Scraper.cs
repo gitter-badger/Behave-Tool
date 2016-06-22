@@ -67,7 +67,7 @@ namespace Behave_Tool
 
         private void save_Click(object sender, EventArgs e)
         {
-            Tools.Misce.listBoxSaveTxt(listBox1);
+            Tools.Misc.listBoxSaveTxt(listBox1);
         }
     }
 }

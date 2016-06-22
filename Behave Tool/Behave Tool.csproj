@@ -118,6 +118,36 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tools\Special\CheckedListBox_With_Image.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tools\Special\CheckedListBox_With_Image.Designer.cs">
+      <DependentUpon>CheckedListBox_With_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\System\FreshSystemStarter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\System\FreshSystemStarter.Designer.cs">
+      <DependentUpon>FreshSystemStarter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Special\Sandbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Special\Sandbox.Designer.cs">
+      <DependentUpon>Sandbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\NetworkSocketListener.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\NetworkSocketListener.Designer.cs">
+      <DependentUpon>NetworkSocketListener.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\System\SystemHardware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\System\SystemHardware.Designer.cs">
+      <DependentUpon>SystemHardware.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\SoundcloudDownloader.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,7 +172,7 @@
     <Compile Include="Tools\Network\Html_Downloader.Designer.cs">
       <DependentUpon>Html_Downloader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Misce.cs" />
+    <Compile Include="Misc.cs" />
     <Compile Include="Tools\Network\TcpConnections.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,10 +249,10 @@
       <DependentUpon>ShowHide.cs</DependentUpon>
     </Compile>
     <Compile Include="System Info.cs" />
-    <Compile Include="Tools\SystemLiveInformation.cs">
+    <Compile Include="Tools\System\SystemLiveInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\SystemLiveInformation.Designer.cs">
+    <Compile Include="Tools\System\SystemLiveInformation.Designer.cs">
       <DependentUpon>SystemLiveInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
@@ -243,6 +273,21 @@
     <Compile Include="Login\Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tools\Special\CheckedListBox_With_Image.resx">
+      <DependentUpon>CheckedListBox_With_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\System\FreshSystemStarter.resx">
+      <DependentUpon>FreshSystemStarter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Special\Sandbox.resx">
+      <DependentUpon>Sandbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\NetworkSocketListener.resx">
+      <DependentUpon>NetworkSocketListener.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\System\SystemHardware.resx">
+      <DependentUpon>SystemHardware.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\Network\Html_Header_Scraper.resx">
       <DependentUpon>Html_Header_Scraper.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,7 +343,7 @@
     <EmbeddedResource Include="ShowHide.resx">
       <DependentUpon>ShowHide.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\SystemLiveInformation.resx">
+    <EmbeddedResource Include="Tools\System\SystemLiveInformation.resx">
       <DependentUpon>SystemLiveInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
@@ -573,6 +618,7 @@
     <None Include="Resources\FireFlower.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\2.png" />
     <Content Include="Resources\behave_vcs_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
