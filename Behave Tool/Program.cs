@@ -1,9 +1,6 @@
 ﻿using Behave_Tool.Tools;
 using System;
-using System.Diagnostics;
-using System.IO;
 using System.Security.Principal;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Behave_Tool
@@ -68,6 +65,7 @@ namespace Behave_Tool
                 Application.Exit();
             }
         }
+
         //static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         //{
         //    MessageBox.Show(e.Exception.Message, "Unhandled Thread Exception");

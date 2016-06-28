@@ -9,6 +9,7 @@ namespace Behave_Tool
         {
             InitializeComponent();
         }
+
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);

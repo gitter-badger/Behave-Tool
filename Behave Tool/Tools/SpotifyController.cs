@@ -2,15 +2,8 @@
 using SpotifyAPI.Local.Enums;
 using SpotifyAPI.Local.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Behave_Tool
@@ -19,9 +12,6 @@ namespace Behave_Tool
     {
         private readonly SpotifyLocalAPI _spotify;
         private Track _currentTrack;
-
-
-
 
         public SpotifyController()
         {

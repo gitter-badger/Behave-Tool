@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
-using System.Windows.Forms;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace Behave_Tool
 {
@@ -12,6 +12,7 @@ namespace Behave_Tool
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
         }
+
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
@@ -46,8 +47,6 @@ namespace Behave_Tool
                 listBox1.Items.Add("Make sure the url starts with http:// or https://");
                 listBox1.Items.Add(""); // space
             }
-            
-
         }
 
         private void ClearList_Click(object sender, EventArgs e)

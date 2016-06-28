@@ -39,7 +39,8 @@ namespace Behave_Tool
                 Properties.Settings.Default.Save();
                 new Restarting().Show();
                 Restarting.restartNow();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Misc.SaveError(ex.ToString());
             }
@@ -71,9 +72,9 @@ namespace Behave_Tool
                 {
                     case 0:
                         //if (Properties.Settings.Default.BackgroundImg != "OrangeCore1")
-                       // {
-                            Properties.Settings.Default["BackgroundImg"] = "OrangeCore1";
-                       // }
+                        // {
+                        Properties.Settings.Default["BackgroundImg"] = "OrangeCore1";
+                        // }
                         pictureBox1.BackgroundImage = Properties.Resources.Background_OrangeCore1;
                         break;
 
@@ -81,10 +82,12 @@ namespace Behave_Tool
                         Properties.Settings.Default["BackgroundImg"] = "SnowFlake1";
                         pictureBox1.BackgroundImage = Properties.Resources.Background_SnowFlake1;
                         break;
+
                     case 2:
                         Properties.Settings.Default["BackgroundImg"] = "SnowFlake2";
                         pictureBox1.BackgroundImage = Properties.Resources.Background_SnowFlake2;
                         break;
+
                     case 3:
                         Properties.Settings.Default["BackgroundImg"] = "GlassWindows1";
                         pictureBox1.BackgroundImage = Properties.Resources.Background_GlassWindows1;
@@ -95,7 +98,8 @@ namespace Behave_Tool
                         pictureBox1.BackgroundImage = Properties.Resources.Background_FireFlower1;
                         break;
                 }
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Misc.SaveError(ex.ToString());
             }

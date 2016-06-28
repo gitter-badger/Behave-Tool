@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
 using System.Net.NetworkInformation;
 using System.Threading;
 using System.Windows.Forms;
@@ -14,6 +12,7 @@ namespace Behave_Tool
             InitializeComponent();
             TopMost = true;
         }
+
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);

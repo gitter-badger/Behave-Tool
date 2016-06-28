@@ -18,6 +18,7 @@ namespace Behave_Tool
 
         // private string[] _tools = new string[] { "Local Host Scanner" };    // Search Bar Items
         private const int WM_NCHITTEST = 132;
+
         private static bool networkTrafficMonitoring = true;
         private static bool systemUsageOn = true;
         private bool stopflicker = false;
@@ -165,15 +166,10 @@ namespace Behave_Tool
         {
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            new Test().Show();
-        }
 
 
         private void Close_Click(object sender, EventArgs e)
         {
-
             Environment.Exit(Environment.ExitCode);
         }
 
@@ -519,9 +515,7 @@ namespace Behave_Tool
 
         private void soundcloudDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             new SoundcloudDownloader().Show();
-
         }
 
         private void socketListenerToolStripMenuItem_Click(object sender, EventArgs e)

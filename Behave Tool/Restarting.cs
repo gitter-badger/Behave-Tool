@@ -28,7 +28,7 @@ namespace Behave_Tool
 
                 Program.restart = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Tools.Misc.SaveError(ex.ToString());
             }
@@ -56,5 +56,5 @@ namespace Behave_Tool
                 Tools.Misc.SaveError(ex.ToString());
             }
         }
-}
+    }
 }

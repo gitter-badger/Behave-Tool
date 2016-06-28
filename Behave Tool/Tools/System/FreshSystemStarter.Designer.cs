@@ -28,89 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Chrome"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Firefox"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Safari"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Vivaldi"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Daemon Tool - Lite"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Gyazo"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
-            "TeamViewer"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
-            "WinDirStat"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
-            "WinRAR"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
-            "μTorrent"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
-            ".NET 4.61"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Air"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Flash Player"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Java 8"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Shockwave"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
-            "SilverLight"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Bitdefender"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Kaspersky"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
-            "MalwareByte"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Audacity"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
-            "iTunes"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Spotify"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
-            "VLC"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Discord"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Steam"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
-            "TeamSpeak 3"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem(new string[] {
+            "GitHub"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Notepad++"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Python"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Visual Studio - Code"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Visual Studio - Community"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Visual Studio - Enterprise"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem(new string[] {
             "FileZilla"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "No IP"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem(new string[] {
+            "No-IP"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Oracle VirtualBox"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem(new string[] {
             "Putty"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(new string[] {
+            "WinSCP"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Xampp"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Discord"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem(new string[] {
+            "f.lux"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Rainmeter"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Razer Cortex"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Steam"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem(new string[] {
+            "TeamSpeak 3"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Audacity"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem(new string[] {
+            "iTunes"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Spotify"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem61 = new System.Windows.Forms.ListViewItem(new string[] {
+            "VLC"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem62 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Bitdefender"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem63 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Kaspersky"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem64 = new System.Windows.Forms.ListViewItem(new string[] {
+            "MalwareByte"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem65 = new System.Windows.Forms.ListViewItem(new string[] {
+            ".NET 4.61"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem66 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Air"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem67 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Flash Player"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem68 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Java 8"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem69 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Shockwave"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem70 = new System.Windows.Forms.ListViewItem(new string[] {
+            "SilverLight"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem71 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Gyazo",
+            "https://files.gyazo.com/setup/Gyazo-3.2.3.exe"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem72 = new System.Windows.Forms.ListViewItem(new string[] {
+            "TeamViewer 11",
+            "https://download.teamviewer.com/download/TeamViewer_Setup_en.exe"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem73 = new System.Windows.Forms.ListViewItem(new string[] {
+            "WinDirStat",
+            "https://sourceforge.net/projects/windirstat/files/latest/download"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem74 = new System.Windows.Forms.ListViewItem(new string[] {
+            "WinRAR",
+            "http://www.win-rar.com/fileadmin/winrar-versions/winrar/wrar500.exe"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem75 = new System.Windows.Forms.ListViewItem(new string[] {
+            "μTorrent",
+            "http://download.ap.bittorrent.com/track/stable/endpoint/utorrent/os/windows"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem76 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Chrome",
+            "https://www.google.com/chrome/browser/thankyou.html?platform=win64&installdataind" +
+                "ex=defaultbrowser"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem77 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Firefox",
+            "https://download.mozilla.org/?product=firefox-stub&os=win&lang=en-US"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem78 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Vivaldi",
+            "https://downloads.vivaldi.com/stable/Vivaldi.1.2.490.43.exe"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DevTools = new System.Windows.Forms.ListView();
+            this.Clear = new System.Windows.Forms.Button();
+            this.DownloadList = new System.Windows.Forms.ListView();
+            this.Server = new System.Windows.Forms.ListView();
+            this.Other = new System.Windows.Forms.ListView();
+            this.Media = new System.Windows.Forms.ListView();
+            this.AntiVirus = new System.Windows.Forms.ListView();
+            this.Runtimes = new System.Windows.Forms.ListView();
+            this.Utilities = new System.Windows.Forms.ListView();
             this.Browsers = new System.Windows.Forms.ListView();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.DevTools = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Utilities = new System.Windows.Forms.ListView();
-            this.Runtimes = new System.Windows.Forms.ListView();
-            this.AntiVirus = new System.Windows.Forms.ListView();
-            this.Media = new System.Windows.Forms.ListView();
-            this.Other = new System.Windows.Forms.ListView();
-            this.Server = new System.Windows.Forms.ListView();
-            this.DownloadList = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.DevTools);
+            this.panel1.Controls.Add(this.Clear);
             this.panel1.Controls.Add(this.DownloadList);
             this.panel1.Controls.Add(this.Server);
             this.panel1.Controls.Add(this.Other);
@@ -124,7 +156,6 @@
             this.panel1.Controls.Add(this.StartButton);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.DevTools);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -133,23 +164,235 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(996, 427);
+            this.panel1.Size = new System.Drawing.Size(1002, 489);
             this.panel1.TabIndex = 0;
+            // 
+            // DevTools
+            // 
+            this.DevTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.DevTools.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DevTools.CheckBoxes = true;
+            this.DevTools.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem40.StateImageIndex = 0;
+            listViewItem41.StateImageIndex = 0;
+            listViewItem42.StateImageIndex = 0;
+            listViewItem43.StateImageIndex = 0;
+            listViewItem44.StateImageIndex = 0;
+            listViewItem45.StateImageIndex = 0;
+            this.DevTools.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem40,
+            listViewItem41,
+            listViewItem42,
+            listViewItem43,
+            listViewItem44,
+            listViewItem45});
+            this.DevTools.Location = new System.Drawing.Point(17, 343);
+            this.DevTools.Name = "DevTools";
+            this.DevTools.Size = new System.Drawing.Size(726, 110);
+            this.DevTools.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.DevTools.TabIndex = 28;
+            this.DevTools.UseCompatibleStateImageBehavior = false;
+            this.DevTools.View = System.Windows.Forms.View.List;
+            this.DevTools.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.DevTools_ItemChecked);
+            // 
+            // Clear
+            // 
+            this.Clear.BackColor = System.Drawing.Color.Black;
+            this.Clear.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.Clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Clear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Clear.ForeColor = System.Drawing.Color.White;
+            this.Clear.Location = new System.Drawing.Point(828, 392);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(75, 23);
+            this.Clear.TabIndex = 27;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = false;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
+            // DownloadList
+            // 
+            this.DownloadList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.DownloadList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DownloadList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.DownloadList.Location = new System.Drawing.Point(828, 55);
+            this.DownloadList.Name = "DownloadList";
+            this.DownloadList.Size = new System.Drawing.Size(156, 319);
+            this.DownloadList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.DownloadList.TabIndex = 26;
+            this.DownloadList.UseCompatibleStateImageBehavior = false;
+            this.DownloadList.View = System.Windows.Forms.View.List;
+            // 
+            // Server
+            // 
+            this.Server.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Server.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Server.CheckBoxes = true;
+            this.Server.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem46.StateImageIndex = 0;
+            listViewItem47.StateImageIndex = 0;
+            listViewItem48.StateImageIndex = 0;
+            listViewItem49.StateImageIndex = 0;
+            listViewItem50.StateImageIndex = 0;
+            listViewItem51.StateImageIndex = 0;
+            this.Server.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem46,
+            listViewItem47,
+            listViewItem48,
+            listViewItem49,
+            listViewItem50,
+            listViewItem51});
+            this.Server.Location = new System.Drawing.Point(17, 205);
+            this.Server.Name = "Server";
+            this.Server.Size = new System.Drawing.Size(120, 112);
+            this.Server.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.Server.TabIndex = 25;
+            this.Server.UseCompatibleStateImageBehavior = false;
+            this.Server.View = System.Windows.Forms.View.List;
+            this.Server.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Server_ItemChecked);
+            // 
+            // Other
+            // 
+            this.Other.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Other.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Other.CheckBoxes = true;
+            this.Other.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem52.StateImageIndex = 0;
+            listViewItem53.StateImageIndex = 0;
+            listViewItem54.StateImageIndex = 0;
+            listViewItem55.StateImageIndex = 0;
+            listViewItem56.StateImageIndex = 0;
+            listViewItem57.StateImageIndex = 0;
+            this.Other.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem52,
+            listViewItem53,
+            listViewItem54,
+            listViewItem55,
+            listViewItem56,
+            listViewItem57});
+            this.Other.Location = new System.Drawing.Point(647, 78);
+            this.Other.Name = "Other";
+            this.Other.Size = new System.Drawing.Size(124, 109);
+            this.Other.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.Other.TabIndex = 24;
+            this.Other.UseCompatibleStateImageBehavior = false;
+            this.Other.View = System.Windows.Forms.View.List;
+            this.Other.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Other_ItemChecked);
+            // 
+            // Media
+            // 
+            this.Media.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Media.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Media.CheckBoxes = true;
+            this.Media.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem58.StateImageIndex = 0;
+            listViewItem59.StateImageIndex = 0;
+            listViewItem60.StateImageIndex = 0;
+            listViewItem61.StateImageIndex = 0;
+            this.Media.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem58,
+            listViewItem59,
+            listViewItem60,
+            listViewItem61});
+            this.Media.Location = new System.Drawing.Point(538, 78);
+            this.Media.Name = "Media";
+            this.Media.Size = new System.Drawing.Size(103, 109);
+            this.Media.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.Media.TabIndex = 23;
+            this.Media.UseCompatibleStateImageBehavior = false;
+            this.Media.View = System.Windows.Forms.View.List;
+            this.Media.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Media_ItemChecked);
+            // 
+            // AntiVirus
+            // 
+            this.AntiVirus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.AntiVirus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AntiVirus.CheckBoxes = true;
+            this.AntiVirus.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem62.StateImageIndex = 0;
+            listViewItem63.StateImageIndex = 0;
+            listViewItem64.StateImageIndex = 0;
+            this.AntiVirus.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem62,
+            listViewItem63,
+            listViewItem64});
+            this.AntiVirus.Location = new System.Drawing.Point(408, 78);
+            this.AntiVirus.Name = "AntiVirus";
+            this.AntiVirus.Size = new System.Drawing.Size(124, 109);
+            this.AntiVirus.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.AntiVirus.TabIndex = 22;
+            this.AntiVirus.UseCompatibleStateImageBehavior = false;
+            this.AntiVirus.View = System.Windows.Forms.View.List;
+            this.AntiVirus.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.AntiVirus_ItemChecked);
+            // 
+            // Runtimes
+            // 
+            this.Runtimes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Runtimes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Runtimes.CheckBoxes = true;
+            this.Runtimes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem65.StateImageIndex = 0;
+            listViewItem66.StateImageIndex = 0;
+            listViewItem67.StateImageIndex = 0;
+            listViewItem68.StateImageIndex = 0;
+            listViewItem69.StateImageIndex = 0;
+            listViewItem70.StateImageIndex = 0;
+            this.Runtimes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem65,
+            listViewItem66,
+            listViewItem67,
+            listViewItem68,
+            listViewItem69,
+            listViewItem70});
+            this.Runtimes.Location = new System.Drawing.Point(282, 78);
+            this.Runtimes.Name = "Runtimes";
+            this.Runtimes.Size = new System.Drawing.Size(120, 109);
+            this.Runtimes.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.Runtimes.TabIndex = 21;
+            this.Runtimes.UseCompatibleStateImageBehavior = false;
+            this.Runtimes.View = System.Windows.Forms.View.List;
+            this.Runtimes.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Runtimes_ItemChecked);
+            // 
+            // Utilities
+            // 
+            this.Utilities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Utilities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Utilities.CheckBoxes = true;
+            this.Utilities.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem71.StateImageIndex = 0;
+            listViewItem72.StateImageIndex = 0;
+            listViewItem73.StateImageIndex = 0;
+            listViewItem74.StateImageIndex = 0;
+            listViewItem75.StateImageIndex = 0;
+            this.Utilities.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem71,
+            listViewItem72,
+            listViewItem73,
+            listViewItem74,
+            listViewItem75});
+            this.Utilities.Location = new System.Drawing.Point(147, 78);
+            this.Utilities.Name = "Utilities";
+            this.Utilities.Size = new System.Drawing.Size(127, 109);
+            this.Utilities.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.Utilities.TabIndex = 20;
+            this.Utilities.UseCompatibleStateImageBehavior = false;
+            this.Utilities.View = System.Windows.Forms.View.List;
+            this.Utilities.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Utilities_ItemChecked);
             // 
             // Browsers
             // 
             this.Browsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Browsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Browsers.CheckBoxes = true;
-            listViewItem26.StateImageIndex = 0;
-            listViewItem27.StateImageIndex = 0;
-            listViewItem28.StateImageIndex = 0;
-            listViewItem29.StateImageIndex = 0;
+            this.Browsers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem76.StateImageIndex = 0;
+            listViewItem77.StateImageIndex = 0;
+            listViewItem78.StateImageIndex = 0;
             this.Browsers.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem26,
-            listViewItem27,
-            listViewItem28,
-            listViewItem29});
+            listViewItem76,
+            listViewItem77,
+            listViewItem78});
             this.Browsers.Location = new System.Drawing.Point(17, 78);
             this.Browsers.Name = "Browsers";
             this.Browsers.Size = new System.Drawing.Size(91, 97);
@@ -190,12 +433,13 @@
             this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.ForeColor = System.Drawing.Color.White;
-            this.StartButton.Location = new System.Drawing.Point(888, 390);
+            this.StartButton.Location = new System.Drawing.Point(909, 392);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(75, 23);
             this.StartButton.TabIndex = 15;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = false;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // label7
             // 
@@ -213,31 +457,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(13, 282);
+            this.label6.Location = new System.Drawing.Point(13, 320);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "Dev Tools";
-            // 
-            // DevTools
-            // 
-            this.DevTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.DevTools.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DevTools.ColumnWidth = 150;
-            this.DevTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.DevTools.FormattingEnabled = true;
-            this.DevTools.Items.AddRange(new object[] {
-            "GitHub",
-            "Python",
-            "Notepad++",
-            "Visual Studio - Code",
-            "Visual Studio - Community",
-            "Visual Studio - Enterprise"});
-            this.DevTools.Location = new System.Drawing.Point(17, 305);
-            this.DevTools.MultiColumn = true;
-            this.DevTools.Name = "DevTools";
-            this.DevTools.Size = new System.Drawing.Size(817, 90);
-            this.DevTools.TabIndex = 10;
             // 
             // label5
             // 
@@ -294,166 +518,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Browsers";
             // 
-            // Utilities
-            // 
-            this.Utilities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Utilities.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Utilities.CheckBoxes = true;
-            this.Utilities.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem20.StateImageIndex = 0;
-            listViewItem21.StateImageIndex = 0;
-            listViewItem22.StateImageIndex = 0;
-            listViewItem23.StateImageIndex = 0;
-            listViewItem24.StateImageIndex = 0;
-            listViewItem25.StateImageIndex = 0;
-            this.Utilities.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25});
-            this.Utilities.Location = new System.Drawing.Point(147, 78);
-            this.Utilities.Name = "Utilities";
-            this.Utilities.Size = new System.Drawing.Size(127, 109);
-            this.Utilities.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Utilities.TabIndex = 20;
-            this.Utilities.UseCompatibleStateImageBehavior = false;
-            this.Utilities.View = System.Windows.Forms.View.List;
-            // 
-            // Runtimes
-            // 
-            this.Runtimes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Runtimes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Runtimes.CheckBoxes = true;
-            this.Runtimes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem14.StateImageIndex = 0;
-            listViewItem15.StateImageIndex = 0;
-            listViewItem16.StateImageIndex = 0;
-            listViewItem17.StateImageIndex = 0;
-            listViewItem18.StateImageIndex = 0;
-            listViewItem19.StateImageIndex = 0;
-            this.Runtimes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19});
-            this.Runtimes.Location = new System.Drawing.Point(282, 78);
-            this.Runtimes.Name = "Runtimes";
-            this.Runtimes.Size = new System.Drawing.Size(120, 109);
-            this.Runtimes.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Runtimes.TabIndex = 21;
-            this.Runtimes.UseCompatibleStateImageBehavior = false;
-            this.Runtimes.View = System.Windows.Forms.View.List;
-            // 
-            // AntiVirus
-            // 
-            this.AntiVirus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.AntiVirus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AntiVirus.CheckBoxes = true;
-            this.AntiVirus.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem11.StateImageIndex = 0;
-            listViewItem12.StateImageIndex = 0;
-            listViewItem13.StateImageIndex = 0;
-            this.AntiVirus.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12,
-            listViewItem13});
-            this.AntiVirus.Location = new System.Drawing.Point(408, 78);
-            this.AntiVirus.Name = "AntiVirus";
-            this.AntiVirus.Size = new System.Drawing.Size(124, 109);
-            this.AntiVirus.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.AntiVirus.TabIndex = 22;
-            this.AntiVirus.UseCompatibleStateImageBehavior = false;
-            this.AntiVirus.View = System.Windows.Forms.View.List;
-            // 
-            // Media
-            // 
-            this.Media.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Media.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Media.CheckBoxes = true;
-            this.Media.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
-            listViewItem10.StateImageIndex = 0;
-            this.Media.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
-            this.Media.Location = new System.Drawing.Point(538, 78);
-            this.Media.Name = "Media";
-            this.Media.Size = new System.Drawing.Size(103, 109);
-            this.Media.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Media.TabIndex = 23;
-            this.Media.UseCompatibleStateImageBehavior = false;
-            this.Media.View = System.Windows.Forms.View.List;
-            // 
-            // Other
-            // 
-            this.Other.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Other.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Other.CheckBoxes = true;
-            this.Other.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
-            listViewItem6.StateImageIndex = 0;
-            this.Other.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
-            this.Other.Location = new System.Drawing.Point(647, 78);
-            this.Other.Name = "Other";
-            this.Other.Size = new System.Drawing.Size(124, 109);
-            this.Other.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Other.TabIndex = 24;
-            this.Other.UseCompatibleStateImageBehavior = false;
-            this.Other.View = System.Windows.Forms.View.List;
-            // 
-            // Server
-            // 
-            this.Server.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Server.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Server.CheckBoxes = true;
-            this.Server.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
-            this.Server.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
-            this.Server.Location = new System.Drawing.Point(17, 205);
-            this.Server.Name = "Server";
-            this.Server.Size = new System.Drawing.Size(124, 74);
-            this.Server.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Server.TabIndex = 25;
-            this.Server.UseCompatibleStateImageBehavior = false;
-            this.Server.View = System.Windows.Forms.View.List;
-            // 
-            // DownloadList
-            // 
-            this.DownloadList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.DownloadList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DownloadList.CheckBoxes = true;
-            this.DownloadList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.DownloadList.Location = new System.Drawing.Point(860, 55);
-            this.DownloadList.Name = "DownloadList";
-            this.DownloadList.Size = new System.Drawing.Size(124, 319);
-            this.DownloadList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.DownloadList.TabIndex = 26;
-            this.DownloadList.UseCompatibleStateImageBehavior = false;
-            this.DownloadList.View = System.Windows.Forms.View.List;
-            // 
             // FreshSystemStarter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(996, 427);
+            this.ClientSize = new System.Drawing.Size(1002, 489);
             this.Controls.Add(this.panel1);
             this.Name = "FreshSystemStarter";
             this.Text = "FreshSystemStarter";
@@ -469,7 +539,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckedListBox DevTools;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -485,5 +554,7 @@
         private System.Windows.Forms.ListView Media;
         private System.Windows.Forms.ListView Server;
         private System.Windows.Forms.ListView DownloadList;
+        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.ListView DevTools;
     }
 }

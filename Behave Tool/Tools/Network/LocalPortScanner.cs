@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
@@ -17,6 +15,7 @@ namespace Behave_Tool
             TopMost = true;
             CheckForIllegalCrossThreadCalls = false;
         }
+
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);

@@ -1,17 +1,14 @@
-﻿
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Behave_Tool.Tools.Special
 {
     public partial class CheckedListBox_With_Image : ListBox
     {
-
         public CheckedListBox_With_Image()
         {
             DrawMode = DrawMode.OwnerDrawFixed;
             ItemHeight = 9;
-            
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)
@@ -34,7 +31,6 @@ namespace Behave_Tool.Tools.Special
 
         private void listView1_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-
         }
     }
 }

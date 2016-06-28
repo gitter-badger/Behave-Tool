@@ -1,18 +1,11 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Behave_Tool.Tools
 {
-    class Misc
+    internal class Misc
     {
-
         public static void SaveError(string ex)
         {
             MessageBox.Show("Behave has hit an error. \nPlease choose a location to save the error log and send it to COOP");
@@ -32,6 +25,7 @@ namespace Behave_Tool.Tools
                 Process.Start(savefile.FileName);
             }
         }
+
         public static void listBoxSaveTxt(ListBox listBox1)
         {
             SaveFileDialog savefile = new SaveFileDialog();
