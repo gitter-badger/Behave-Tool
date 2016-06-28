@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Behave_Tool
 {
+    
     public partial class Behave : Form
     {
         //private const int HT_CLIENT = 1;
@@ -22,6 +23,7 @@ namespace Behave_Tool
         private static bool networkTrafficMonitoring = true;
         private static bool systemUsageOn = true;
         private bool stopflicker = false;
+
 
         public Behave()
         {
@@ -152,16 +154,6 @@ namespace Behave_Tool
             m.Result = (IntPtr)2;
         }
 
-        private static ulong GetTotalMemoryInBytes()
-        {
-            return new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1024 / 1024;
-        }
-
-        private static ulong GetUsingMemoryInBytes()
-        {
-            return new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / 1024 / 1024;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
         }
@@ -175,14 +167,7 @@ namespace Behave_Tool
 
         private void getCPUusage()
         {
-            CPUbar.ForeColor = Color.Red;
-            CPUbar.Style = ProgressBarStyle.Continuous;
-            CPUbar.Maximum = 100;
-            CPUbar.Minimum = 0;
-            RAMbar.ForeColor = Color.Red;
-            RAMbar.Style = ProgressBarStyle.Continuous;
-            RAMbar.Maximum = 100;
-            RAMbar.Minimum = 0;
+            
             while (systemUsageOn)
             {
                 PerformanceCounter cpuCounter = new PerformanceCounter();
@@ -208,8 +193,8 @@ namespace Behave_Tool
 
             while (true)
             {
-                memAvailable = GetUsingMemoryInBytes();
-                memPhysical = GetTotalMemoryInBytes();
+                memAvailable = System_Information.RAM.GetUsingMemoryInBytes();
+                memPhysical = System_Information.RAM.GetTotalMemoryInBytes();
                 memUsing = memPhysical - memAvailable;
 
                 percentage = Convert.ToInt16(memUsing / memPhysical * 100);
@@ -251,6 +236,20 @@ namespace Behave_Tool
             setBackground();
             var colour1 = ColorTranslator.FromHtml(Properties.Settings.Default.Text1_Colour);
             var colour2 = ColorTranslator.FromHtml(Properties.Settings.Default.Text2_Colour);
+            var colour3 = ColorTranslator.FromHtml(Properties.Settings.Default.Text3_Colour);
+            foreach (ToolStripDropDownItem button in Menu.DropDownItems)
+            {
+                button.ForeColor = colour3;
+            }
+            CPUbar.ForeColor = Color.Red;
+            CPUbar.Style = ProgressBarStyle.Continuous;
+            CPUbar.Maximum = 100;
+            CPUbar.Minimum = 0;
+            RAMbar.ForeColor = Color.Red;
+            RAMbar.Style = ProgressBarStyle.Continuous;
+            RAMbar.Maximum = 100;
+            RAMbar.Minimum = 0;
+
             Menu.ForeColor = colour1;
             IPdisplay.ForeColor = colour2;
             CPU_Label.ForeColor = colour2;
@@ -530,7 +529,22 @@ namespace Behave_Tool
 
         private void softwareInstallerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FreshSystemStarter().Show();
+            new SoftwareDownload().Show();
+        }
+
+        private void betterTaskManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BetterTaskManager().Show(); 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            new ShowHide().Show();
+        }
+
+        private void storageDrives1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -26,5 +26,8 @@
     <Setting Name="Sign_In" Type="System.String" Scope="User">
       <Value Profile="(Default)">%*#(@</Value>
     </Setting>
+    <Setting Name="Text3_Colour" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFFF</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

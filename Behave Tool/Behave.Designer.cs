@@ -48,6 +48,7 @@
             this.performanceMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preset1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.softwareInstallerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.betterTaskManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundcloudDownloaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spotifyControllerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +88,7 @@
             this.Storage_Label = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.storageDrives1 = new Behave_Tool.StorageDrives();
             this.ToolBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -288,7 +290,8 @@
             this.systemToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.systemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.performanceMonitorToolStripMenuItem,
-            this.softwareInstallerToolStripMenuItem});
+            this.softwareInstallerToolStripMenuItem,
+            this.betterTaskManagerToolStripMenuItem});
             this.systemToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.systemToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
@@ -331,6 +334,17 @@
             this.softwareInstallerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.softwareInstallerToolStripMenuItem.Text = "Software Installer";
             this.softwareInstallerToolStripMenuItem.Click += new System.EventHandler(this.softwareInstallerToolStripMenuItem_Click);
+            // 
+            // betterTaskManagerToolStripMenuItem
+            // 
+            this.betterTaskManagerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.betterTaskManagerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.betterTaskManagerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.betterTaskManagerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.betterTaskManagerToolStripMenuItem.Name = "betterTaskManagerToolStripMenuItem";
+            this.betterTaskManagerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.betterTaskManagerToolStripMenuItem.Text = "Better Task Manager";
+            this.betterTaskManagerToolStripMenuItem.Click += new System.EventHandler(this.betterTaskManagerToolStripMenuItem_Click);
             // 
             // otherToolStripMenuItem
             // 
@@ -457,6 +471,7 @@
             // MaximizeNormalize
             // 
             this.MaximizeNormalize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.MaximizeNormalize.AutoToolTip = false;
             this.MaximizeNormalize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.MaximizeNormalize.Image = ((System.Drawing.Image)(resources.GetObject("MaximizeNormalize.Image")));
             this.MaximizeNormalize.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -784,10 +799,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Location = new System.Drawing.Point(640, 209);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // storageDrives1
+            // 
+            this.storageDrives1.BackColor = System.Drawing.Color.Black;
+            this.storageDrives1.Location = new System.Drawing.Point(355, 134);
+            this.storageDrives1.Name = "storageDrives1";
+            this.storageDrives1.Size = new System.Drawing.Size(186, 89);
+            this.storageDrives1.TabIndex = 12;
             // 
             // Behave
             // 
@@ -798,8 +824,9 @@
             this.BackgroundImage = global::Behave_Tool.Properties.Resources.Background_OrangeCore1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1003, 345);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.storageDrives1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.ToolBar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -870,7 +897,6 @@
         private System.Windows.Forms.ToolStripComboBox SearchBar;
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soundcloudDownloaderToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem externalNetworkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem urlToIPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem htmlDownloaderToolStripMenuItem;
@@ -880,6 +906,9 @@
         private System.Windows.Forms.ToolStripMenuItem specialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sandboxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem softwareInstallerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem betterTaskManagerToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private StorageDrives storageDrives1;
     }
 }
 

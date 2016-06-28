@@ -46,7 +46,7 @@
             this.Lock.Location = new System.Drawing.Point(0, 0);
             this.Lock.Margin = new System.Windows.Forms.Padding(0);
             this.Lock.Name = "Lock";
-            this.Lock.Size = new System.Drawing.Size(126, 22);
+            this.Lock.Size = new System.Drawing.Size(162, 22);
             this.Lock.TabIndex = 0;
             this.Lock.Text = "Lock Panel";
             this.Lock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -65,7 +65,7 @@
             this.KeepOnTop.Location = new System.Drawing.Point(0, 22);
             this.KeepOnTop.Margin = new System.Windows.Forms.Padding(0);
             this.KeepOnTop.Name = "KeepOnTop";
-            this.KeepOnTop.Size = new System.Drawing.Size(126, 22);
+            this.KeepOnTop.Size = new System.Drawing.Size(162, 22);
             this.KeepOnTop.TabIndex = 1;
             this.KeepOnTop.Text = "KeepOnTop";
             this.KeepOnTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -73,18 +73,21 @@
             // 
             // Close
             // 
+            this.Close.AutoSize = true;
+            this.Close.BackColor = System.Drawing.Color.Black;
             this.Close.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Close.Dock = System.Windows.Forms.DockStyle.Top;
             this.Close.FlatAppearance.BorderSize = 0;
             this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.Close.ForeColor = System.Drawing.Color.White;
-            this.Close.Location = new System.Drawing.Point(0, 47);
+            this.Close.Location = new System.Drawing.Point(0, 44);
             this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(123, 22);
+            this.Close.Size = new System.Drawing.Size(162, 25);
             this.Close.TabIndex = 2;
             this.Close.Text = "Close";
-            this.Close.UseVisualStyleBackColor = true;
+            this.Close.UseVisualStyleBackColor = false;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // PanelOptions
@@ -92,12 +95,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(162, 67);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.KeepOnTop);
             this.Controls.Add(this.Lock);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PanelOptions";
-            this.Size = new System.Drawing.Size(126, 72);
             this.ResumeLayout(false);
             this.PerformLayout();
 

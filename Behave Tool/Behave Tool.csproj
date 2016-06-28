@@ -48,6 +48,8 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -98,17 +100,41 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tools\Special\CheckedListBox_With_Image.cs">
+    <Compile Include="CustomControls\CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Tools\Special\CheckedListBox_With_Image.Designer.cs">
-      <DependentUpon>CheckedListBox_With_Image.cs</DependentUpon>
+    <Compile Include="CustomControls\CustomProgressBar.Designer.cs">
+      <DependentUpon>CustomProgressBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\System\FreshSystemStarter.cs">
+    <Compile Include="inf.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\System\FreshSystemStarter.Designer.cs">
-      <DependentUpon>FreshSystemStarter.cs</DependentUpon>
+    <Compile Include="inf.Designer.cs">
+      <DependentUpon>inf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\StorageDrives.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\StorageDrives.Designer.cs">
+      <DependentUpon>StorageDrives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\System\BetterTaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\System\BetterTaskManager.Designer.cs">
+      <DependentUpon>BetterTaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CheckedListBox_With_Image.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CheckedListBox_With_Image.Designer.cs">
+      <DependentUpon>CheckedListBox_With_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\System\SoftwareDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\System\SoftwareDownload.Designer.cs">
+      <DependentUpon>SoftwareDownload.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\Special\Sandbox.cs">
       <SubType>Form</SubType>
@@ -171,10 +197,10 @@
     <Compile Include="Behave_Settings.Designer.cs">
       <DependentUpon>Behave_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\BruteForce.cs">
+    <Compile Include="Tools\Special\BruteForce.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\BruteForce.Designer.cs">
+    <Compile Include="Tools\Special\BruteForce.Designer.cs">
       <DependentUpon>BruteForce.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\Network\Network.cs">
@@ -208,7 +234,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="PanelOptions.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="PanelOptions.Designer.cs">
       <DependentUpon>PanelOptions.cs</DependentUpon>
@@ -223,7 +249,7 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="ShowHide.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ShowHide.Designer.cs">
       <DependentUpon>ShowHide.cs</DependentUpon>
@@ -247,11 +273,20 @@
     <Compile Include="Login\Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Tools\Special\CheckedListBox_With_Image.resx">
+    <EmbeddedResource Include="inf.resx">
+      <DependentUpon>inf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CheckedListBox_With_Image.resx">
       <DependentUpon>CheckedListBox_With_Image.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\System\FreshSystemStarter.resx">
-      <DependentUpon>FreshSystemStarter.cs</DependentUpon>
+    <EmbeddedResource Include="CustomControls\StorageDrives.resx">
+      <DependentUpon>StorageDrives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\System\BetterTaskManager.resx">
+      <DependentUpon>BetterTaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\System\SoftwareDownload.resx">
+      <DependentUpon>SoftwareDownload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Special\Sandbox.resx">
       <DependentUpon>Sandbox.cs</DependentUpon>
@@ -280,7 +315,7 @@
     <EmbeddedResource Include="Behave_Settings.resx">
       <DependentUpon>Behave_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\BruteForce.resx">
+    <EmbeddedResource Include="Tools\Special\BruteForce.resx">
       <DependentUpon>BruteForce.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Network\Network.resx">
@@ -409,6 +444,9 @@
     <None Include="Resources\FireFlower.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Resources.txt" />
+    <None Include="Resources\TextFile1.txt" />
+    <EmbeddedResource Include="Tools\System\SoftwareDownloadLinks.xml" />
     <None Include="Resources\2.png" />
     <Content Include="Resources\behave_vcs_icon.ico" />
   </ItemGroup>

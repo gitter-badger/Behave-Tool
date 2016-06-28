@@ -3,21 +3,29 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-
+using System.Linq;
 namespace Behave_Tool
 {
     public partial class Behave_Settings : Form
     {
+
+        private string[] colourList = { "Black", "White", "Red", "Green", "Lime",
+            "Blue", "cyan", "Magenta", "Yellow", "Aqua", "Fuchsia", "Navy", "Teal",
+            "Olive", "Maroon", "Gray", "Silver", "Purple", "Orange" };
+
         public Behave_Settings()
         {
             InitializeComponent();
-            TopMost = true;
+            TopMost = Properties.Settings.Default.KeepWindowOnTop;
             var colour1 = ColorTranslator.FromHtml(Properties.Settings.Default.Text1_Colour);
             var colour2 = ColorTranslator.FromHtml(Properties.Settings.Default.Text2_Colour);
+            var colour3 = ColorTranslator.FromHtml(Properties.Settings.Default.Text3_Colour);
             Text1_Label.ForeColor = colour1;
             Text2_Label.ForeColor = colour2;
+            Text3_Label.ForeColor = colour3;
             Text1_Colour.Text = Properties.Settings.Default.Text1_Colour;
             Text2_Colour.Text = Properties.Settings.Default.Text2_Colour;
+            Text3_Colour.Text = Properties.Settings.Default.Text3_Colour;
             checkBox1.Checked = Properties.Settings.Default.KeepWindowOnTop;
         }
 
@@ -35,7 +43,7 @@ namespace Behave_Tool
             {
                 Properties.Settings.Default["Text1_Colour"] = Text1_Colour.Text;
                 Properties.Settings.Default["Text2_Colour"] = Text2_Colour.Text;
-
+                Properties.Settings.Default["Text3_Colour"] = Text3_Colour.Text;
                 Properties.Settings.Default.Save();
                 new Restarting().Show();
                 Restarting.restartNow();
@@ -108,6 +116,83 @@ namespace Behave_Tool
         private void Close_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ColourDiag1_Click(object sender, EventArgs e)
+        {
+            // Show the color dialog.
+            ColorDialog dlg = new ColorDialog();
+            //dlg.ShowDialog();
+            // See if user pressed ok.
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                string str = null;
+                str = dlg.Color.Name;
+                if (colourList.Contains(str))
+                {
+                    Text1_Colour.Text = str;
+                }
+                else
+                {
+                    Text1_Colour.Text = "#" + str;
+                }
+            }
+        }
+
+        private void ColourDiag2_Click(object sender, EventArgs e)
+        {
+            // Show the color dialog.
+            ColorDialog dlg = new ColorDialog();
+            //dlg.ShowDialog();
+            // See if user pressed ok.
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                string str = null;
+                str = dlg.Color.Name;
+                if (colourList.Contains(str))
+                {
+                    Text2_Colour.Text = str;
+                }
+                else
+                {
+                    Text2_Colour.Text = "#" + str;
+                }
+            }
+        }
+
+        private void ColourDiag3_Click(object sender, EventArgs e)
+        {
+            // Show the color dialog.
+            ColorDialog dlg = new ColorDialog();
+            // dlg.ShowDialog();
+            // See if user pressed ok.
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                string str = null;
+                str = dlg.Color.Name;
+                if (colourList.Contains(str))
+                {
+                    Text3_Colour.Text = str;
+                }
+                else
+                {
+                    Text3_Colour.Text = "#" + str;
+                }
+            }
+        }
+
+        private void Text2_Colour_TextChanged(object sender, EventArgs e)
+        {
+            Text2_Label.ForeColor = ColorTranslator.FromHtml(Text2_Colour.Text);
+        }
+
+        private void Text1_Colour_TextChanged(object sender, EventArgs e)
+        {
+            Text1_Label.ForeColor = ColorTranslator.FromHtml(Text1_Colour.Text);
+        }
+        private void Text3_Colour_TextChanged(object sender, EventArgs e)
+        {
+            Text3_Label.ForeColor = ColorTranslator.FromHtml(Text3_Colour.Text);
         }
     }
 }

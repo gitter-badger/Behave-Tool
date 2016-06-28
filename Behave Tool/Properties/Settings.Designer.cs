@@ -118,5 +118,17 @@ namespace Behave_Tool.Properties {
                 this["Sign_In"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FFFFFF")]
+        public string Text3_Colour {
+            get {
+                return ((string)(this["Text3_Colour"]));
+            }
+            set {
+                this["Text3_Colour"] = value;
+            }
+        }
     }
 }

@@ -1,26 +1,23 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Reflection;
+using System.IO;
 
 namespace Behave_Tool
 {
-    public partial class FreshSystemStarter : Form
+    public partial class SoftwareDownload : Form
     {
-        public FreshSystemStarter()
+        public SoftwareDownload()
         {
             InitializeComponent();
         }
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            foreach(ListViewItem item in Browsers.CheckedItems)
+            foreach (ListViewItem item in Browsers.CheckedItems)
             {
                 item.Checked = false;
             }
@@ -52,6 +49,10 @@ namespace Behave_Tool
             {
                 item.Checked = false;
             }
+            foreach (ListViewItem item in Benchmark.CheckedItems)
+            {
+                item.Checked = false;
+            }
         }
 
         private void Browsers_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -71,9 +72,7 @@ namespace Behave_Tool
             }
             else
             {
-
                 DownloadList.Items.Add((ListViewItem)item.Clone());
-
             }
 
 
@@ -123,7 +122,7 @@ namespace Behave_Tool
             }
         }
 
-        
+
 
         private void AntiVirus_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
@@ -207,9 +206,7 @@ namespace Behave_Tool
             }
             else
             {
-
                 DownloadList.Items.Add((ListViewItem)item.Clone());
-
             }
         }
 
@@ -229,14 +226,13 @@ namespace Behave_Tool
             }
             else
             {
-
                 DownloadList.Items.Add((ListViewItem)item.Clone());
-
             }
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
+            getLinks();
             try
             {
                 //string[,] downloadLinks = new string[];
@@ -249,10 +245,58 @@ namespace Behave_Tool
                 {
                     MessageBox.Show(str);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Tools.Misc.SaveError(ex.ToString());
             }
+        }
+
+        private void Benchmark_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            ListViewItem item = e.Item;
+            if (!e.Item.Checked)
+            {
+                foreach (ListViewItem i in DownloadList.Items)
+                {
+                    if (i.Text == item.Text)
+                    {
+                        i.Remove();
+                    }
+                }
+            }
+            else
+            {
+                DownloadList.Items.Add((ListViewItem)item.Clone());
+            }
+        }
+        private void getLinks()
+        {
+            Assembly a = Assembly.GetExecutingAssembly();
+         
+
+            List<string> links = new List<string>();
+
+            XmlDocument xmlDoc = new XmlDocument();
+            try
+            {
+
+                xmlDoc.Load(a.GetManifestResourceStream("SoftwareDownloadLinks.xml"));
+                XmlNodeList nodeList = xmlDoc.SelectNodes("//SoftwareDownload");
+                foreach (XmlNode node in nodeList)
+                {
+                    foreach (XmlNode childNode in node.ChildNodes)
+                    {
+                        links.Add(childNode.Value.ToString());
+                    }
+                }
+                string link = string.Join(",", links.ToArray());
+                MessageBox.Show(link);
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+                    
         }
     }
 }

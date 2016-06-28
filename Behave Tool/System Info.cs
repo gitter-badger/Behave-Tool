@@ -23,12 +23,23 @@ namespace System_Information
 
     public class RAM
     {
-        public static string getAvailableRAM()
+        
+        public static ulong GetUsingMemoryInBytes()
         {
-            PerformanceCounter ramCounter;
-
-            ramCounter = new PerformanceCounter("Memory", "Available MBytes");
-            return ramCounter.NextValue() + "MB";
+            return new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / 1024 / 1024;
         }
+        public static ulong GetTotalMemoryInBytes()
+        {
+            return new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1024 / 1024;
+        }
+    }
+    public class Network
+    {
+
+
+    }
+    public class Storage
+    {
+
     }
 }
