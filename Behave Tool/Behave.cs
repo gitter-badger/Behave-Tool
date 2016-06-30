@@ -1,5 +1,7 @@
 ﻿using Behave_Tool.Tools;
+//using Behave_Tool.Widget;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -329,19 +331,21 @@ namespace Behave_Tool
                 if (preset1ToolStripMenuItem.Checked == false)
                 {
                     preset1ToolStripMenuItem.Checked = true;
-                    new SystemLiveInformation().Show();
+                    //new SystemPerformance().Show();
                 }
                 else
                 {
                     preset1ToolStripMenuItem.Checked = false;
-                    foreach (Form form in Application.OpenForms)
-                    {
-                        SystemLiveInformation.ActiveForm.Close();
-                        //if (form.Name == "SystemLiveInformation")
-                        //{
-                        //    form.Close();
-                        //}
-                    }
+                    List<Form> forms = new List<Form>();
+
+                    // All opened myForm instances
+                    foreach (Form f in Application.OpenForms)
+                        if (f.Name == "SystemPerformance")
+                            forms.Add(f);
+
+                    // Now let's close opened myForm instances
+                    foreach (Form f in forms)
+                        f.Close();
                 }
             }
             catch (Exception ex)

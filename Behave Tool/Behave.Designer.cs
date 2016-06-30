@@ -88,7 +88,6 @@
             this.Storage_Label = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.storageDrives1 = new Behave_Tool.StorageDrives();
             this.ToolBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -317,7 +316,6 @@
             this.preset1ToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.preset1ToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.preset1ToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.preset1ToolStripMenuItem.Enabled = false;
             this.preset1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.preset1ToolStripMenuItem.Name = "preset1ToolStripMenuItem";
             this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
@@ -807,14 +805,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // storageDrives1
-            // 
-            this.storageDrives1.BackColor = System.Drawing.Color.Black;
-            this.storageDrives1.Location = new System.Drawing.Point(355, 134);
-            this.storageDrives1.Name = "storageDrives1";
-            this.storageDrives1.Size = new System.Drawing.Size(186, 89);
-            this.storageDrives1.TabIndex = 12;
-            // 
             // Behave
             // 
             this.AccessibleName = "Main";
@@ -824,7 +814,6 @@
             this.BackgroundImage = global::Behave_Tool.Properties.Resources.Background_OrangeCore1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1003, 345);
-            this.Controls.Add(this.storageDrives1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);

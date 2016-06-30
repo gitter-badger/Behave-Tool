@@ -14,6 +14,9 @@ namespace Behave_Tool
             originalWidth = Width;
             widthToggle();
 
+            AutoSize = true;
+
+
         }
         private void startPosition()
         {

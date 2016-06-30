@@ -122,11 +122,10 @@ namespace Behave_Tool
         {
             // Show the color dialog.
             ColorDialog dlg = new ColorDialog();
-            //dlg.ShowDialog();
             // See if user pressed ok.
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                string str = null;
+                string str;
                 str = dlg.Color.Name;
                 if (colourList.Contains(str))
                 {

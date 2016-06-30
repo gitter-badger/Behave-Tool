@@ -19,6 +19,7 @@ namespace Behave_Tool
             // Application.Run(new Behave());
             while (true)
             {
+                for (int i = 0; i <=10; i++)
                 restart = false;
                 if (!(new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator)))
                 {

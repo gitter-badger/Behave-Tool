@@ -8,8 +8,8 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Behave_Tool</RootNamespace>
-    <AssemblyName>Behave Tool</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AssemblyName>BehaveTool</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -27,6 +27,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -100,6 +101,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\CpuRam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CpuRam.Designer.cs">
+      <DependentUpon>CpuRam.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -255,12 +262,6 @@
       <DependentUpon>ShowHide.cs</DependentUpon>
     </Compile>
     <Compile Include="System Info.cs" />
-    <Compile Include="Tools\System\SystemLiveInformation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\System\SystemLiveInformation.Designer.cs">
-      <DependentUpon>SystemLiveInformation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tools\Network\URLtoIP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +274,9 @@
     <Compile Include="Login\Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomControls\CpuRam.resx">
+      <DependentUpon>CpuRam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inf.resx">
       <DependentUpon>inf.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,9 +355,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowHide.resx">
       <DependentUpon>ShowHide.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools\System\SystemLiveInformation.resx">
-      <DependentUpon>SystemLiveInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Network\URLtoIP.resx">
       <DependentUpon>URLtoIP.cs</DependentUpon>
@@ -452,6 +453,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
+    <Folder Include="Widget\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
