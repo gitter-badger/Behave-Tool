@@ -1,26 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Behave_Tool
+namespace Behave_Tool.Tools.Network
 {
-    public partial class Html_Header_Scraper : Form
+    public partial class HtmlHeaderScraper : ToolDefaultForm
     {
-        public Html_Header_Scraper()
+        public HtmlHeaderScraper()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
         }
-
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg != 132)
-                return;
-            m.Result = (IntPtr)2;
-        }
-
         public void header()
         {
             try
@@ -59,14 +56,9 @@ namespace Behave_Tool
             new Thread(new ThreadStart(header)) { IsBackground = true }.Start();
         }
 
-        private void Close_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void save_Click(object sender, EventArgs e)
         {
-            Tools.Misc.listBoxSaveTxt(listBox1);
+            Misc.listBoxSaveTxt(listBox1);
         }
     }
 }

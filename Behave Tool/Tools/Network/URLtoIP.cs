@@ -1,17 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Behave_Tool.Tools
+namespace Behave_Tool.Tools.Network
 {
-    public partial class URLtoIP : Form
+    public partial class UrlToIP : ToolDefaultForm
     {
-        public URLtoIP()
+        public UrlToIP()
         {
             InitializeComponent();
             TopMost = true;
         }
+
 
         public void urlToIP()
         {
@@ -52,9 +59,5 @@ namespace Behave_Tool.Tools
             Misc.listBoxSaveTxt(listBox1);
         }
 
-        private void Close_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

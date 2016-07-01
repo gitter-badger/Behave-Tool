@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Behave_Tool
+namespace Behave_Tool.Tools.Network
 {
-    public partial class inf : ShowHide
+    public partial class HtmlDownloader : ToolDefaultForm
     {
-        public inf()
+        public HtmlDownloader()
         {
             InitializeComponent();
         }

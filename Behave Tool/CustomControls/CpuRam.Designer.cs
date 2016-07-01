@@ -140,6 +140,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CpuRam";
             this.Size = new System.Drawing.Size(226, 65);
+            this.Load += new System.EventHandler(this.CpuRam_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

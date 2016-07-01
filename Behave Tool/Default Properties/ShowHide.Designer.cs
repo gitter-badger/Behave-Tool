@@ -79,6 +79,7 @@
             this.Name = "ShowHide";
             this.Opacity = 0.95D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Load += new System.EventHandler(this.ShowHide_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ShowHide_MouseClick);
             this.ResumeLayout(false);
             this.PerformLayout();

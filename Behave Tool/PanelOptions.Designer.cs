@@ -111,6 +111,6 @@
 
         private System.Windows.Forms.CheckBox Lock;
         private System.Windows.Forms.CheckBox KeepOnTop;
-        private System.Windows.Forms.Button Close;
+        private new System.Windows.Forms.Button Close;
     }
 }

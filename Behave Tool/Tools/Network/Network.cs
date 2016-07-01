@@ -1,30 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Behave_Tool
+namespace Behave_Tool.Tools.Network
 {
-    public partial class Network : Form
+    public partial class Network : ToolDefaultForm
     {
         public Network()
         {
             InitializeComponent();
         }
-
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg != 132)
-                return;
-            m.Result = (IntPtr)2;
-        }
-
         private void startupProcedure()
         {
             new Thread(new ThreadStart(getWebConnect)) { IsBackground = true }.Start();
@@ -44,41 +39,41 @@ namespace Behave_Tool
         {
             IP.Text = "Getting...";
 
-            IP.Text = Behave_Tool.IP.getPublicIP();
+            IP.Text = IPinfo.getPublicIP();
         }
 
         private void getIPv6()
         {
             IPv6.Text = "Getting...";
 
-            IPv6.Text = Behave_Tool.IP.getIPv6();
+            IPv6.Text = IPinfo.getIPv6();
         }
 
         private void getWebConnect()
         {
             WebConnection.Text = "Ping'ing...";
 
-            WebConnection.Text = Behave_Tool.IP.getConnectionStatus();
+            WebConnection.Text = IPinfo.getConnectionStatus();
         }
 
         private void getIPv4()
         {
             IPv4.Text = "Getting...";
 
-            IPv4.Text = Behave_Tool.IP.getIPv4();
+            IPv4.Text = IPinfo.getIPv4();
         }
 
         private void getMAC()
         {
             MAC.Text = "Getting...";
 
-            MAC.Text = Behave_Tool.IP.getMAC();
+            MAC.Text = IPinfo.getMAC();
         }
 
         private void getGateway()
         {
             gateway.Text = "Getting...";
-            gateway.Text = Behave_Tool.IP.getGateway();
+            gateway.Text = IPinfo.getGateway();
         }
 
         private void recheckAll()
@@ -94,11 +89,6 @@ namespace Behave_Tool
             }
             else if (WebConnection.Text == "Ping'ing...") { WebConnection.ForeColor = Color.Yellow; }
             else { WebConnection.ForeColor = Color.Red; }
-        }
-
-        private void Close_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void ALL_Refresh_Click(object sender, EventArgs e)
@@ -135,61 +125,8 @@ namespace Behave_Tool
         {
             new Thread(new ThreadStart(getGateway)) { IsBackground = true }.Start();
         }
-
-        private void MAC_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void MAC_Label_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void IPv6_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void IPv4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void Ipv4Label_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void gateLabel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void gateway_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void IP_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void WebLabel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void WebConnection_Click(object sender, EventArgs e)
-        {
-        }
     }
-
-    public class IP
+    public class IPinfo
     {
         public static string getConnectionStatus()
 

@@ -1,14 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Behave_Tool
+namespace Behave_Tool.Tools.Network
 {
-    public partial class LocalHostScanner : Form
+    public partial class LocalHostScanner : ToolDefaultForm
     {
         private static CountdownEvent countdown;
         private static int upCount = 0;
@@ -36,7 +43,7 @@ namespace Behave_Tool
             Stopwatch sw = new Stopwatch();
             sw.Start();
             string ipBase = string.Empty;
-            string gate = IP.getGateway();
+            string gate = IPinfo.getGateway();
 
             if (gate != "Failed")
             {
@@ -109,23 +116,14 @@ namespace Behave_Tool
             new Thread(program).Start();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ClearList_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
         }
 
         private void SaveToTxt_Click(object sender, EventArgs e)
         {
-            Tools.Misc.listBoxSaveTxt(listBox1);
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void Close_Click(object sender, EventArgs e)
-        {
-            Close();
+            Misc.listBoxSaveTxt(listBox1);
         }
     }
 }

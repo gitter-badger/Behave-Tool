@@ -1,45 +1,79 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Behave_Tool
+namespace Behave_Tool.Tools.Network
 {
-    public partial class Local_Port_Scanner : Form
+    public partial class LocalPortScanner : ToolDefaultForm
     {
         private bool _stopScan;
 
-        public Local_Port_Scanner()
+        public LocalPortScanner()
         {
             InitializeComponent();
-            TopMost = true;
-            CheckForIllegalCrossThreadCalls = false;
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg != 132)
-                return;
-            m.Result = (IntPtr)2;
-        }
-
-        private void ClearList_Click(object sender, System.EventArgs e)
+        private void ClearList_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
         }
 
-        private void ScanRange_Click(object sender, System.EventArgs e)
+        private void ScanRange_Click(object sender, EventArgs e)
         {
             new Thread(new ThreadStart(AllOpenPorts)).Start();
         }
+        public void SinglePort()
+        {
+            string ipBase;
+            string gate = IPinfo.getGateway();
 
+            if (gate != "Failed")
+            {
+                ipBase = gate.Substring(0, gate.Length - 1);
+            }
+
+            using (TcpClient tcpClient = new TcpClient())
+            {
+                int port = 0;
+
+                try
+                {
+                    port = Convert.ToInt32(SinglePortBox.Text);
+                }
+                catch (Exception)
+                {
+                }
+                ScanStatus.Text = "Scanning Port " + port;
+                try
+                {
+                    tcpClient.Connect(gate, port);
+                    listBox1.Items.Add(port);
+                    Console.WriteLine("Port {0} is Open", port);
+                }
+                catch (Exception)
+                {
+                    //listBox1.Items.Add(port);
+                    ScanStatus.Text = "Port " + port + " Is Closed";
+                    Console.WriteLine("Port {0} is closed", port);
+                    Thread.Sleep(1000);
+                }
+            }
+
+            ScanStatus.Text = "Idle";
+        }
         public void AllOpenPorts()
         {
             _stopScan = false;
             ScanStatus.Text = "Scanning";
             string ipBase = string.Empty;
-            string gate = IP.getGateway();
+            string gate = IPinfo.getGateway();
 
             if (gate != "Failed")
             {
@@ -90,42 +124,7 @@ namespace Behave_Tool
 
         private void ScanSingle_Click(object sender, EventArgs e)
         {
-            string ipBase = string.Empty;
-            string gate = IP.getGateway();
-
-            if (gate != "Failed")
-            {
-                ipBase = gate.Substring(0, gate.Length - 1);
-            }
-
-            using (TcpClient tcpClient = new TcpClient())
-            {
-                int port = 0;
-
-                try
-                {
-                    port = Convert.ToInt32(SinglePort.Text);
-                }
-                catch (Exception)
-                {
-                }
-                ScanStatus.Text = "Scanning Port " + port;
-                try
-                {
-                    tcpClient.Connect(gate, port);
-                    listBox1.Items.Add(port);
-                    Console.WriteLine("Port {0} is Open", port);
-                }
-                catch (Exception)
-                {
-                    //listBox1.Items.Add(port);
-                    ScanStatus.Text = "Port " + port + " Is Closed";
-                    Console.WriteLine("Port {0} is closed", port);
-                    Thread.Sleep(1000);
-                }
-            }
-
-            ScanStatus.Text = "Idle";
+            new Thread(new ThreadStart(SinglePort)).Start();
         }
 
         private void OnKeyDown(object sender, KeyEventArgs e)
@@ -143,12 +142,7 @@ namespace Behave_Tool
 
         private void SaveToTxt_Click(object sender, EventArgs e)
         {
-            Tools.Misc.listBoxSaveTxt(listBox1);
-        }
-
-        private void Close_Click(object sender, EventArgs e)
-        {
-            Close();
+            Misc.listBoxSaveTxt(listBox1);
         }
     }
 }

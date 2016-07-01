@@ -10,12 +10,6 @@ namespace Behave_Tool
         public ShowHide()
         {
             InitializeComponent();
-            startPosition();
-            originalWidth = Width;
-            widthToggle();
-
-            AutoSize = true;
-
 
         }
         private void startPosition()
@@ -37,14 +31,6 @@ namespace Behave_Tool
         {
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg != 132)
-                return;
-            m.Result = (IntPtr)2;
-        }
-
         private void panel1_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -56,33 +42,15 @@ namespace Behave_Tool
 
         private void ShowHideToggle_CheckStateChanged(object sender, EventArgs e)
         {
-
-
+            ShowHideToggle.Visible = false;
             t.Start();
-            //if (ShowHideToggle.Checked) //checked = expand form
-            //{
-            //    ShowHideToggle.Text = "<";
-            //    while (Width < originalWidth)
-            //    {
-            //        Width++;
-            //        Application.DoEvents();// stops form freezing
-            //    }
-            //}
-            //else
-            //{
-            //    ShowHideToggle.Text = ">";
-            //    while (Width > 24)
-            //    {
-            //        Width--;
-            //        Application.DoEvents();// stops form freezing
-            //    }
-            //}
+            
         }
         Timer t = new Timer();
         private void widthToggle()
         {
 
-            t.Interval = 15;
+            t.Interval = 14;
 
             t.Tick += delegate
             {
@@ -90,10 +58,11 @@ namespace Behave_Tool
                 {
                     if (Width > 24) // Set Form.MinimumSize to this otherwise the Timer will keep going, so it will permanently try to decrease the size.
                     {
-                        Width -= 10;
+                        Width -= 15;
                     }
                     else
                     {
+                        ShowHideToggle.Visible = true;
                         ShowHideToggle.Text = ">";
                         t.Stop();
                     }
@@ -102,10 +71,11 @@ namespace Behave_Tool
                 {
                     if (Width < originalWidth)
                     {
-                        Width += 10;
+                        Width += 15;
                     }
                     else
                     {
+                        ShowHideToggle.Visible = true;
                         ShowHideToggle.Text = "<";
                         t.Stop();
                     }
@@ -122,6 +92,14 @@ namespace Behave_Tool
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void ShowHide_Load(object sender, EventArgs e)
+        {
+            startPosition();
+            originalWidth = Width;
+            widthToggle();
+            AutoSize = true;
         }
     }
 }

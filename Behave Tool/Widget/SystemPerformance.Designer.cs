@@ -1,6 +1,6 @@
-﻿namespace Behave_Tool
+﻿namespace Behave_Tool.Widget
 {
-    partial class inf
+    partial class SystemPerformance
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.cpuRam1 = new Behave_Tool.CpuRam();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // inf
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cpuRam1);
+            // 
+            // cpuRam1
+            // 
+            this.cpuRam1.BackColor = System.Drawing.Color.Transparent;
+            this.cpuRam1.Location = new System.Drawing.Point(7, 12);
+            this.cpuRam1.Name = "cpuRam1";
+            this.cpuRam1.Size = new System.Drawing.Size(215, 65);
+            this.cpuRam1.TabIndex = 0;
+            // 
+            // SystemPerformance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "inf";
+            this.ClientSize = new System.Drawing.Size(245, 138);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "SystemPerformance";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private CpuRam cpuRam1;
     }
 }

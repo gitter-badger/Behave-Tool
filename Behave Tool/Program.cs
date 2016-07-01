@@ -43,6 +43,7 @@ namespace Behave_Tool
                     {
                         try
                         {
+
                             Application.Run(new Behave());
                         }
                         catch (Exception ex)

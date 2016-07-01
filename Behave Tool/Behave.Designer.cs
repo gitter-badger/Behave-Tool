@@ -63,7 +63,6 @@
             this.Minimize = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Settings = new System.Windows.Forms.ToolStripButton();
-            this.SearchBar = new System.Windows.Forms.ToolStripComboBox();
             this.IPrefresh = new System.Windows.Forms.ToolStripButton();
             this.SessionTimer = new System.Windows.Forms.Label();
             this.TotalSessionTime = new System.Windows.Forms.Label();
@@ -108,15 +107,15 @@
             this.Minimize,
             this.toolStripSeparator2,
             this.Settings,
-            this.SearchBar,
             this.IPrefresh});
             this.ToolBar.Location = new System.Drawing.Point(0, 0);
             this.ToolBar.Name = "ToolBar";
             this.ToolBar.Padding = new System.Windows.Forms.Padding(1);
             this.ToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.ToolBar.Size = new System.Drawing.Size(1003, 36);
+            this.ToolBar.Size = new System.Drawing.Size(680, 36);
             this.ToolBar.TabIndex = 0;
             this.ToolBar.Text = "toolStrip1";
+            this.ToolBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolBar_MouseDown);
             // 
             // Menu
             // 
@@ -456,7 +455,7 @@
             this.Close.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Close.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.Close.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.Close.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Close.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Close.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -486,7 +485,7 @@
             this.Minimize.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.Minimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Minimize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.Minimize.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.Minimize.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Minimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Minimize.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Minimize.Name = "Minimize";
@@ -511,17 +510,6 @@
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             this.Settings.MouseLeave += new System.EventHandler(this.Settings_MouseLeave);
             this.Settings.MouseHover += new System.EventHandler(this.Settings_MouseHover);
-            // 
-            // SearchBar
-            // 
-            this.SearchBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.SearchBar.BackColor = System.Drawing.Color.Black;
-            this.SearchBar.Enabled = false;
-            this.SearchBar.ForeColor = System.Drawing.Color.White;
-            this.SearchBar.Name = "SearchBar";
-            this.SearchBar.Size = new System.Drawing.Size(160, 34);
-            this.SearchBar.Text = "Quick Search";
-            this.SearchBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchBar_KeyUp);
             // 
             // IPrefresh
             // 
@@ -572,7 +560,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.TotalSessionTime, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.SessionTimer, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(856, 37);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(527, 41);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -797,7 +785,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(640, 209);
+            this.button1.Location = new System.Drawing.Point(605, 184);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
@@ -813,7 +801,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::Behave_Tool.Properties.Resources.Background_OrangeCore1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1003, 345);
+            this.ClientSize = new System.Drawing.Size(680, 203);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -822,8 +810,13 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(680, 203);
             this.Name = "Behave";
+            this.Opacity = 0D;
+            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "Behave";
+            this.Load += new System.EventHandler(this.Behave_Load);
             this.ToolBar.ResumeLayout(false);
             this.ToolBar.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -883,7 +876,6 @@
         private System.Windows.Forms.ToolStripMenuItem preset1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localHostScannerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tCPConnectionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox SearchBar;
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soundcloudDownloaderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem externalNetworkToolStripMenuItem;

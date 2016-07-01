@@ -1,4 +1,7 @@
-﻿using Behave_Tool.Tools;
+﻿using Behave_Tool;
+using Behave_Tool.Tools;
+using Behave_Tool.Tools.Network;
+using Behave_Tool.Widget;
 //using Behave_Tool.Widget;
 using System;
 using System.Collections.Generic;
@@ -7,6 +10,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -15,33 +19,42 @@ namespace Behave_Tool
     
     public partial class Behave : Form
     {
-        //private const int HT_CLIENT = 1;
-        //private const int HT_CAPTION = 2;
-        public static bool loadComplete = false;
-
-        // private string[] _tools = new string[] { "Local Host Scanner" };    // Search Bar Items
-        private const int WM_NCHITTEST = 132;
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
 
         private static bool networkTrafficMonitoring = true;
         private static bool systemUsageOn = true;
         private bool stopflicker = false;
 
-
         public Behave()
         {
             InitializeComponent();
-
-            this.Opacity = 0;
-            //ControlBox = false;
-            //Text = "";
-            //new Loading().Show();
-
-            Load_Settings();
-            startupProceedure();
-            loadComplete = true;
-            MessageBox.Show("Double Click Storage to disable the disgusting flickery. Will improve in the future.");
+            
         }
+        private void Behave_Load(object sender, EventArgs e)
+        {
+            startupProceedure();
+            Hide();
+            bool done = false;
+            ThreadPool.QueueUserWorkItem((x) =>
+            {
+                using (var splashForm = new Splash())
+                {
+                    splashForm.Show();
+                    while (!done)
+                        Application.DoEvents();
+                    splashForm.Close();
+                }
+            });
 
+            Thread.Sleep(3000); // Emulate hardwork
+            done = true;
+            Show();
+        }
         private void AvailableDrives()
         {
             int defaultHeight = tableLayoutPanel1.Height;
@@ -127,7 +140,7 @@ namespace Behave_Tool
             IPrefresh.Image = Properties.Resources.Loading_Gif;
 
             IPdisplay.Text = "Checking IP...";
-            IPdisplay.Text = "Public IP: " + IP.getPublicIP();
+            IPdisplay.Text = "Public IP: " + IPinfo.getPublicIP();
             IPrefresh.Image = Properties.Resources.Behave;
             Console.WriteLine("=Done= UpdatePublicIP");
         }
@@ -155,12 +168,6 @@ namespace Behave_Tool
                 return;
             m.Result = (IntPtr)2;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-
 
         private void Close_Click(object sender, EventArgs e)
         {
@@ -210,12 +217,12 @@ namespace Behave_Tool
 
         private void htmlDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Html_Downloader().Show();
+            new HtmlDownloader().Show();
         }
 
         private void htmlHeaderScraperToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Html_Header_Scraper().Show();
+            new HtmlHeaderScraper().Show();
         }
 
         private void IPdisplay_ButtonClick(object sender, EventArgs e)
@@ -321,7 +328,7 @@ namespace Behave_Tool
 
         private void openPortScannerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Local_Port_Scanner().Show();
+            new LocalPortScanner().Show();
         }
 
         private void preset1ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -331,7 +338,7 @@ namespace Behave_Tool
                 if (preset1ToolStripMenuItem.Checked == false)
                 {
                     preset1ToolStripMenuItem.Checked = true;
-                    //new SystemPerformance().Show();
+                    new SystemPerformance().Show();
                 }
                 else
                 {
@@ -370,18 +377,6 @@ namespace Behave_Tool
             }.Start();
         }
 
-        private void SearchBar_KeyUp(object sender, KeyEventArgs e)
-        {
-            //foreach (string t in _tools)
-            //{
-            //    string value1 = Array.Find(_tools, element => element.StartsWith(Text, StringComparison.Ordinal));
-            //    if (value1.Contains(Text))
-            //    {
-            //        SearchBar.Items.Clear();
-            //        SearchBar.Items.Add(value1);
-            //    }
-            //}
-        }
 
         private void sessionTimer()
         {
@@ -432,7 +427,10 @@ namespace Behave_Tool
         private void startupProceedure()
         {
             Console.WriteLine(NetworkInterface.GetIsNetworkAvailable());
-
+            new Thread(new ThreadStart(Load_Settings))
+            {
+                IsBackground = true
+            }.Start();
             new Thread(new ThreadStart(UpdatePublicIP))
             {
                 IsBackground = true
@@ -454,16 +452,17 @@ namespace Behave_Tool
             {
                 IsBackground = true
             }.Start();
+            
         }
 
         private void tCPConnectionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ActiveTcpConnections().Show();
+            new TcpConnections().Show();
         }
 
         private void urlToIPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new URLtoIP().Show();
+            new UrlToIP().Show();
         }
 
         private class MySR : ToolStripSystemRenderer
@@ -549,6 +548,15 @@ namespace Behave_Tool
         private void storageDrives1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ToolBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }

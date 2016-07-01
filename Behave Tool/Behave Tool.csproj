@@ -113,17 +113,72 @@
     <Compile Include="CustomControls\CustomProgressBar.Designer.cs">
       <DependentUpon>CustomProgressBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="inf.cs">
+    <Compile Include="CustomControls\CustomRenderers.cs" />
+    <Compile Include="Default Properties\ToolDefaultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inf.Designer.cs">
-      <DependentUpon>inf.cs</DependentUpon>
+    <Compile Include="Default Properties\ToolDefaultForm.Designer.cs">
+      <DependentUpon>ToolDefaultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\HtmlDownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\HtmlDownloader.Designer.cs">
+      <DependentUpon>HtmlDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\HtmlHeaderScraper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\HtmlHeaderScraper.Designer.cs">
+      <DependentUpon>HtmlHeaderScraper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\LocalHostScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\LocalHostScanner.Designer.cs">
+      <DependentUpon>LocalHostScanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widget\SystemPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Widget\SystemPerformance.Designer.cs">
+      <DependentUpon>SystemPerformance.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\StorageDrives.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomControls\StorageDrives.Designer.cs">
       <DependentUpon>StorageDrives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\LocalPortScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\LocalPortScanner.Designer.cs">
+      <DependentUpon>LocalPortScanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\Network.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\Network.Designer.cs">
+      <DependentUpon>Network.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\TcpConnections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\TcpConnections.Designer.cs">
+      <DependentUpon>TcpConnections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Network\UrlToIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Network\UrlToIP.Designer.cs">
+      <DependentUpon>UrlToIP.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\System\BetterTaskManager.cs">
       <SubType>Form</SubType>
@@ -173,25 +228,7 @@
     <Compile Include="Tools\SpotifyController.Designer.cs">
       <DependentUpon>SpotifyController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Network\Html_Header_Scraper.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\Network\Html_Header_Scraper.Designer.cs">
-      <DependentUpon>Html_Header_Scraper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tools\Network\Html_Downloader.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\Network\Html_Downloader.Designer.cs">
-      <DependentUpon>Html_Downloader.cs</DependentUpon>
-    </Compile>
     <Compile Include="Misc.cs" />
-    <Compile Include="Tools\Network\TcpConnections.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\Network\TcpConnections.Designer.cs">
-      <DependentUpon>TcpConnections.cs</DependentUpon>
-    </Compile>
     <Compile Include="Behave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,30 +246,6 @@
     </Compile>
     <Compile Include="Tools\Special\BruteForce.Designer.cs">
       <DependentUpon>BruteForce.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tools\Network\Network.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\Network\Network.Designer.cs">
-      <DependentUpon>Network.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Loading.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Loading.Designer.cs">
-      <DependentUpon>Loading.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tools\Network\LocalPortScanner.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\Network\LocalPortScanner.Designer.cs">
-      <DependentUpon>LocalPortScanner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tools\Network\LocalHostScanner.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\Network\LocalHostScanner.Designer.cs">
-      <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
@@ -255,19 +268,13 @@
       <DependentUpon>Restarting.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="ShowHide.cs">
+    <Compile Include="Default Properties\ShowHide.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowHide.Designer.cs">
+    <Compile Include="Default Properties\ShowHide.Designer.cs">
       <DependentUpon>ShowHide.cs</DependentUpon>
     </Compile>
     <Compile Include="System Info.cs" />
-    <Compile Include="Tools\Network\URLtoIP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\Network\URLtoIP.Designer.cs">
-      <DependentUpon>URLtoIP.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\Usage_Agreement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,14 +284,41 @@
     <EmbeddedResource Include="CustomControls\CpuRam.resx">
       <DependentUpon>CpuRam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inf.resx">
-      <DependentUpon>inf.cs</DependentUpon>
+    <EmbeddedResource Include="Default Properties\ToolDefaultForm.resx">
+      <DependentUpon>ToolDefaultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\HtmlDownloader.resx">
+      <DependentUpon>HtmlDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\HtmlHeaderScraper.resx">
+      <DependentUpon>HtmlHeaderScraper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\LocalHostScanner.resx">
+      <DependentUpon>LocalHostScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widget\SystemPerformance.resx">
+      <DependentUpon>SystemPerformance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CheckedListBox_With_Image.resx">
       <DependentUpon>CheckedListBox_With_Image.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\StorageDrives.resx">
       <DependentUpon>StorageDrives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\LocalPortScanner.resx">
+      <DependentUpon>LocalPortScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\Network.resx">
+      <DependentUpon>Network.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\TcpConnections.resx">
+      <DependentUpon>TcpConnections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Network\UrlToIP.resx">
+      <DependentUpon>UrlToIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\System\BetterTaskManager.resx">
       <DependentUpon>BetterTaskManager.cs</DependentUpon>
@@ -301,17 +335,8 @@
     <EmbeddedResource Include="Tools\System\SystemHardware.resx">
       <DependentUpon>SystemHardware.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Network\Html_Header_Scraper.resx">
-      <DependentUpon>Html_Header_Scraper.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Tools\SpotifyController.resx">
       <DependentUpon>SpotifyController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Network\Html_Downloader.resx">
-      <DependentUpon>Html_Downloader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Network\TcpConnections.resx">
-      <DependentUpon>TcpConnections.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Behave.resx">
       <DependentUpon>Behave.cs</DependentUpon>
@@ -321,18 +346,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Special\BruteForce.resx">
       <DependentUpon>BruteForce.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Network\Network.resx">
-      <DependentUpon>Network.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Loading.resx">
-      <DependentUpon>Loading.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Network\LocalPortScanner.resx">
-      <DependentUpon>LocalPortScanner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Network\LocalHostScanner.resx">
-      <DependentUpon>LocalHostScanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -353,11 +366,8 @@
     <EmbeddedResource Include="Restarting.resx">
       <DependentUpon>Restarting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShowHide.resx">
+    <EmbeddedResource Include="Default Properties\ShowHide.resx">
       <DependentUpon>ShowHide.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Network\URLtoIP.resx">
-      <DependentUpon>URLtoIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Usage_Agreement.resx">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
@@ -453,7 +463,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
-    <Folder Include="Widget\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

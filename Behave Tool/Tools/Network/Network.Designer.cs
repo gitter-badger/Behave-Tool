@@ -1,4 +1,4 @@
-﻿namespace Behave_Tool
+﻿namespace Behave_Tool.Tools.Network
 {
     partial class Network
     {
@@ -29,8 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Network));
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.MAC = new System.Windows.Forms.TextBox();
+            this.IPv6 = new System.Windows.Forms.TextBox();
+            this.IPv4 = new System.Windows.Forms.TextBox();
+            this.gateway = new System.Windows.Forms.TextBox();
+            this.IP = new System.Windows.Forms.TextBox();
+            this.web_Refresh = new System.Windows.Forms.Button();
+            this.gateway_Refresh = new System.Windows.Forms.Button();
+            this.gateLabel = new System.Windows.Forms.Label();
             this.MAC_Refresh = new System.Windows.Forms.Button();
             this.MAC_Label = new System.Windows.Forms.Label();
             this.IPv6_Refresh = new System.Windows.Forms.Button();
@@ -38,41 +45,19 @@
             this.IP_Refresh = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.Ipv4Label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.WebLabel = new System.Windows.Forms.Label();
             this.WebConnection = new System.Windows.Forms.Label();
             this.All_Refresh = new System.Windows.Forms.Button();
-            this.Close = new System.Windows.Forms.Button();
-            this.gateLabel = new System.Windows.Forms.Label();
-            this.gateway_Refresh = new System.Windows.Forms.Button();
-            this.web_Refresh = new System.Windows.Forms.Button();
-            this.IP = new System.Windows.Forms.TextBox();
-            this.gateway = new System.Windows.Forms.TextBox();
-            this.IPv4 = new System.Windows.Forms.TextBox();
-            this.IPv6 = new System.Windows.Forms.TextBox();
-            this.MAC = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(24, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "IP";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.28572F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.71428F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.Controls.Add(this.MAC, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.IPv6, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.IPv4, 1, 3);
@@ -91,7 +76,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.WebLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.WebConnection, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 30);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 38);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -102,8 +87,123 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(229, 127);
-            this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // MAC
+            // 
+            this.MAC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MAC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.MAC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MAC.ForeColor = System.Drawing.Color.Orange;
+            this.MAC.Location = new System.Drawing.Point(47, 109);
+            this.MAC.Name = "MAC";
+            this.MAC.ReadOnly = true;
+            this.MAC.Size = new System.Drawing.Size(144, 13);
+            this.MAC.TabIndex = 13;
+            this.MAC.Text = "0.0.0.0";
+            // 
+            // IPv6
+            // 
+            this.IPv6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IPv6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.IPv6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.IPv6.ForeColor = System.Drawing.Color.Orange;
+            this.IPv6.Location = new System.Drawing.Point(47, 87);
+            this.IPv6.Name = "IPv6";
+            this.IPv6.ReadOnly = true;
+            this.IPv6.Size = new System.Drawing.Size(144, 13);
+            this.IPv6.TabIndex = 12;
+            this.IPv6.Text = "0.0.0.0";
+            // 
+            // IPv4
+            // 
+            this.IPv4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IPv4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.IPv4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.IPv4.ForeColor = System.Drawing.Color.Orange;
+            this.IPv4.Location = new System.Drawing.Point(47, 66);
+            this.IPv4.Name = "IPv4";
+            this.IPv4.ReadOnly = true;
+            this.IPv4.Size = new System.Drawing.Size(144, 13);
+            this.IPv4.TabIndex = 11;
+            this.IPv4.Text = "0.0.0.0";
+            // 
+            // gateway
+            // 
+            this.gateway.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gateway.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.gateway.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gateway.ForeColor = System.Drawing.Color.Orange;
+            this.gateway.Location = new System.Drawing.Point(47, 45);
+            this.gateway.Name = "gateway";
+            this.gateway.ReadOnly = true;
+            this.gateway.Size = new System.Drawing.Size(144, 13);
+            this.gateway.TabIndex = 10;
+            this.gateway.Text = "0.0.0.0";
+            // 
+            // IP
+            // 
+            this.IP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.IP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.IP.ForeColor = System.Drawing.Color.Orange;
+            this.IP.Location = new System.Drawing.Point(47, 25);
+            this.IP.Name = "IP";
+            this.IP.ReadOnly = true;
+            this.IP.Size = new System.Drawing.Size(144, 13);
+            this.IP.TabIndex = 9;
+            this.IP.Text = "0.0.0.0";
+            // 
+            // web_Refresh
+            // 
+            this.web_Refresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.web_Refresh.AutoSize = true;
+            this.web_Refresh.BackColor = System.Drawing.Color.Black;
+            this.web_Refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("web_Refresh.BackgroundImage")));
+            this.web_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.web_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.web_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.web_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.web_Refresh.Location = new System.Drawing.Point(202, 0);
+            this.web_Refresh.Margin = new System.Windows.Forms.Padding(0);
+            this.web_Refresh.Name = "web_Refresh";
+            this.web_Refresh.Size = new System.Drawing.Size(27, 21);
+            this.web_Refresh.TabIndex = 10;
+            this.web_Refresh.Text = "R";
+            this.web_Refresh.UseVisualStyleBackColor = false;
+            this.web_Refresh.Click += new System.EventHandler(this.WebConnection_TextChanged);
+            // 
+            // gateway_Refresh
+            // 
+            this.gateway_Refresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gateway_Refresh.AutoSize = true;
+            this.gateway_Refresh.BackColor = System.Drawing.Color.Black;
+            this.gateway_Refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gateway_Refresh.BackgroundImage")));
+            this.gateway_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gateway_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.gateway_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gateway_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.gateway_Refresh.Location = new System.Drawing.Point(202, 42);
+            this.gateway_Refresh.Margin = new System.Windows.Forms.Padding(0);
+            this.gateway_Refresh.Name = "gateway_Refresh";
+            this.gateway_Refresh.Size = new System.Drawing.Size(27, 20);
+            this.gateway_Refresh.TabIndex = 14;
+            this.gateway_Refresh.Text = "R";
+            this.gateway_Refresh.UseVisualStyleBackColor = false;
+            this.gateway_Refresh.Click += new System.EventHandler(this.gateway_Refresh_Click);
+            // 
+            // gateLabel
+            // 
+            this.gateLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gateLabel.AutoSize = true;
+            this.gateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.gateLabel.ForeColor = System.Drawing.Color.Orange;
+            this.gateLabel.Location = new System.Drawing.Point(10, 45);
+            this.gateLabel.Name = "gateLabel";
+            this.gateLabel.Size = new System.Drawing.Size(30, 13);
+            this.gateLabel.TabIndex = 9;
+            this.gateLabel.Text = "Gate";
+            this.gateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MAC_Refresh
             // 
@@ -115,6 +215,7 @@
             this.MAC_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.MAC_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MAC_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAC_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.MAC_Refresh.Location = new System.Drawing.Point(202, 104);
             this.MAC_Refresh.Margin = new System.Windows.Forms.Padding(0);
             this.MAC_Refresh.Name = "MAC_Refresh";
@@ -130,13 +231,12 @@
             this.MAC_Label.AutoSize = true;
             this.MAC_Label.BackColor = System.Drawing.Color.Transparent;
             this.MAC_Label.ForeColor = System.Drawing.Color.Orange;
-            this.MAC_Label.Location = new System.Drawing.Point(11, 109);
+            this.MAC_Label.Location = new System.Drawing.Point(10, 109);
             this.MAC_Label.Name = "MAC_Label";
             this.MAC_Label.Size = new System.Drawing.Size(30, 13);
             this.MAC_Label.TabIndex = 12;
             this.MAC_Label.Text = "MAC";
             this.MAC_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.MAC_Label.Click += new System.EventHandler(this.MAC_Label_Click);
             // 
             // IPv6_Refresh
             // 
@@ -147,6 +247,7 @@
             this.IPv6_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.IPv6_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.IPv6_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IPv6_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.IPv6_Refresh.Location = new System.Drawing.Point(202, 83);
             this.IPv6_Refresh.Margin = new System.Windows.Forms.Padding(0);
             this.IPv6_Refresh.Name = "IPv6_Refresh";
@@ -165,6 +266,7 @@
             this.IPv4_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.IPv4_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.IPv4_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IPv4_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.IPv4_Refresh.Location = new System.Drawing.Point(202, 62);
             this.IPv4_Refresh.Margin = new System.Windows.Forms.Padding(0);
             this.IPv4_Refresh.Name = "IPv4_Refresh";
@@ -183,6 +285,7 @@
             this.IP_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.IP_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.IP_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IP_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.IP_Refresh.Location = new System.Drawing.Point(202, 21);
             this.IP_Refresh.Margin = new System.Windows.Forms.Padding(0);
             this.IP_Refresh.Name = "IP_Refresh";
@@ -198,13 +301,12 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(12, 87);
+            this.label3.Location = new System.Drawing.Point(11, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "IPv6";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Ipv4Label
             // 
@@ -212,13 +314,25 @@
             this.Ipv4Label.AutoSize = true;
             this.Ipv4Label.BackColor = System.Drawing.Color.Transparent;
             this.Ipv4Label.ForeColor = System.Drawing.Color.Orange;
-            this.Ipv4Label.Location = new System.Drawing.Point(12, 66);
+            this.Ipv4Label.Location = new System.Drawing.Point(11, 66);
             this.Ipv4Label.Name = "Ipv4Label";
             this.Ipv4Label.Size = new System.Drawing.Size(29, 13);
             this.Ipv4Label.TabIndex = 1;
             this.Ipv4Label.Text = "IPv4";
             this.Ipv4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Ipv4Label.Click += new System.EventHandler(this.Ipv4Label_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.Location = new System.Drawing.Point(23, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "IP";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WebLabel
             // 
@@ -226,13 +340,12 @@
             this.WebLabel.AutoSize = true;
             this.WebLabel.BackColor = System.Drawing.Color.Transparent;
             this.WebLabel.ForeColor = System.Drawing.Color.Orange;
-            this.WebLabel.Location = new System.Drawing.Point(11, 4);
+            this.WebLabel.Location = new System.Drawing.Point(10, 4);
             this.WebLabel.Name = "WebLabel";
             this.WebLabel.Size = new System.Drawing.Size(30, 13);
             this.WebLabel.TabIndex = 6;
             this.WebLabel.Text = "Web";
             this.WebLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.WebLabel.Click += new System.EventHandler(this.WebLabel_Click);
             // 
             // WebConnection
             // 
@@ -240,14 +353,12 @@
             this.WebConnection.AutoSize = true;
             this.WebConnection.BackColor = System.Drawing.Color.Transparent;
             this.WebConnection.ForeColor = System.Drawing.Color.Orange;
-            this.WebConnection.Location = new System.Drawing.Point(47, 4);
+            this.WebConnection.Location = new System.Drawing.Point(46, 4);
             this.WebConnection.Name = "WebConnection";
             this.WebConnection.Size = new System.Drawing.Size(65, 13);
             this.WebConnection.TabIndex = 7;
             this.WebConnection.Text = "Connected?";
             this.WebConnection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.WebConnection.TextChanged += new System.EventHandler(this.WebConnection_TextChanged);
-            this.WebConnection.Click += new System.EventHandler(this.WebConnection_Click);
             // 
             // All_Refresh
             // 
@@ -257,190 +368,57 @@
             this.All_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.All_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.All_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.All_Refresh.Location = new System.Drawing.Point(207, 160);
+            this.All_Refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.All_Refresh.Location = new System.Drawing.Point(204, 168);
             this.All_Refresh.Margin = new System.Windows.Forms.Padding(0);
             this.All_Refresh.Name = "All_Refresh";
             this.All_Refresh.Size = new System.Drawing.Size(37, 26);
-            this.All_Refresh.TabIndex = 8;
+            this.All_Refresh.TabIndex = 10;
             this.All_Refresh.Text = "ALL";
             this.All_Refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.All_Refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.All_Refresh.UseVisualStyleBackColor = false;
             this.All_Refresh.Click += new System.EventHandler(this.ALL_Refresh_Click);
             // 
-            // Close
-            // 
-            this.Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Close.BackColor = System.Drawing.Color.Transparent;
-            this.Close.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
-            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Close.Location = new System.Drawing.Point(235, 0);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(24, 24);
-            this.Close.TabIndex = 6;
-            this.Close.Text = "X";
-            this.Close.UseVisualStyleBackColor = false;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
-            // 
-            // gateLabel
-            // 
-            this.gateLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gateLabel.AutoSize = true;
-            this.gateLabel.BackColor = System.Drawing.Color.Transparent;
-            this.gateLabel.ForeColor = System.Drawing.Color.Orange;
-            this.gateLabel.Location = new System.Drawing.Point(11, 45);
-            this.gateLabel.Name = "gateLabel";
-            this.gateLabel.Size = new System.Drawing.Size(30, 13);
-            this.gateLabel.TabIndex = 9;
-            this.gateLabel.Text = "Gate";
-            this.gateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.gateLabel.Click += new System.EventHandler(this.gateLabel_Click);
-            // 
-            // gateway_Refresh
-            // 
-            this.gateway_Refresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gateway_Refresh.AutoSize = true;
-            this.gateway_Refresh.BackColor = System.Drawing.Color.Black;
-            this.gateway_Refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gateway_Refresh.BackgroundImage")));
-            this.gateway_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gateway_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.gateway_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gateway_Refresh.Location = new System.Drawing.Point(202, 42);
-            this.gateway_Refresh.Margin = new System.Windows.Forms.Padding(0);
-            this.gateway_Refresh.Name = "gateway_Refresh";
-            this.gateway_Refresh.Size = new System.Drawing.Size(27, 20);
-            this.gateway_Refresh.TabIndex = 14;
-            this.gateway_Refresh.Text = "R";
-            this.gateway_Refresh.UseVisualStyleBackColor = false;
-            this.gateway_Refresh.Click += new System.EventHandler(this.gateway_Refresh_Click);
-            // 
-            // web_Refresh
-            // 
-            this.web_Refresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.web_Refresh.AutoSize = true;
-            this.web_Refresh.BackColor = System.Drawing.Color.Black;
-            this.web_Refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("web_Refresh.BackgroundImage")));
-            this.web_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.web_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.web_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.web_Refresh.Location = new System.Drawing.Point(202, 0);
-            this.web_Refresh.Margin = new System.Windows.Forms.Padding(0);
-            this.web_Refresh.Name = "web_Refresh";
-            this.web_Refresh.Size = new System.Drawing.Size(27, 21);
-            this.web_Refresh.TabIndex = 10;
-            this.web_Refresh.Text = "R";
-            this.web_Refresh.UseVisualStyleBackColor = false;
-            this.web_Refresh.Click += new System.EventHandler(this.Web_Refresh_Click);
-            // 
-            // IP
-            // 
-            this.IP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.IP.BackColor = System.Drawing.Color.Black;
-            this.IP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.IP.ForeColor = System.Drawing.Color.Orange;
-            this.IP.Location = new System.Drawing.Point(50, 25);
-            this.IP.Name = "IP";
-            this.IP.ReadOnly = true;
-            this.IP.Size = new System.Drawing.Size(144, 13);
-            this.IP.TabIndex = 9;
-            this.IP.Text = "0.0.0.0";
-            this.IP.TextChanged += new System.EventHandler(this.IP_TextChanged);
-            // 
-            // gateway
-            // 
-            this.gateway.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gateway.BackColor = System.Drawing.Color.Black;
-            this.gateway.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gateway.ForeColor = System.Drawing.Color.Orange;
-            this.gateway.Location = new System.Drawing.Point(50, 45);
-            this.gateway.Name = "gateway";
-            this.gateway.ReadOnly = true;
-            this.gateway.Size = new System.Drawing.Size(144, 13);
-            this.gateway.TabIndex = 10;
-            this.gateway.Text = "0.0.0.0";
-            // 
-            // IPv4
-            // 
-            this.IPv4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.IPv4.BackColor = System.Drawing.Color.Black;
-            this.IPv4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.IPv4.ForeColor = System.Drawing.Color.Orange;
-            this.IPv4.Location = new System.Drawing.Point(50, 66);
-            this.IPv4.Name = "IPv4";
-            this.IPv4.ReadOnly = true;
-            this.IPv4.Size = new System.Drawing.Size(144, 13);
-            this.IPv4.TabIndex = 11;
-            this.IPv4.Text = "0.0.0.0";
-            // 
-            // IPv6
-            // 
-            this.IPv6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.IPv6.BackColor = System.Drawing.Color.Black;
-            this.IPv6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.IPv6.ForeColor = System.Drawing.Color.Orange;
-            this.IPv6.Location = new System.Drawing.Point(50, 87);
-            this.IPv6.Name = "IPv6";
-            this.IPv6.ReadOnly = true;
-            this.IPv6.Size = new System.Drawing.Size(144, 13);
-            this.IPv6.TabIndex = 12;
-            this.IPv6.Text = "0.0.0.0";
-            // 
-            // MAC
-            // 
-            this.MAC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MAC.BackColor = System.Drawing.Color.Black;
-            this.MAC.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MAC.ForeColor = System.Drawing.Color.Orange;
-            this.MAC.Location = new System.Drawing.Point(50, 109);
-            this.MAC.Name = "MAC";
-            this.MAC.ReadOnly = true;
-            this.MAC.Size = new System.Drawing.Size(144, 13);
-            this.MAC.TabIndex = 13;
-            this.MAC.Text = "0.0.0.0";
-            // 
             // Network
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(259, 186);
-            this.Controls.Add(this.Close);
+            this.ClientSize = new System.Drawing.Size(251, 202);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.All_Refresh);
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Network";
-            this.Load += new System.EventHandler(this.IndepthIPinfo_Load);
+            this.Text = "clone";
+            this.Controls.SetChildIndex(this.All_Refresh, 0);
+            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label Ipv4Label;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label WebLabel;
-        private System.Windows.Forms.Label WebConnection;
-        private new System.Windows.Forms.Button Close;
-        private System.Windows.Forms.Button All_Refresh;
-        private System.Windows.Forms.Button IPv6_Refresh;
-        private System.Windows.Forms.Button IPv4_Refresh;
-        private System.Windows.Forms.Button IP_Refresh;
-        private System.Windows.Forms.Button MAC_Refresh;
-        private System.Windows.Forms.Label MAC_Label;
-        private System.Windows.Forms.Button gateway_Refresh;
-        private System.Windows.Forms.Label gateLabel;
-        private System.Windows.Forms.Button web_Refresh;
-        private System.Windows.Forms.TextBox IP;
         private System.Windows.Forms.TextBox MAC;
         private System.Windows.Forms.TextBox IPv6;
         private System.Windows.Forms.TextBox IPv4;
         private System.Windows.Forms.TextBox gateway;
+        private System.Windows.Forms.TextBox IP;
+        private System.Windows.Forms.Button web_Refresh;
+        private System.Windows.Forms.Button gateway_Refresh;
+        private System.Windows.Forms.Label gateLabel;
+        private System.Windows.Forms.Button MAC_Refresh;
+        private System.Windows.Forms.Label MAC_Label;
+        private System.Windows.Forms.Button IPv6_Refresh;
+        private System.Windows.Forms.Button IPv4_Refresh;
+        private System.Windows.Forms.Button IP_Refresh;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Ipv4Label;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label WebLabel;
+        private System.Windows.Forms.Label WebConnection;
+        private System.Windows.Forms.Button All_Refresh;
     }
 }

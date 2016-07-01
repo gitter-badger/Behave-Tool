@@ -15,21 +15,9 @@ namespace Behave_Tool
     {
         public CpuRam()
         {
-            if (IsDesignMode())
-            {         
-            }
-            else{
-            InitializeComponent();         
-            systemUsage();
-            }
+            InitializeComponent();
+        }
 
-        }
-        public IsDesignMode()
-        {
-            if (System.Diagnostics.Process.GetCurrentProcess().ProcessName == "devenv"){
-            return true;
-            }else {return false;}
-        }
 
         private void systemUsage()
         {
@@ -81,6 +69,11 @@ namespace Behave_Tool
                 RAMbar.Value = percentage;
                 Thread.Sleep(4000);
             }
+        }
+
+        private void CpuRam_Load(object sender, EventArgs e)
+        {
+            systemUsage();
         }
     }
 }

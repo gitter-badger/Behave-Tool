@@ -1,26 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Net.NetworkInformation;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Behave_Tool
+namespace Behave_Tool.Tools.Network
 {
-    public partial class ActiveTcpConnections : Form
+    public partial class TcpConnections : ToolDefaultForm
     {
-        public ActiveTcpConnections()
+        public TcpConnections()
         {
             InitializeComponent();
-            TopMost = true;
         }
-
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg != 132)
-                return;
-            m.Result = (IntPtr)2;
-        }
-
         public void ShowActiveTcpConnections()
         {
             Console.WriteLine("Active TCP Connections");
@@ -40,7 +36,7 @@ namespace Behave_Tool
 
         private void SaveToTxt_Click(object sender, EventArgs e)
         {
-            Tools.Misc.listBoxSaveTxt(listBox1);
+            Misc.listBoxSaveTxt(listBox1);
         }
 
         private void Scan_Click(object sender, EventArgs e)
@@ -48,9 +44,5 @@ namespace Behave_Tool
             new Thread(ShowActiveTcpConnections).Start();
         }
 
-        private void Close_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }
