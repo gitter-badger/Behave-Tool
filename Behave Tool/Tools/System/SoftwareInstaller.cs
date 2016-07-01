@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using System.Reflection;
-using System.IO;
 
-namespace Behave_Tool
+namespace Behave_Tool.Tools
 {
-    public partial class SoftwareDownload : Form
+    public partial class SoftwareInstaller : ToolDefaultForm 
     {
-        public SoftwareDownload()
+        public SoftwareInstaller()
         {
             InitializeComponent();
         }
@@ -273,7 +278,7 @@ namespace Behave_Tool
         private void getLinks()
         {
             Assembly a = Assembly.GetExecutingAssembly();
-         
+
 
             List<string> links = new List<string>();
 
@@ -292,12 +297,12 @@ namespace Behave_Tool
                 }
                 string link = string.Join(",", links.ToArray());
                 MessageBox.Show(link);
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-                    
+
         }
     }
 }
-

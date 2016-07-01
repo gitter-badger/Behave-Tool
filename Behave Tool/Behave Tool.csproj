@@ -101,6 +101,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behave_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Behave_Settings.Designer.cs">
+      <DependentUpon>Behave_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\System\SoftwareInstaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\System\SoftwareInstaller.Designer.cs">
+      <DependentUpon>SoftwareInstaller.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CpuRam.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,16 +126,16 @@
       <DependentUpon>CustomProgressBar.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\CustomRenderers.cs" />
-    <Compile Include="Default Properties\ToolDefaultForm.cs">
+    <Compile Include="DefaultProperties\ToolDefaultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Default Properties\ToolDefaultForm.Designer.cs">
+    <Compile Include="DefaultProperties\ToolDefaultForm.Designer.cs">
       <DependentUpon>ToolDefaultForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Splash.cs">
+    <Compile Include="Login\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Splash.Designer.cs">
+    <Compile Include="Login\Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\Network\HtmlDownloader.cs">
@@ -186,18 +198,6 @@
     <Compile Include="Tools\System\BetterTaskManager.Designer.cs">
       <DependentUpon>BetterTaskManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\CheckedListBox_With_Image.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\CheckedListBox_With_Image.Designer.cs">
-      <DependentUpon>CheckedListBox_With_Image.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tools\System\SoftwareDownload.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\System\SoftwareDownload.Designer.cs">
-      <DependentUpon>SoftwareDownload.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tools\Special\Sandbox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,30 +216,24 @@
     <Compile Include="Tools\System\SystemHardware.Designer.cs">
       <DependentUpon>SystemHardware.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\SoundcloudDownloader.cs">
+    <Compile Include="Tools\Special\SoundcloudDownloader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\SoundcloudDownloader.Designer.cs">
+    <Compile Include="Tools\Special\SoundcloudDownloader.Designer.cs">
       <DependentUpon>SoundcloudDownloader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\SpotifyController.cs">
+    <Compile Include="Tools\Special\SpotifyController.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\SpotifyController.Designer.cs">
+    <Compile Include="Tools\Special\SpotifyController.Designer.cs">
       <DependentUpon>SpotifyController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Misc.cs" />
+    <Compile Include="Tools\Misc.cs" />
     <Compile Include="Behave.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Behave.Designer.cs">
       <DependentUpon>Behave.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Behave_Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Behave_Settings.Designer.cs">
-      <DependentUpon>Behave_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\Special\BruteForce.cs">
       <SubType>Form</SubType>
@@ -253,10 +247,10 @@
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="PanelOptions.cs">
+    <Compile Include="CustomControls\PanelOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PanelOptions.Designer.cs">
+    <Compile Include="CustomControls\PanelOptions.Designer.cs">
       <DependentUpon>PanelOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -268,10 +262,10 @@
       <DependentUpon>Restarting.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Default Properties\ShowHide.cs">
+    <Compile Include="DefaultProperties\ShowHide.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Default Properties\ShowHide.Designer.cs">
+    <Compile Include="DefaultProperties\ShowHide.Designer.cs">
       <DependentUpon>ShowHide.cs</DependentUpon>
     </Compile>
     <Compile Include="System Info.cs" />
@@ -281,13 +275,19 @@
     <Compile Include="Login\Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Behave_Settings.resx">
+      <DependentUpon>Behave_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\System\SoftwareInstaller.resx">
+      <DependentUpon>SoftwareInstaller.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CpuRam.resx">
       <DependentUpon>CpuRam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default Properties\ToolDefaultForm.resx">
+    <EmbeddedResource Include="DefaultProperties\ToolDefaultForm.resx">
       <DependentUpon>ToolDefaultForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Splash.resx">
+    <EmbeddedResource Include="Login\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Network\HtmlDownloader.resx">
@@ -301,9 +301,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Widget\SystemPerformance.resx">
       <DependentUpon>SystemPerformance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\CheckedListBox_With_Image.resx">
-      <DependentUpon>CheckedListBox_With_Image.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\StorageDrives.resx">
       <DependentUpon>StorageDrives.cs</DependentUpon>
@@ -323,9 +320,6 @@
     <EmbeddedResource Include="Tools\System\BetterTaskManager.resx">
       <DependentUpon>BetterTaskManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\System\SoftwareDownload.resx">
-      <DependentUpon>SoftwareDownload.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Tools\Special\Sandbox.resx">
       <DependentUpon>Sandbox.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,14 +329,11 @@
     <EmbeddedResource Include="Tools\System\SystemHardware.resx">
       <DependentUpon>SystemHardware.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\SpotifyController.resx">
+    <EmbeddedResource Include="Tools\Special\SpotifyController.resx">
       <DependentUpon>SpotifyController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Behave.resx">
       <DependentUpon>Behave.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Behave_Settings.resx">
-      <DependentUpon>Behave_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Special\BruteForce.resx">
       <DependentUpon>BruteForce.cs</DependentUpon>
@@ -350,7 +341,7 @@
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PanelOptions.resx">
+    <EmbeddedResource Include="CustomControls\PanelOptions.resx">
       <DependentUpon>PanelOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -366,7 +357,7 @@
     <EmbeddedResource Include="Restarting.resx">
       <DependentUpon>Restarting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default Properties\ShowHide.resx">
+    <EmbeddedResource Include="DefaultProperties\ShowHide.resx">
       <DependentUpon>ShowHide.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Usage_Agreement.resx">

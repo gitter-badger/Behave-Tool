@@ -1,6 +1,6 @@
-﻿namespace Behave_Tool
+﻿namespace Behave_Tool.Tools
 {
-    partial class SoftwareDownload
+    partial class SoftwareInstaller
     {
         /// <summary>
         /// Required designer variable.
@@ -130,16 +130,11 @@
             "μTorrent",
             "http://download.ap.bittorrent.com/track/stable/endpoint/utorrent/os/windows"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
             System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Chrome",
-            "https://www.google.com/chrome/browser/thankyou.html?platform=win64&installdataind" +
-                "ex=defaultbrowser"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            "Chrome"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
             System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Firefox",
-            "https://download.mozilla.org/?product=firefox-stub&os=win&lang=en-US"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
+            "Firefox"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
             System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Vivaldi",
-            "https://downloads.vivaldi.com/stable/Vivaldi.1.2.490.43.exe"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
-            this.panel1 = new System.Windows.Forms.Panel();
+            "Vivaldi"}, -1, System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0))))), System.Drawing.Color.Empty, null);
             this.Benchmark = new System.Windows.Forms.ListView();
             this.label10 = new System.Windows.Forms.Label();
             this.DevTools = new System.Windows.Forms.ListView();
@@ -162,38 +157,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.Benchmark);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.DevTools);
-            this.panel1.Controls.Add(this.Clear);
-            this.panel1.Controls.Add(this.DownloadList);
-            this.panel1.Controls.Add(this.Server);
-            this.panel1.Controls.Add(this.Other);
-            this.panel1.Controls.Add(this.Media);
-            this.panel1.Controls.Add(this.AntiVirus);
-            this.panel1.Controls.Add(this.Runtimes);
-            this.panel1.Controls.Add(this.Utilities);
-            this.panel1.Controls.Add(this.Browsers);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.StartButton);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1002, 489);
-            this.panel1.TabIndex = 0;
             // 
             // Benchmark
             // 
@@ -212,11 +176,11 @@
             listViewItem3,
             listViewItem4,
             listViewItem5});
-            this.Benchmark.Location = new System.Drawing.Point(282, 205);
+            this.Benchmark.Location = new System.Drawing.Point(277, 231);
             this.Benchmark.Name = "Benchmark";
             this.Benchmark.Size = new System.Drawing.Size(127, 112);
             this.Benchmark.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Benchmark.TabIndex = 30;
+            this.Benchmark.TabIndex = 52;
             this.Benchmark.UseCompatibleStateImageBehavior = false;
             this.Benchmark.View = System.Windows.Forms.View.List;
             this.Benchmark.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Benchmark_ItemChecked);
@@ -226,10 +190,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(278, 182);
+            this.label10.Location = new System.Drawing.Point(273, 208);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 20);
-            this.label10.TabIndex = 29;
+            this.label10.TabIndex = 51;
             this.label10.Text = "Benchmark";
             // 
             // DevTools
@@ -253,11 +217,11 @@
             listViewItem10,
             listViewItem11,
             listViewItem12});
-            this.DevTools.Location = new System.Drawing.Point(17, 343);
+            this.DevTools.Location = new System.Drawing.Point(12, 369);
             this.DevTools.Name = "DevTools";
             this.DevTools.Size = new System.Drawing.Size(726, 110);
             this.DevTools.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.DevTools.TabIndex = 28;
+            this.DevTools.TabIndex = 50;
             this.DevTools.UseCompatibleStateImageBehavior = false;
             this.DevTools.View = System.Windows.Forms.View.List;
             this.DevTools.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.DevTools_ItemChecked);
@@ -270,10 +234,10 @@
             this.Clear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Clear.ForeColor = System.Drawing.Color.White;
-            this.Clear.Location = new System.Drawing.Point(828, 392);
+            this.Clear.Location = new System.Drawing.Point(823, 418);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(75, 23);
-            this.Clear.TabIndex = 27;
+            this.Clear.TabIndex = 49;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -283,11 +247,11 @@
             this.DownloadList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.DownloadList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DownloadList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.DownloadList.Location = new System.Drawing.Point(828, 55);
+            this.DownloadList.Location = new System.Drawing.Point(823, 81);
             this.DownloadList.Name = "DownloadList";
             this.DownloadList.Size = new System.Drawing.Size(156, 319);
             this.DownloadList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.DownloadList.TabIndex = 26;
+            this.DownloadList.TabIndex = 48;
             this.DownloadList.UseCompatibleStateImageBehavior = false;
             this.DownloadList.View = System.Windows.Forms.View.List;
             // 
@@ -308,11 +272,11 @@
             listViewItem15,
             listViewItem16,
             listViewItem17});
-            this.Server.Location = new System.Drawing.Point(17, 205);
+            this.Server.Location = new System.Drawing.Point(12, 231);
             this.Server.Name = "Server";
             this.Server.Size = new System.Drawing.Size(120, 112);
             this.Server.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Server.TabIndex = 25;
+            this.Server.TabIndex = 47;
             this.Server.UseCompatibleStateImageBehavior = false;
             this.Server.View = System.Windows.Forms.View.List;
             this.Server.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Server_ItemChecked);
@@ -338,11 +302,11 @@
             listViewItem22,
             listViewItem23,
             listViewItem24});
-            this.Other.Location = new System.Drawing.Point(647, 78);
+            this.Other.Location = new System.Drawing.Point(642, 104);
             this.Other.Name = "Other";
             this.Other.Size = new System.Drawing.Size(124, 124);
             this.Other.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Other.TabIndex = 24;
+            this.Other.TabIndex = 46;
             this.Other.UseCompatibleStateImageBehavior = false;
             this.Other.View = System.Windows.Forms.View.List;
             this.Other.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Other_ItemChecked);
@@ -368,11 +332,11 @@
             listViewItem29,
             listViewItem30,
             listViewItem31});
-            this.Media.Location = new System.Drawing.Point(538, 78);
+            this.Media.Location = new System.Drawing.Point(533, 104);
             this.Media.Name = "Media";
             this.Media.Size = new System.Drawing.Size(103, 129);
             this.Media.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Media.TabIndex = 23;
+            this.Media.TabIndex = 45;
             this.Media.UseCompatibleStateImageBehavior = false;
             this.Media.View = System.Windows.Forms.View.List;
             this.Media.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Media_ItemChecked);
@@ -390,11 +354,11 @@
             listViewItem32,
             listViewItem33,
             listViewItem34});
-            this.AntiVirus.Location = new System.Drawing.Point(408, 78);
+            this.AntiVirus.Location = new System.Drawing.Point(403, 104);
             this.AntiVirus.Name = "AntiVirus";
             this.AntiVirus.Size = new System.Drawing.Size(124, 109);
             this.AntiVirus.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.AntiVirus.TabIndex = 22;
+            this.AntiVirus.TabIndex = 44;
             this.AntiVirus.UseCompatibleStateImageBehavior = false;
             this.AntiVirus.View = System.Windows.Forms.View.List;
             this.AntiVirus.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.AntiVirus_ItemChecked);
@@ -418,11 +382,11 @@
             listViewItem38,
             listViewItem39,
             listViewItem40});
-            this.Runtimes.Location = new System.Drawing.Point(282, 78);
+            this.Runtimes.Location = new System.Drawing.Point(277, 104);
             this.Runtimes.Name = "Runtimes";
             this.Runtimes.Size = new System.Drawing.Size(120, 109);
             this.Runtimes.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Runtimes.TabIndex = 21;
+            this.Runtimes.TabIndex = 43;
             this.Runtimes.UseCompatibleStateImageBehavior = false;
             this.Runtimes.View = System.Windows.Forms.View.List;
             this.Runtimes.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Runtimes_ItemChecked);
@@ -450,11 +414,11 @@
             listViewItem46,
             listViewItem47,
             listViewItem48});
-            this.Utilities.Location = new System.Drawing.Point(144, 205);
+            this.Utilities.Location = new System.Drawing.Point(139, 231);
             this.Utilities.Name = "Utilities";
             this.Utilities.Size = new System.Drawing.Size(127, 137);
             this.Utilities.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Utilities.TabIndex = 20;
+            this.Utilities.TabIndex = 42;
             this.Utilities.UseCompatibleStateImageBehavior = false;
             this.Utilities.View = System.Windows.Forms.View.List;
             this.Utilities.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Utilities_ItemChecked);
@@ -472,11 +436,11 @@
             listViewItem49,
             listViewItem50,
             listViewItem51});
-            this.Browsers.Location = new System.Drawing.Point(17, 78);
+            this.Browsers.Location = new System.Drawing.Point(12, 104);
             this.Browsers.Name = "Browsers";
             this.Browsers.Size = new System.Drawing.Size(91, 97);
             this.Browsers.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.Browsers.TabIndex = 20;
+            this.Browsers.TabIndex = 41;
             this.Browsers.UseCompatibleStateImageBehavior = false;
             this.Browsers.View = System.Windows.Forms.View.List;
             this.Browsers.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Browsers_ItemChecked);
@@ -486,10 +450,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(13, 182);
+            this.label9.Location = new System.Drawing.Point(8, 208);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 20);
-            this.label9.TabIndex = 18;
+            this.label9.TabIndex = 40;
             this.label9.Text = "Server";
             // 
             // label8
@@ -498,10 +462,10 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(12, 9);
+            this.label8.Location = new System.Drawing.Point(7, 35);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(454, 25);
-            this.label8.TabIndex = 16;
+            this.label8.TabIndex = 39;
             this.label8.Text = "Behave\'s Trusted Softwares For Fresh OS";
             // 
             // StartButton
@@ -512,10 +476,10 @@
             this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.ForeColor = System.Drawing.Color.White;
-            this.StartButton.Location = new System.Drawing.Point(909, 392);
+            this.StartButton.Location = new System.Drawing.Point(904, 418);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(75, 23);
-            this.StartButton.TabIndex = 15;
+            this.StartButton.TabIndex = 38;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = false;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
@@ -525,10 +489,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(643, 55);
+            this.label7.Location = new System.Drawing.Point(638, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 20);
-            this.label7.TabIndex = 13;
+            this.label7.TabIndex = 37;
             this.label7.Text = "Other";
             // 
             // label6
@@ -536,10 +500,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(13, 320);
+            this.label6.Location = new System.Drawing.Point(8, 346);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 20);
-            this.label6.TabIndex = 11;
+            this.label6.TabIndex = 36;
             this.label6.Text = "Dev Tools";
             // 
             // label5
@@ -547,10 +511,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(278, 55);
+            this.label5.Location = new System.Drawing.Point(273, 81);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 20);
-            this.label5.TabIndex = 9;
+            this.label5.TabIndex = 35;
             this.label5.Text = "Runtimes";
             // 
             // label4
@@ -558,10 +522,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(140, 182);
+            this.label4.Location = new System.Drawing.Point(135, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
-            this.label4.TabIndex = 7;
+            this.label4.TabIndex = 34;
             this.label4.Text = "Utilities";
             // 
             // label3
@@ -569,10 +533,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(534, 55);
+            this.label3.Location = new System.Drawing.Point(529, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 33;
             this.label3.Text = "Media";
             // 
             // label2
@@ -580,10 +544,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(404, 55);
+            this.label2.Location = new System.Drawing.Point(399, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 20);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 32;
             this.label2.Text = "Anti-Virus";
             // 
             // label1
@@ -591,51 +555,91 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 55);
+            this.label1.Location = new System.Drawing.Point(8, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 31;
             this.label1.Text = "Browsers";
             // 
-            // SoftwareDownload
+            // SoftwareInstaller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1002, 489);
-            this.Controls.Add(this.panel1);
-            this.Name = "SoftwareDownload";
-            this.Text = "FreshSystemStarter";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(997, 489);
+            this.Controls.Add(this.Benchmark);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.DevTools);
+            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.DownloadList);
+            this.Controls.Add(this.Server);
+            this.Controls.Add(this.Other);
+            this.Controls.Add(this.Media);
+            this.Controls.Add(this.AntiVirus);
+            this.Controls.Add(this.Runtimes);
+            this.Controls.Add(this.Utilities);
+            this.Controls.Add(this.Browsers);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.StartButton);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "SoftwareInstaller";
+            this.Text = "clone";
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.StartButton, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.label9, 0);
+            this.Controls.SetChildIndex(this.Browsers, 0);
+            this.Controls.SetChildIndex(this.Utilities, 0);
+            this.Controls.SetChildIndex(this.Runtimes, 0);
+            this.Controls.SetChildIndex(this.AntiVirus, 0);
+            this.Controls.SetChildIndex(this.Media, 0);
+            this.Controls.SetChildIndex(this.Other, 0);
+            this.Controls.SetChildIndex(this.Server, 0);
+            this.Controls.SetChildIndex(this.DownloadList, 0);
+            this.Controls.SetChildIndex(this.Clear, 0);
+            this.Controls.SetChildIndex(this.DevTools, 0);
+            this.Controls.SetChildIndex(this.label10, 0);
+            this.Controls.SetChildIndex(this.Benchmark, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView Benchmark;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListView DevTools;
+        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.ListView DownloadList;
+        private System.Windows.Forms.ListView Server;
+        private System.Windows.Forms.ListView Other;
+        private System.Windows.Forms.ListView Media;
+        private System.Windows.Forms.ListView AntiVirus;
+        private System.Windows.Forms.ListView Runtimes;
+        private System.Windows.Forms.ListView Utilities;
+        private System.Windows.Forms.ListView Browsers;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button StartButton;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListView Browsers;
-        private System.Windows.Forms.ListView Utilities;
-        private System.Windows.Forms.ListView AntiVirus;
-        private System.Windows.Forms.ListView Runtimes;
-        private System.Windows.Forms.ListView Other;
-        private System.Windows.Forms.ListView Media;
-        private System.Windows.Forms.ListView Server;
-        private System.Windows.Forms.ListView DownloadList;
-        private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.ListView DevTools;
-        private System.Windows.Forms.ListView Benchmark;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

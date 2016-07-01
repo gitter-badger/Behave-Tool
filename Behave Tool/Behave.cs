@@ -532,7 +532,7 @@ namespace Behave_Tool
 
         private void softwareInstallerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SoftwareDownload().Show();
+            new SoftwareInstaller().Show();
         }
 
         private void betterTaskManagerToolStripMenuItem_Click(object sender, EventArgs e)

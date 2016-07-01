@@ -59,7 +59,6 @@
             this.releaseIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renewIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Close = new System.Windows.Forms.ToolStripButton();
-            this.MaximizeNormalize = new System.Windows.Forms.ToolStripButton();
             this.Minimize = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Settings = new System.Windows.Forms.ToolStripButton();
@@ -103,7 +102,6 @@
             this.toolStripSeparator1,
             this.IPdisplay,
             this.Close,
-            this.MaximizeNormalize,
             this.Minimize,
             this.toolStripSeparator2,
             this.Settings,
@@ -112,7 +110,7 @@
             this.ToolBar.Name = "ToolBar";
             this.ToolBar.Padding = new System.Windows.Forms.Padding(1);
             this.ToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.ToolBar.Size = new System.Drawing.Size(680, 36);
+            this.ToolBar.Size = new System.Drawing.Size(680, 35);
             this.ToolBar.TabIndex = 0;
             this.ToolBar.Text = "toolStrip1";
             this.ToolBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolBar_MouseDown);
@@ -133,6 +131,7 @@
             this.Menu.Image = ((System.Drawing.Image)(resources.GetObject("Menu.Image")));
             this.Menu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Menu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Menu.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(62, 31);
             this.Menu.Text = "Menu";
@@ -149,7 +148,7 @@
             this.stuffToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
             this.stuffToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
             this.stuffToolStripMenuItem.Text = "Network";
             // 
             // LocalNetworkToolStripMenuItem
@@ -205,6 +204,11 @@
             // 
             // socketListenerToolStripMenuItem
             // 
+            this.socketListenerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.socketListenerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.socketListenerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.socketListenerToolStripMenuItem.Enabled = false;
+            this.socketListenerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.socketListenerToolStripMenuItem.Name = "socketListenerToolStripMenuItem";
             this.socketListenerToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.socketListenerToolStripMenuItem.Text = "Socket Listener";
@@ -251,6 +255,7 @@
             this.htmlDownloaderToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.htmlDownloaderToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.htmlDownloaderToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.htmlDownloaderToolStripMenuItem.Enabled = false;
             this.htmlDownloaderToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.htmlDownloaderToolStripMenuItem.Name = "htmlDownloaderToolStripMenuItem";
             this.htmlDownloaderToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
@@ -264,18 +269,18 @@
             this.toysToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toysToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.entertainMeToolStripMenuItem});
+            this.toysToolStripMenuItem.Enabled = false;
             this.toysToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toysToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.toysToolStripMenuItem.Name = "toysToolStripMenuItem";
             this.toysToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.toysToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.toysToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
             this.toysToolStripMenuItem.Text = "Toys";
             // 
             // entertainMeToolStripMenuItem
             // 
             this.entertainMeToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.entertainMeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.entertainMeToolStripMenuItem.Enabled = false;
             this.entertainMeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.entertainMeToolStripMenuItem.Name = "entertainMeToolStripMenuItem";
             this.entertainMeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
@@ -294,7 +299,7 @@
             this.systemToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             this.systemToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
             this.systemToolStripMenuItem.Text = "System";
             // 
             // performanceMonitorToolStripMenuItem
@@ -326,6 +331,7 @@
             this.softwareInstallerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.softwareInstallerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.softwareInstallerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.softwareInstallerToolStripMenuItem.Enabled = false;
             this.softwareInstallerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.softwareInstallerToolStripMenuItem.Name = "softwareInstallerToolStripMenuItem";
             this.softwareInstallerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
@@ -337,6 +343,7 @@
             this.betterTaskManagerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.betterTaskManagerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.betterTaskManagerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.betterTaskManagerToolStripMenuItem.Enabled = false;
             this.betterTaskManagerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.betterTaskManagerToolStripMenuItem.Name = "betterTaskManagerToolStripMenuItem";
             this.betterTaskManagerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
@@ -351,10 +358,11 @@
             this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.soundcloudDownloaderToolStripMenuItem,
             this.spotifyControllerToolStripMenuItem});
+            this.otherToolStripMenuItem.Enabled = false;
             this.otherToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.otherToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.otherToolStripMenuItem.Text = "Other";
             // 
             // soundcloudDownloaderToolStripMenuItem
@@ -362,7 +370,6 @@
             this.soundcloudDownloaderToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.soundcloudDownloaderToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.soundcloudDownloaderToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.soundcloudDownloaderToolStripMenuItem.Enabled = false;
             this.soundcloudDownloaderToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.soundcloudDownloaderToolStripMenuItem.Name = "soundcloudDownloaderToolStripMenuItem";
             this.soundcloudDownloaderToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
@@ -387,10 +394,11 @@
             this.specialToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.specialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sandboxToolStripMenuItem});
+            this.specialToolStripMenuItem.Enabled = false;
             this.specialToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.specialToolStripMenuItem.ForeColor = System.Drawing.Color.Fuchsia;
             this.specialToolStripMenuItem.Name = "specialToolStripMenuItem";
-            this.specialToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.specialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.specialToolStripMenuItem.Text = "Special";
             // 
             // sandboxToolStripMenuItem
@@ -407,7 +415,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // IPdisplay
             // 
@@ -417,6 +425,7 @@
             this.renewIPToolStripMenuItem});
             this.IPdisplay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.IPdisplay.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.IPdisplay.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.IPdisplay.Name = "IPdisplay";
             this.IPdisplay.Size = new System.Drawing.Size(72, 31);
             this.IPdisplay.Text = "Public IP:";
@@ -431,7 +440,7 @@
             this.releaseIPToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.releaseIPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.releaseIPToolStripMenuItem.Name = "releaseIPToolStripMenuItem";
-            this.releaseIPToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.releaseIPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.releaseIPToolStripMenuItem.Text = "Release IP";
             this.releaseIPToolStripMenuItem.Click += new System.EventHandler(this.releaseIPToolStripMenuItem_Click);
             // 
@@ -444,7 +453,7 @@
             this.renewIPToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.renewIPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.renewIPToolStripMenuItem.Name = "renewIPToolStripMenuItem";
-            this.renewIPToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.renewIPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.renewIPToolStripMenuItem.Text = "Renew IP";
             this.renewIPToolStripMenuItem.Click += new System.EventHandler(this.renewIPToolStripMenuItem_Click);
             // 
@@ -459,24 +468,12 @@
             this.Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Close.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Close.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Close.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(23, 31);
+            this.Close.Size = new System.Drawing.Size(23, 32);
             this.Close.Text = "X";
             this.Close.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Close.Click += new System.EventHandler(this.Close_Click);
-            // 
-            // MaximizeNormalize
-            // 
-            this.MaximizeNormalize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.MaximizeNormalize.AutoToolTip = false;
-            this.MaximizeNormalize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MaximizeNormalize.Image = ((System.Drawing.Image)(resources.GetObject("MaximizeNormalize.Image")));
-            this.MaximizeNormalize.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MaximizeNormalize.Name = "MaximizeNormalize";
-            this.MaximizeNormalize.Size = new System.Drawing.Size(23, 31);
-            this.MaximizeNormalize.ToolTipText = " ";
-            this.MaximizeNormalize.Visible = false;
-            this.MaximizeNormalize.Click += new System.EventHandler(this.MaximizeNormalize_Click);
             // 
             // Minimize
             // 
@@ -488,8 +485,9 @@
             this.Minimize.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Minimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Minimize.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Minimize.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.Minimize.Name = "Minimize";
-            this.Minimize.Size = new System.Drawing.Size(23, 31);
+            this.Minimize.Size = new System.Drawing.Size(23, 32);
             this.Minimize.Text = "__";
             this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
             // 
@@ -497,7 +495,7 @@
             // 
             this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 34);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // Settings
             // 
@@ -505,6 +503,7 @@
             this.Settings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.Settings.Image = global::Behave_Tool.Properties.Resources.Gear_;
             this.Settings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Settings.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(23, 31);
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
@@ -518,6 +517,7 @@
             this.IPrefresh.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.IPrefresh.Image = global::Behave_Tool.Properties.Resources.Behave;
             this.IPrefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.IPrefresh.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.IPrefresh.Name = "IPrefresh";
             this.IPrefresh.Size = new System.Drawing.Size(26, 31);
             this.IPrefresh.Click += new System.EventHandler(this.IPrefresh_Click);
@@ -846,7 +846,6 @@
         private System.Windows.Forms.Label SessionTimer;
         private System.Windows.Forms.Label TotalSessionTime;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.ToolStripButton MaximizeNormalize;
         private System.Windows.Forms.ToolStripButton Settings;
         private System.Windows.Forms.ToolStripMenuItem LocalNetworkToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

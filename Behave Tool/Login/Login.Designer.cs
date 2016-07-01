@@ -43,6 +43,7 @@
             this.Close = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AutoLogin = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
@@ -56,7 +57,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
@@ -68,7 +69,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(4, 40);
+            this.label2.Location = new System.Drawing.Point(4, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
@@ -80,7 +81,7 @@
             this.UserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserName.ForeColor = System.Drawing.Color.White;
-            this.UserName.Location = new System.Drawing.Point(73, 9);
+            this.UserName.Location = new System.Drawing.Point(73, 5);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(94, 13);
             this.UserName.TabIndex = 2;
@@ -91,7 +92,7 @@
             this.PassWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PassWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PassWord.ForeColor = System.Drawing.Color.White;
-            this.PassWord.Location = new System.Drawing.Point(73, 40);
+            this.PassWord.Location = new System.Drawing.Point(73, 29);
             this.PassWord.Name = "PassWord";
             this.PassWord.Size = new System.Drawing.Size(94, 13);
             this.PassWord.TabIndex = 3;
@@ -100,7 +101,7 @@
             // Log_In
             // 
             this.Log_In.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Log_In.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Log_In.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Log_In.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Log_In.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Log_In.ForeColor = System.Drawing.Color.White;
@@ -131,7 +132,7 @@
             this.Error.AutoSize = true;
             this.Error.BackColor = System.Drawing.Color.Transparent;
             this.Error.ForeColor = System.Drawing.Color.Red;
-            this.Error.Location = new System.Drawing.Point(370, 9);
+            this.Error.Location = new System.Drawing.Point(371, 10);
             this.Error.Name = "Error";
             this.Error.Size = new System.Drawing.Size(64, 13);
             this.Error.TabIndex = 7;
@@ -163,23 +164,25 @@
             this.tableLayoutPanel1.Controls.Add(this.PassWord, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.saveLogIn, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.loading, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.AutoLogin, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(171, 8);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 85);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 95);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // saveLogIn
             // 
-            this.saveLogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.saveLogIn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.saveLogIn.AutoSize = true;
             this.saveLogIn.BackColor = System.Drawing.Color.Transparent;
             this.saveLogIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.saveLogIn.ForeColor = System.Drawing.Color.White;
-            this.saveLogIn.Location = new System.Drawing.Point(67, 65);
+            this.saveLogIn.Location = new System.Drawing.Point(64, 51);
             this.saveLogIn.Name = "saveLogIn";
             this.saveLogIn.Size = new System.Drawing.Size(106, 17);
             this.saveLogIn.TabIndex = 41;
@@ -192,7 +195,7 @@
             // 
             this.loading.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loading.Location = new System.Drawing.Point(15, 65);
+            this.loading.Location = new System.Drawing.Point(15, 51);
             this.loading.Name = "loading";
             this.loading.Size = new System.Drawing.Size(30, 17);
             this.loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -205,7 +208,7 @@
             this.serverStatus.AutoSize = true;
             this.serverStatus.BackColor = System.Drawing.Color.Transparent;
             this.serverStatus.ForeColor = System.Drawing.Color.White;
-            this.serverStatus.Location = new System.Drawing.Point(47, 77);
+            this.serverStatus.Location = new System.Drawing.Point(47, 90);
             this.serverStatus.Name = "serverStatus";
             this.serverStatus.Size = new System.Drawing.Size(68, 13);
             this.serverStatus.TabIndex = 10;
@@ -217,7 +220,8 @@
             // 
             this.Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Close.BackColor = System.Drawing.Color.Transparent;
-            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Close.Location = new System.Drawing.Point(430, 0);
@@ -251,8 +255,22 @@
             this.panel1.Controls.Add(this.serverStatus);
             this.panel1.Location = new System.Drawing.Point(-1, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 93);
+            this.panel1.Size = new System.Drawing.Size(453, 118);
             this.panel1.TabIndex = 42;
+            // 
+            // AutoLogin
+            // 
+            this.AutoLogin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.AutoLogin.AutoSize = true;
+            this.AutoLogin.BackColor = System.Drawing.Color.Transparent;
+            this.AutoLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.AutoLogin.ForeColor = System.Drawing.Color.White;
+            this.AutoLogin.Location = new System.Drawing.Point(64, 74);
+            this.AutoLogin.Name = "AutoLogin";
+            this.AutoLogin.Size = new System.Drawing.Size(77, 17);
+            this.AutoLogin.TabIndex = 42;
+            this.AutoLogin.Text = "Auto Login";
+            this.AutoLogin.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
@@ -260,7 +278,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(454, 147);
+            this.ClientSize = new System.Drawing.Size(454, 152);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -298,5 +316,6 @@
         private System.Windows.Forms.CheckBox saveLogIn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox AutoLogin;
     }
 }

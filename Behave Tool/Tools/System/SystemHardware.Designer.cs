@@ -1,4 +1,4 @@
-﻿namespace Behave_Tool
+﻿namespace Behave_Tool.Tools
 {
     partial class SystemHardware
     {

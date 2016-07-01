@@ -48,7 +48,7 @@ namespace Behave_Tool
             g.Dispose();
         }
 
-        public int Minimum
+        public new int Minimum
         {
             get
             {
@@ -81,7 +81,7 @@ namespace Behave_Tool
             }
         }
 
-        public int Maximum
+        public new int Maximum
         {
             get
             {
@@ -109,7 +109,7 @@ namespace Behave_Tool
             }
         }
 
-        public int Value
+        public new int Value
         {
             get
             {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Behave_Tool
+namespace Behave_Tool.Tools
 {
     public partial class SystemHardware : Form
     {

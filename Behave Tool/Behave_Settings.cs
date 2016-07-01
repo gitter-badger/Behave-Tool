@@ -1,14 +1,19 @@
 ﻿using Behave_Tool.Tools;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace Behave_Tool
 {
-    public partial class Behave_Settings : Form
+    public partial class Behave_Settings : ToolDefaultForm
     {
-
         private string[] colourList = { "Black", "White", "Red", "Green", "Lime",
             "Blue", "cyan", "Magenta", "Yellow", "Aqua", "Fuchsia", "Navy", "Teal",
             "Olive", "Maroon", "Gray", "Silver", "Purple", "Orange" };
@@ -111,11 +116,6 @@ namespace Behave_Tool
             {
                 Misc.SaveError(ex.ToString());
             }
-        }
-
-        private void Close_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void ColourDiag1_Click(object sender, EventArgs e)
