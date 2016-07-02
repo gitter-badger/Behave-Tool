@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace Behave_Tool
 {
-    
+
     public partial class Behave : Form
     {
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -33,12 +33,15 @@ namespace Behave_Tool
         public Behave()
         {
             InitializeComponent();
-            
+
         }
         private void Behave_Load(object sender, EventArgs e)
         {
-            startupProceedure();
+            //menuStrip1.Renderer = new ToolStripProfessionalRenderer(new TestColorTable());
             Hide();
+            Username.Text = "Hello " + Login.loggedInAss;
+            startupProceedure();
+
             bool done = false;
             ThreadPool.QueueUserWorkItem((x) =>
             {
@@ -46,8 +49,11 @@ namespace Behave_Tool
                 {
                     splashForm.Show();
                     while (!done)
+                    {
                         Application.DoEvents();
+                    }
                     splashForm.Close();
+                    splashForm.Dispose();
                 }
             });
 
@@ -176,7 +182,7 @@ namespace Behave_Tool
 
         private void getCPUusage()
         {
-            
+
             while (systemUsageOn)
             {
                 PerformanceCounter cpuCounter = new PerformanceCounter();
@@ -452,7 +458,7 @@ namespace Behave_Tool
             {
                 IsBackground = true
             }.Start();
-            
+
         }
 
         private void tCPConnectionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -473,7 +479,26 @@ namespace Behave_Tool
 
             protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
             {
-                base.OnRenderToolStripBorder(e);
+                //base.OnRenderToolStripBorder(e);
+                ToolStripDropDown dr = e.ToolStrip as ToolStripDropDown;
+
+                if (dr != null)
+                {
+                    //e.Graphics.FillRectangle(Brushes.black, e.AffectedBounds);
+                }
+
+            }
+
+            protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
+            {
+                ToolStripDropDown dr = e.ToolStrip as ToolStripDropDown;
+
+                if (dr != null)
+                {
+                    // e.ToolStrip.Visible = false;
+
+                    e.Graphics.FillRectangle(Brushes.Black, e.AffectedBounds);
+                }
             }
         }
 
@@ -537,7 +562,7 @@ namespace Behave_Tool
 
         private void betterTaskManagerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new BetterTaskManager().Show(); 
+            new BetterTaskManager().Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -558,5 +583,31 @@ namespace Behave_Tool
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void widgetMakerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new WidgetMaker().Show();
+        }
     }
+    public class MenuColorTable : ProfessionalColorTable
+    {
+        public MenuColorTable()
+        {
+            // see notes
+            base.UseSystemColors = false;
+        }
+        public override System.Drawing.Color MenuBorder
+        {
+            get { return Color.Fuchsia; }
+        }
+        public override System.Drawing.Color MenuItemBorder
+        {
+            get { return Color.DarkViolet; }
+        }
+        public override Color MenuItemSelected
+        {
+            get { return Color.Cornsilk; }
+        }
+    } 
+    
 }

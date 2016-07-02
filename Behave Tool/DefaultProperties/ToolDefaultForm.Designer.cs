@@ -160,7 +160,7 @@
             // 
             // ToolBar
             // 
-            this.ToolBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.ToolBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -227,7 +227,7 @@
             // 
             // ToolName
             // 
-            this.ToolName.BackColor = System.Drawing.Color.Black;
+            this.ToolName.BackColor = System.Drawing.Color.Transparent;
             this.ToolName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ToolName.ForeColor = System.Drawing.Color.White;
             this.ToolName.Image = global::Behave_Tool.Properties.Resources.Behave;

@@ -57,7 +57,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.28572F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.71428F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.Controls.Add(this.MAC, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.IPv6, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.IPv4, 1, 3);
@@ -389,6 +389,7 @@
             this.Controls.Add(this.All_Refresh);
             this.Name = "Network";
             this.Text = "clone";
+            this.Load += new System.EventHandler(this.IndepthIPinfo_Load);
             this.Controls.SetChildIndex(this.All_Refresh, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);

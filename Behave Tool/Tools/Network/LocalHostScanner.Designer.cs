@@ -106,6 +106,7 @@
             this.Scan.TabIndex = 43;
             this.Scan.Text = "Scan\r\n";
             this.Scan.UseVisualStyleBackColor = false;
+            this.Scan.Click += new System.EventHandler(this.Scan_Click);
             // 
             // listBox1
             // 
@@ -118,7 +119,7 @@
             this.listBox1.Size = new System.Drawing.Size(418, 223);
             this.listBox1.TabIndex = 42;
             // 
-            // cline
+            // LocalHostScanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +130,7 @@
             this.Controls.Add(this.ClearList);
             this.Controls.Add(this.Scan);
             this.Controls.Add(this.listBox1);
-            this.Name = "cline";
+            this.Name = "LocalHostScanner";
             this.Text = "cline";
             this.Controls.SetChildIndex(this.listBox1, 0);
             this.Controls.SetChildIndex(this.Scan, 0);

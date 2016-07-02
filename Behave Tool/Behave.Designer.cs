@@ -63,6 +63,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Settings = new System.Windows.Forms.ToolStripButton();
             this.IPrefresh = new System.Windows.Forms.ToolStripButton();
+            this.Username = new System.Windows.Forms.ToolStripButton();
             this.SessionTimer = new System.Windows.Forms.Label();
             this.TotalSessionTime = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -86,6 +87,7 @@
             this.Storage_Label = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.widgetMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -94,7 +96,7 @@
             // 
             // ToolBar
             // 
-            this.ToolBar.BackColor = System.Drawing.Color.Transparent;
+            this.ToolBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.ToolBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -105,7 +107,8 @@
             this.Minimize,
             this.toolStripSeparator2,
             this.Settings,
-            this.IPrefresh});
+            this.IPrefresh,
+            this.Username});
             this.ToolBar.Location = new System.Drawing.Point(0, 0);
             this.ToolBar.Name = "ToolBar";
             this.ToolBar.Padding = new System.Windows.Forms.Padding(1);
@@ -308,6 +311,7 @@
             this.performanceMonitorToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.performanceMonitorToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.performanceMonitorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.widgetMakerToolStripMenuItem,
             this.preset1ToolStripMenuItem});
             this.performanceMonitorToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.performanceMonitorToolStripMenuItem.ForeColor = System.Drawing.Color.White;
@@ -322,7 +326,7 @@
             this.preset1ToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.preset1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.preset1ToolStripMenuItem.Name = "preset1ToolStripMenuItem";
-            this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.preset1ToolStripMenuItem.Text = "Preset 1";
             this.preset1ToolStripMenuItem.Click += new System.EventHandler(this.preset1ToolStripMenuItem_Click);
             // 
@@ -331,7 +335,6 @@
             this.softwareInstallerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.softwareInstallerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.softwareInstallerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.softwareInstallerToolStripMenuItem.Enabled = false;
             this.softwareInstallerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.softwareInstallerToolStripMenuItem.Name = "softwareInstallerToolStripMenuItem";
             this.softwareInstallerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
@@ -440,7 +443,7 @@
             this.releaseIPToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.releaseIPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.releaseIPToolStripMenuItem.Name = "releaseIPToolStripMenuItem";
-            this.releaseIPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.releaseIPToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.releaseIPToolStripMenuItem.Text = "Release IP";
             this.releaseIPToolStripMenuItem.Click += new System.EventHandler(this.releaseIPToolStripMenuItem_Click);
             // 
@@ -453,7 +456,7 @@
             this.renewIPToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.renewIPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.renewIPToolStripMenuItem.Name = "renewIPToolStripMenuItem";
-            this.renewIPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.renewIPToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.renewIPToolStripMenuItem.Text = "Renew IP";
             this.renewIPToolStripMenuItem.Click += new System.EventHandler(this.renewIPToolStripMenuItem_Click);
             // 
@@ -521,6 +524,18 @@
             this.IPrefresh.Name = "IPrefresh";
             this.IPrefresh.Size = new System.Drawing.Size(26, 31);
             this.IPrefresh.Click += new System.EventHandler(this.IPrefresh_Click);
+            // 
+            // Username
+            // 
+            this.Username.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.Username.AutoToolTip = false;
+            this.Username.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Username.Image = ((System.Drawing.Image)(resources.GetObject("Username.Image")));
+            this.Username.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(64, 30);
+            this.Username.Text = "Username";
             // 
             // SessionTimer
             // 
@@ -793,6 +808,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // widgetMakerToolStripMenuItem
+            // 
+            this.widgetMakerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.widgetMakerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.widgetMakerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.widgetMakerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.widgetMakerToolStripMenuItem.Name = "widgetMakerToolStripMenuItem";
+            this.widgetMakerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.widgetMakerToolStripMenuItem.Text = "Widget Maker";
+            this.widgetMakerToolStripMenuItem.Click += new System.EventHandler(this.widgetMakerToolStripMenuItem_Click);
+            // 
             // Behave
             // 
             this.AccessibleName = "Main";
@@ -889,6 +915,8 @@
         private System.Windows.Forms.ToolStripMenuItem betterTaskManagerToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private StorageDrives storageDrives1;
+        private System.Windows.Forms.ToolStripButton Username;
+        private System.Windows.Forms.ToolStripMenuItem widgetMakerToolStripMenuItem;
     }
 }
 

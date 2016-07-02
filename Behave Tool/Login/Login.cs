@@ -13,21 +13,12 @@ namespace Behave_Tool
     {
         public bool success;
         private static int attempts = 0;
+        public static string loggedInAss;
 
-        //private string pass;
-        //private string user;
         public Login()
         {
             InitializeComponent();
 
-            this.PassWord.PasswordChar = this.randChar();
-            CheckForIllegalCrossThreadCalls = false;
-            StartPosition = FormStartPosition.Manual;
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
-
-            new Thread(new ThreadStart(setSave)) { IsBackground = true }.Start();
-            new Thread(new ThreadStart(this.getServerStatus)) { IsBackground = true }.Start();
         }
 
         protected override void WndProc(ref Message m)
@@ -62,7 +53,6 @@ namespace Behave_Tool
 
         private void err()
         {
-            Error.Visible = true;
             Thread.Sleep(3000);
             Error.Visible = false;
         }
@@ -88,11 +78,12 @@ namespace Behave_Tool
 
         private void login()
         {
+
             if (saveLogIn.Checked == true)
             {
                 Properties.Settings.Default["Sign_In"] = (UserName.Text + "," + PassWord.Text);
             }
-            new Thread(new ThreadStart(this.startLoading))
+            new Thread(new ThreadStart(startLoading))
             {
                 IsBackground = true
             }.Start();
@@ -100,13 +91,9 @@ namespace Behave_Tool
             attempts += 1;
             if (!this.loginSuccess())
             {
-                this.Error.Visible = true;
+                                
                 if (attempts <= 2)
                 {
-                    new Thread(new ThreadStart(this.err))
-                    {
-                        IsBackground = true
-                    }.Start();
                     this.AttemptCount.Text = "Attempts left: " + (3 - attempts);
                     this.loading.Visible = false;
                     new Thread(new ThreadStart(this.stopLoading))
@@ -124,12 +111,21 @@ namespace Behave_Tool
             else
             {
                 Program.failLogin = false;
+                loggedInAss = UserName.Text;
                 this.Close();
             }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
+            this.PassWord.PasswordChar = this.randChar();
+            CheckForIllegalCrossThreadCalls = false;
+            StartPosition = FormStartPosition.Manual;
+            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+
+            new Thread(new ThreadStart(setSave)) { IsBackground = true }.Start();
+            new Thread(new ThreadStart(this.getServerStatus)) { IsBackground = true }.Start();
         }
 
         private bool loginSuccess()
@@ -150,7 +146,7 @@ namespace Behave_Tool
         {
             if (e.KeyCode == Keys.Enter)
             {
-                this.login();
+                login();
             }
         }
 
@@ -226,7 +222,7 @@ namespace Behave_Tool
 
         private void startLoading()
         {
-            this.loading.BackgroundImage = Properties.Resources.Loading_Gif;
+            this.loading.Image = Properties.Resources.Loading_Gif;
         }
 
         private void stopLoading()

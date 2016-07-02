@@ -60,7 +60,20 @@ namespace Behave_Tool
 
         private void ToolDefaultForm_Load(object sender, EventArgs e)
         {
+            Username.Text = Login.loggedInAss;
             ToolName.Text = getFormName();
+            ToolBar.Renderer = new MySR();
+        }
+        public class MySR : ToolStripSystemRenderer
+        {
+            public MySR() { }
+
+            protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+            {
+                
+                //base.OnRenderToolStripBorder(e);
+            }
         }
     }
+
 }

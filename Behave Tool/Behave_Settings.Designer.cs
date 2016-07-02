@@ -60,6 +60,7 @@
             this.SaveSettings.Text = "Apply";
             this.SaveSettings.UseVisualStyleBackColor = true;
             this.SaveSettings.TextChanged += new System.EventHandler(this.SaveSettings_Click);
+            this.SaveSettings.Click += new System.EventHandler(this.SaveSettings_Click);
             // 
             // ColourDiag3
             // 
@@ -131,9 +132,9 @@
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(331, 72);
+            this.pictureBox1.Location = new System.Drawing.Point(308, 72);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 113);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
@@ -280,14 +281,14 @@
             this.tabControl1.Size = new System.Drawing.Size(522, 217);
             this.tabControl1.TabIndex = 3;
             // 
-            // clone
+            // Behave_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 295);
             this.Controls.Add(this.SaveSettings);
             this.Controls.Add(this.tabControl1);
-            this.Name = "clone";
+            this.Name = "Behave_Settings";
             this.Text = "clone";
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.SaveSettings, 0);
