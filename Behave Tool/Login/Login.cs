@@ -49,6 +49,7 @@ namespace Behave_Tool
         {
             Program.failLogin = true;
             Close();
+            Dispose();
         }
 
         private void err()
@@ -105,14 +106,16 @@ namespace Behave_Tool
                 {
                     MessageBox.Show("You have ran out of attempts!");
                     Program.failLogin = true;
-                    this.Close();
+                    Close();
+                    Dispose();
                 }
             }
             else
             {
                 Program.failLogin = false;
                 loggedInAss = UserName.Text;
-                this.Close();
+                Close();
+                Dispose();
             }
         }
 

@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Behave_Tool.Widget
 {
-    public partial class WidgetMaker : ToolDefaultForm
+    public partial class WidgetAssembly : ToolDefaultForm
     {
-        public WidgetMaker()
+        public WidgetAssembly()
         {
             InitializeComponent();
             fillWidgetList();

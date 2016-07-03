@@ -1,6 +1,6 @@
 ﻿namespace Behave_Tool.Widget
 {
-    partial class WidgetMaker
+    partial class WidgetAssembly
     {
         /// <summary>
         /// Required designer variable.

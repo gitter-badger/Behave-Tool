@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Behave Tool", "Behave Tool\Behave Tool.csproj", "{320802F7-50D0-4CA9-A166-C988FE648B8B}"
 EndProject
@@ -17,6 +17,7 @@ Global
 		{320802F7-50D0-4CA9-A166-C988FE648B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{320802F7-50D0-4CA9-A166-C988FE648B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{320802F7-50D0-4CA9-A166-C988FE648B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{320802F7-50D0-4CA9-A166-C988FE648B8B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

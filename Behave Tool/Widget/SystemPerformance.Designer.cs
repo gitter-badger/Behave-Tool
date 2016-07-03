@@ -34,6 +34,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.cpuRam1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.None;
             this.panel1.Location = new System.Drawing.Point(0, 25);
@@ -54,6 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(230, 90);
             this.Name = "SystemPerformance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

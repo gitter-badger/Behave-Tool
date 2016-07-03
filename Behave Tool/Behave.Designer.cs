@@ -46,6 +46,7 @@
             this.entertainMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.performanceMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.widgetMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preset1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.softwareInstallerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.betterTaskManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,25 +74,15 @@
             this.CPUbar = new System.Windows.Forms.ProgressBar();
             this.NetworkTrafficUp = new System.Windows.Forms.Label();
             this.RAMbar = new System.Windows.Forms.ProgressBar();
-            this.DrivesList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NetworkTrafficDown = new System.Windows.Forms.Label();
             this.ramUsage = new System.Windows.Forms.Label();
             this.CPU_Label = new System.Windows.Forms.Label();
             this.RAM_Label = new System.Windows.Forms.Label();
             this.Download_Label = new System.Windows.Forms.Label();
             this.Upload_Label = new System.Windows.Forms.Label();
-            this.Storage_Label = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.widgetMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ToolBar
@@ -151,7 +142,7 @@
             this.stuffToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
             this.stuffToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
+            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.stuffToolStripMenuItem.Text = "Network";
             // 
             // LocalNetworkToolStripMenuItem
@@ -277,7 +268,7 @@
             this.toysToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.toysToolStripMenuItem.Name = "toysToolStripMenuItem";
             this.toysToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.toysToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
+            this.toysToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.toysToolStripMenuItem.Text = "Toys";
             // 
             // entertainMeToolStripMenuItem
@@ -302,7 +293,7 @@
             this.systemToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             this.systemToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.systemToolStripMenuItem.Text = "System";
             // 
             // performanceMonitorToolStripMenuItem
@@ -319,6 +310,17 @@
             this.performanceMonitorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.performanceMonitorToolStripMenuItem.Text = "Performance Monitor";
             // 
+            // widgetMakerToolStripMenuItem
+            // 
+            this.widgetMakerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.widgetMakerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.widgetMakerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.widgetMakerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.widgetMakerToolStripMenuItem.Name = "widgetMakerToolStripMenuItem";
+            this.widgetMakerToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.widgetMakerToolStripMenuItem.Text = "Widget Maker";
+            this.widgetMakerToolStripMenuItem.Click += new System.EventHandler(this.widgetMakerToolStripMenuItem_Click);
+            // 
             // preset1ToolStripMenuItem
             // 
             this.preset1ToolStripMenuItem.BackColor = System.Drawing.Color.Black;
@@ -326,7 +328,7 @@
             this.preset1ToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.preset1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.preset1ToolStripMenuItem.Name = "preset1ToolStripMenuItem";
-            this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.preset1ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.preset1ToolStripMenuItem.Text = "Preset 1";
             this.preset1ToolStripMenuItem.Click += new System.EventHandler(this.preset1ToolStripMenuItem_Click);
             // 
@@ -365,7 +367,7 @@
             this.otherToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.otherToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.otherToolStripMenuItem.Text = "Other";
             // 
             // soundcloudDownloaderToolStripMenuItem
@@ -401,7 +403,7 @@
             this.specialToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.specialToolStripMenuItem.ForeColor = System.Drawing.Color.Fuchsia;
             this.specialToolStripMenuItem.Name = "specialToolStripMenuItem";
-            this.specialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.specialToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.specialToolStripMenuItem.Text = "Special";
             // 
             // sandboxToolStripMenuItem
@@ -593,15 +595,13 @@
             this.tableLayoutPanel1.Controls.Add(this.CPUbar, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.NetworkTrafficUp, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.RAMbar, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.DrivesList, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.NetworkTrafficDown, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.ramUsage, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.CPU_Label, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.RAM_Label, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.Download_Label, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.Upload_Label, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.Storage_Label, 0, 6);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 47);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -611,7 +611,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(215, 119);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(150, 74);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // cpuUsage
@@ -620,7 +620,7 @@
             this.cpuUsage.AutoSize = true;
             this.cpuUsage.BackColor = System.Drawing.Color.Transparent;
             this.cpuUsage.ForeColor = System.Drawing.Color.White;
-            this.cpuUsage.Location = new System.Drawing.Point(116, 0);
+            this.cpuUsage.Location = new System.Drawing.Point(79, 0);
             this.cpuUsage.Name = "cpuUsage";
             this.cpuUsage.Size = new System.Drawing.Size(35, 13);
             this.cpuUsage.TabIndex = 1;
@@ -632,7 +632,7 @@
             this.CPUbar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CPUbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CPUbar.ForeColor = System.Drawing.Color.Red;
-            this.CPUbar.Location = new System.Drawing.Point(84, 16);
+            this.CPUbar.Location = new System.Drawing.Point(47, 16);
             this.CPUbar.Name = "CPUbar";
             this.CPUbar.Size = new System.Drawing.Size(100, 5);
             this.CPUbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -644,7 +644,7 @@
             this.NetworkTrafficUp.AutoSize = true;
             this.NetworkTrafficUp.BackColor = System.Drawing.Color.Transparent;
             this.NetworkTrafficUp.ForeColor = System.Drawing.Color.White;
-            this.NetworkTrafficUp.Location = new System.Drawing.Point(120, 61);
+            this.NetworkTrafficUp.Location = new System.Drawing.Point(83, 61);
             this.NetworkTrafficUp.Name = "NetworkTrafficUp";
             this.NetworkTrafficUp.Size = new System.Drawing.Size(27, 13);
             this.NetworkTrafficUp.TabIndex = 4;
@@ -655,53 +655,11 @@
             this.RAMbar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RAMbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.RAMbar.ForeColor = System.Drawing.Color.Red;
-            this.RAMbar.Location = new System.Drawing.Point(84, 40);
+            this.RAMbar.Location = new System.Drawing.Point(47, 40);
             this.RAMbar.Name = "RAMbar";
             this.RAMbar.Size = new System.Drawing.Size(100, 5);
             this.RAMbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.RAMbar.TabIndex = 8;
-            // 
-            // DrivesList
-            // 
-            this.DrivesList.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.DrivesList.BackColor = System.Drawing.Color.Black;
-            this.DrivesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DrivesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.DrivesList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DrivesList.ForeColor = System.Drawing.Color.White;
-            this.DrivesList.FullRowSelect = true;
-            this.DrivesList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.DrivesList.HoverSelection = true;
-            this.DrivesList.Location = new System.Drawing.Point(56, 77);
-            this.DrivesList.Name = "DrivesList";
-            this.DrivesList.Scrollable = false;
-            this.DrivesList.Size = new System.Drawing.Size(156, 39);
-            this.DrivesList.TabIndex = 1;
-            this.DrivesList.UseCompatibleStateImageBehavior = false;
-            this.DrivesList.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Width = 25;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 55;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 20;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 55;
             // 
             // NetworkTrafficDown
             // 
@@ -709,7 +667,7 @@
             this.NetworkTrafficDown.AutoSize = true;
             this.NetworkTrafficDown.BackColor = System.Drawing.Color.Transparent;
             this.NetworkTrafficDown.ForeColor = System.Drawing.Color.White;
-            this.NetworkTrafficDown.Location = new System.Drawing.Point(113, 48);
+            this.NetworkTrafficDown.Location = new System.Drawing.Point(76, 48);
             this.NetworkTrafficDown.Name = "NetworkTrafficDown";
             this.NetworkTrafficDown.Size = new System.Drawing.Size(41, 13);
             this.NetworkTrafficDown.TabIndex = 3;
@@ -721,7 +679,7 @@
             this.ramUsage.AutoSize = true;
             this.ramUsage.BackColor = System.Drawing.Color.Transparent;
             this.ramUsage.ForeColor = System.Drawing.Color.White;
-            this.ramUsage.Location = new System.Drawing.Point(115, 24);
+            this.ramUsage.Location = new System.Drawing.Point(78, 24);
             this.ramUsage.Name = "ramUsage";
             this.ramUsage.Size = new System.Drawing.Size(37, 13);
             this.ramUsage.TabIndex = 2;
@@ -733,7 +691,7 @@
             this.CPU_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CPU_Label.AutoSize = true;
             this.CPU_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CPU_Label.Location = new System.Drawing.Point(18, 0);
+            this.CPU_Label.Location = new System.Drawing.Point(9, 0);
             this.CPU_Label.Name = "CPU_Label";
             this.CPU_Label.Size = new System.Drawing.Size(32, 13);
             this.CPU_Label.TabIndex = 9;
@@ -745,7 +703,7 @@
             this.RAM_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.RAM_Label.AutoSize = true;
             this.RAM_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.RAM_Label.Location = new System.Drawing.Point(16, 24);
+            this.RAM_Label.Location = new System.Drawing.Point(7, 24);
             this.RAM_Label.Name = "RAM_Label";
             this.RAM_Label.Size = new System.Drawing.Size(34, 13);
             this.RAM_Label.TabIndex = 10;
@@ -757,7 +715,7 @@
             this.Download_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Download_Label.AutoSize = true;
             this.Download_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Download_Label.Location = new System.Drawing.Point(12, 48);
+            this.Download_Label.Location = new System.Drawing.Point(3, 48);
             this.Download_Label.Name = "Download_Label";
             this.Download_Label.Size = new System.Drawing.Size(38, 13);
             this.Download_Label.TabIndex = 11;
@@ -769,55 +727,12 @@
             this.Upload_Label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Upload_Label.AutoSize = true;
             this.Upload_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Upload_Label.Location = new System.Drawing.Point(26, 61);
+            this.Upload_Label.Location = new System.Drawing.Point(17, 61);
             this.Upload_Label.Name = "Upload_Label";
             this.Upload_Label.Size = new System.Drawing.Size(24, 13);
             this.Upload_Label.TabIndex = 12;
             this.Upload_Label.Text = "Up:";
             this.Upload_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // Storage_Label
-            // 
-            this.Storage_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Storage_Label.AutoSize = true;
-            this.Storage_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Storage_Label.Location = new System.Drawing.Point(3, 74);
-            this.Storage_Label.Name = "Storage_Label";
-            this.Storage_Label.Size = new System.Drawing.Size(47, 13);
-            this.Storage_Label.TabIndex = 13;
-            this.Storage_Label.Text = "Storage:";
-            this.Storage_Label.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.label5_MouseDoubleClick);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 70);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(221, 153);
-            this.flowLayoutPanel1.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(605, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // widgetMakerToolStripMenuItem
-            // 
-            this.widgetMakerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.widgetMakerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
-            this.widgetMakerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.widgetMakerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.widgetMakerToolStripMenuItem.Name = "widgetMakerToolStripMenuItem";
-            this.widgetMakerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.widgetMakerToolStripMenuItem.Text = "Widget Maker";
-            this.widgetMakerToolStripMenuItem.Click += new System.EventHandler(this.widgetMakerToolStripMenuItem_Click);
             // 
             // Behave
             // 
@@ -828,8 +743,7 @@
             this.BackgroundImage = global::Behave_Tool.Properties.Resources.Background_OrangeCore1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(680, 203);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.ToolBar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -849,8 +763,6 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -875,24 +787,6 @@
         private System.Windows.Forms.ToolStripButton Settings;
         private System.Windows.Forms.ToolStripMenuItem LocalNetworkToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label cpuUsage;
-        private System.Windows.Forms.ProgressBar CPUbar;
-        private System.Windows.Forms.Label NetworkTrafficUp;
-        private System.Windows.Forms.ProgressBar RAMbar;
-        private System.Windows.Forms.ListView DrivesList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Label NetworkTrafficDown;
-        private System.Windows.Forms.Label ramUsage;
-        private System.Windows.Forms.Label CPU_Label;
-        private System.Windows.Forms.Label RAM_Label;
-        private System.Windows.Forms.Label Download_Label;
-        private System.Windows.Forms.Label Upload_Label;
-        private System.Windows.Forms.Label Storage_Label;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem toysToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entertainMeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openPortScannerToolStripMenuItem;
@@ -913,10 +807,20 @@
         private System.Windows.Forms.ToolStripMenuItem sandboxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem softwareInstallerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem betterTaskManagerToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private StorageDrives storageDrives1;
         private System.Windows.Forms.ToolStripButton Username;
         private System.Windows.Forms.ToolStripMenuItem widgetMakerToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label cpuUsage;
+        private System.Windows.Forms.ProgressBar CPUbar;
+        private System.Windows.Forms.Label NetworkTrafficUp;
+        private System.Windows.Forms.ProgressBar RAMbar;
+        private System.Windows.Forms.Label NetworkTrafficDown;
+        private System.Windows.Forms.Label ramUsage;
+        private System.Windows.Forms.Label CPU_Label;
+        private System.Windows.Forms.Label RAM_Label;
+        private System.Windows.Forms.Label Download_Label;
+        private System.Windows.Forms.Label Upload_Label;
     }
 }
 

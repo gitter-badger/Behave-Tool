@@ -280,11 +280,11 @@
     <Compile Include="Login\Usage_Agreement.Designer.cs">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widget\WidgetMaker.cs">
+    <Compile Include="Widget\WidgetAssembly.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Widget\WidgetMaker.Designer.cs">
-      <DependentUpon>WidgetMaker.cs</DependentUpon>
+    <Compile Include="Widget\WidgetAssembly.Designer.cs">
+      <DependentUpon>WidgetAssembly.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Behave_Settings.resx">
       <DependentUpon>Behave_Settings.cs</DependentUpon>
@@ -377,8 +377,8 @@
     <EmbeddedResource Include="Login\Usage_Agreement.resx">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widget\WidgetMaker.resx">
-      <DependentUpon>WidgetMaker.cs</DependentUpon>
+    <EmbeddedResource Include="Widget\WidgetAssembly.resx">
+      <DependentUpon>WidgetAssembly.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config">
       <SubType>Designer</SubType>

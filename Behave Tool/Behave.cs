@@ -37,7 +37,6 @@ namespace Behave_Tool
         }
         private void Behave_Load(object sender, EventArgs e)
         {
-            //menuStrip1.Renderer = new ToolStripProfessionalRenderer(new TestColorTable());
             Hide();
             Username.Text = "Hello " + Login.loggedInAss;
             startupProceedure();
@@ -61,72 +60,72 @@ namespace Behave_Tool
             done = true;
             Show();
         }
-        private void AvailableDrives()
-        {
-            int defaultHeight = tableLayoutPanel1.Height;
-            while (true)
-            {
-                DrivesList.HeaderStyle = ColumnHeaderStyle.None;
-                // Here we create a DataTable with four columns.
-                DataTable table = new DataTable();
+        //private void AvailableDrives()
+        //{
+        //    int defaultHeight = tableLayoutPanel1.Height;
+        //    while (true)
+        //    {
+        //        DrivesList.HeaderStyle = ColumnHeaderStyle.None;
+        //        // Here we create a DataTable with four columns.
+        //        DataTable table = new DataTable();
 
-                table.Columns.Add("Drive", typeof(string));
-                table.Columns.Add("Using", typeof(string));
-                table.Columns.Add("Total", typeof(string));
-                table.Columns.Add("seperator", typeof(string));
+        //        table.Columns.Add("Drive", typeof(string));
+        //        table.Columns.Add("Using", typeof(string));
+        //        table.Columns.Add("Total", typeof(string));
+        //        table.Columns.Add("seperator", typeof(string));
 
-                // string rowdata;
-                string name;
-                string usingSpace = null;
-                string totalSpace = null;
-                string seperator = "/";
-                int counter = -42;
-                DriveInfo[] allDrives = DriveInfo.GetDrives();
+        //        // string rowdata;
+        //        string name;
+        //        string usingSpace = null;
+        //        string totalSpace = null;
+        //        string seperator = "/";
+        //        int counter = -42;
+        //        DriveInfo[] allDrives = DriveInfo.GetDrives();
 
-                foreach (DriveInfo d in allDrives)
-                {
-                    counter += 21;
-                    if (d.IsReady == true)
-                    {
-                        name = d.Name + " ";
-                        if ((d.TotalSize / 1024 / 1024 / 1024) - (d.TotalFreeSpace / 1024 / 1024 / 1024) < 1000)
-                        {
-                            usingSpace = (d.TotalSize / 1024 / 1024 / 1024) - (d.TotalFreeSpace / 1024 / 1024 / 1024) + " GB";
-                        }
-                        else if ((d.TotalSize / 1024 / 1024 / 1024) - (d.TotalFreeSpace / 1024 / 1024 / 1024) >= 1000)
-                        {
-                            usingSpace = Math.Round(d.TotalSize / 1024 / 1024 / 1024 / 1024 - (float)(d.TotalFreeSpace / 1024 / 1024 / 1024 / 1024), 2) + " TB";
-                        }
-                        if ((d.TotalSize / 1024 / 1024 / 1024) < 1000)
-                        {
-                            totalSpace = (d.TotalSize / 1024 / 1024 / 1024).ToString() + " GB";
-                        }
-                        else if ((d.TotalSize / 1024 / 1024 / 1024) >= 1000)
-                        {
-                            totalSpace = Math.Round(((float)d.TotalSize / 1024 / 1024 / 1024 / 1024), 2).ToString() + " TB";
-                        }
-                        table.Rows.Add(d.Name, usingSpace, seperator, totalSpace);
-                    }
-                }
-                tableLayoutPanel1.Height += counter;
+        //        foreach (DriveInfo d in allDrives)
+        //        {
+        //            counter += 21;
+        //            if (d.IsReady == true)
+        //            {
+        //                name = d.Name + " ";
+        //                if ((d.TotalSize / 1024 / 1024 / 1024) - (d.TotalFreeSpace / 1024 / 1024 / 1024) < 1000)
+        //                {
+        //                    usingSpace = (d.TotalSize / 1024 / 1024 / 1024) - (d.TotalFreeSpace / 1024 / 1024 / 1024) + " GB";
+        //                }
+        //                else if ((d.TotalSize / 1024 / 1024 / 1024) - (d.TotalFreeSpace / 1024 / 1024 / 1024) >= 1000)
+        //                {
+        //                    usingSpace = Math.Round(d.TotalSize / 1024 / 1024 / 1024 / 1024 - (float)(d.TotalFreeSpace / 1024 / 1024 / 1024 / 1024), 2) + " TB";
+        //                }
+        //                if ((d.TotalSize / 1024 / 1024 / 1024) < 1000)
+        //                {
+        //                    totalSpace = (d.TotalSize / 1024 / 1024 / 1024).ToString() + " GB";
+        //                }
+        //                else if ((d.TotalSize / 1024 / 1024 / 1024) >= 1000)
+        //                {
+        //                    totalSpace = Math.Round(((float)d.TotalSize / 1024 / 1024 / 1024 / 1024), 2).ToString() + " TB";
+        //                }
+        //                table.Rows.Add(d.Name, usingSpace, seperator, totalSpace);
+        //            }
+        //        }
+        //        tableLayoutPanel1.Height += counter;
 
-                foreach (DataRow d in table.Rows)
-                {
-                    ListViewItem item = new ListViewItem(d[0].ToString());
-                    for (int i = 1; i < table.Columns.Count; i++)
-                    {
-                        item.SubItems.Add(d[i].ToString());
-                    }
-                    DrivesList.Items.Add(item);
-                }
-                if (stopflicker == true) { break; }
-                Thread.Sleep(5000);
-                DrivesList.Items.Clear();
-                DrivesList.Update();
-                DrivesList.Refresh();
-                tableLayoutPanel1.Height = defaultHeight; // reset height of List
-            }
-        }
+        //        foreach (DataRow d in table.Rows)
+        //        {
+        //            ListViewItem item = new ListViewItem(d[0].ToString());
+        //            for (int i = 1; i < table.Columns.Count; i++)
+        //            {
+        //                item.SubItems.Add(d[i].ToString());
+        //            }
+        //            DrivesList.Items.Add(item);
+        //        }
+        //        if (stopflicker == true) { break; }
+        //        Thread.Sleep(5000);
+        //        DrivesList.Items.Clear();
+        //        DrivesList.Update();
+        //        DrivesList.Refresh();
+        //        tableLayoutPanel1.Height = defaultHeight; // reset height of List
+        //    }
+        //}
 
         private void systemUsage()
         {
@@ -271,7 +270,7 @@ namespace Behave_Tool
             RAM_Label.ForeColor = colour2;
             Download_Label.ForeColor = colour2;
             Upload_Label.ForeColor = colour2;
-            Storage_Label.ForeColor = colour2;
+            //Storage_Label.ForeColor = colour2;
             SessionTimer.ForeColor = colour2;
             TotalSessionTime.ForeColor = colour2;
 
@@ -454,10 +453,10 @@ namespace Behave_Tool
             {
                 IsBackground = true
             }.Start();
-            new Thread(new ThreadStart(AvailableDrives))
-            {
-                IsBackground = true
-            }.Start();
+            //new Thread(new ThreadStart(AvailableDrives))
+            //{
+            //    IsBackground = true
+            //}.Start();
 
         }
 
@@ -586,7 +585,7 @@ namespace Behave_Tool
 
         private void widgetMakerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new WidgetMaker().Show();
+            new WidgetAssembly().Show();
         }
     }
     public class MenuColorTable : ProfessionalColorTable
