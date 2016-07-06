@@ -38,7 +38,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.saveLogIn = new System.Windows.Forms.CheckBox();
-            this.loading = new System.Windows.Forms.PictureBox();
             this.AutoLogin = new System.Windows.Forms.CheckBox();
             this.serverStatus = new System.Windows.Forms.Label();
             this.Close = new System.Windows.Forms.Button();
@@ -46,7 +45,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -102,7 +100,7 @@
             // 
             this.Log_In.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Log_In.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Log_In.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Log_In.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Log_In.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Log_In.ForeColor = System.Drawing.Color.White;
             this.Log_In.Image = global::Behave_Tool.Properties.Resources.Button;
@@ -163,7 +161,6 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.PassWord, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.saveLogIn, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.loading, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.AutoLogin, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(171, 8);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -191,22 +188,12 @@
             this.saveLogIn.UseVisualStyleBackColor = false;
             this.saveLogIn.CheckedChanged += new System.EventHandler(this.saveLogIn_CheckedChanged);
             // 
-            // loading
-            // 
-            this.loading.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loading.Location = new System.Drawing.Point(15, 51);
-            this.loading.Name = "loading";
-            this.loading.Size = new System.Drawing.Size(30, 17);
-            this.loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.loading.TabIndex = 11;
-            this.loading.TabStop = false;
-            // 
             // AutoLogin
             // 
             this.AutoLogin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AutoLogin.AutoSize = true;
             this.AutoLogin.BackColor = System.Drawing.Color.Transparent;
+            this.AutoLogin.Enabled = false;
             this.AutoLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.AutoLogin.ForeColor = System.Drawing.Color.White;
             this.AutoLogin.Location = new System.Drawing.Point(64, 74);
@@ -291,7 +278,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -312,7 +298,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label serverStatus;
-        private System.Windows.Forms.PictureBox loading;
         private new System.Windows.Forms.Button Close;
         private System.Windows.Forms.CheckBox saveLogIn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

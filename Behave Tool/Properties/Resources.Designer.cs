@@ -153,9 +153,9 @@ namespace Behave_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Gear_ {
+        internal static System.Drawing.Bitmap Gear_Static {
             get {
-                object obj = ResourceManager.GetObject("Gear_", resourceCulture);
+                object obj = ResourceManager.GetObject("Gear_Static", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

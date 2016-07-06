@@ -113,6 +113,7 @@
     <Compile Include="CustomControls\WidgetMakerList.Designer.cs">
       <DependentUpon>WidgetMakerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encryption.cs" />
     <Compile Include="Tools\System\SoftwareInstaller.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,10 +132,10 @@
     <Compile Include="CustomControls\CustomProgressBar.Designer.cs">
       <DependentUpon>CustomProgressBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="DefaultProperties\ToolDefaultForm.cs">
+    <Compile Include="InheritForms\ToolDefaultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DefaultProperties\ToolDefaultForm.Designer.cs">
+    <Compile Include="InheritForms\ToolDefaultForm.Designer.cs">
       <DependentUpon>ToolDefaultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Splash.cs">
@@ -267,10 +268,10 @@
       <DependentUpon>Restarting.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="DefaultProperties\ShowHide.cs">
+    <Compile Include="InheritForms\ShowHide.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DefaultProperties\ShowHide.Designer.cs">
+    <Compile Include="InheritForms\ShowHide.Designer.cs">
       <DependentUpon>ShowHide.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\System Info.cs" />
@@ -301,7 +302,7 @@
     <EmbeddedResource Include="CustomControls\CpuRam.resx">
       <DependentUpon>CpuRam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DefaultProperties\ToolDefaultForm.resx">
+    <EmbeddedResource Include="InheritForms\ToolDefaultForm.resx">
       <DependentUpon>ToolDefaultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Splash.resx">
@@ -371,7 +372,7 @@
     <EmbeddedResource Include="Restarting.resx">
       <DependentUpon>Restarting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DefaultProperties\ShowHide.resx">
+    <EmbeddedResource Include="InheritForms\ShowHide.resx">
       <DependentUpon>ShowHide.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Usage_Agreement.resx">

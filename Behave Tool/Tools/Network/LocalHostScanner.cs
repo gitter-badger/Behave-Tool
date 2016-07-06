@@ -30,7 +30,7 @@ namespace Behave_Tool.Tools.Network
 
         public void program()
         {
-            Status.Text = "Scanning 254 Ports...";
+            Status.Text = "Scanning all Ports...";
             countdown = new CountdownEvent(1);
             Stopwatch sw = new Stopwatch();
             sw.Start();

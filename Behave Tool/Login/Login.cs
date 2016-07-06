@@ -13,12 +13,11 @@ namespace Behave_Tool
     {
         public bool success;
         private static int attempts = 0;
-        public static string loggedInAss;
+        public static string loggedInAs;
 
         public Login()
         {
             InitializeComponent();
-
         }
 
         protected override void WndProc(ref Message m)
@@ -48,8 +47,8 @@ namespace Behave_Tool
         private void Close_Click(object sender, EventArgs e)
         {
             Program.failLogin = true;
-            Close();
-            Dispose();
+            Environment.Exit(0);
+            //Application.Exit();
         }
 
         private void err()
@@ -64,9 +63,13 @@ namespace Behave_Tool
             {
                 serverStatus.Text = "Checking Server...";
                 if (new Ping().Send(IPAddress.Parse("31.170.162.63")).Status == IPStatus.Success)
-                    this.serverStatus.Text = "Online";
+                {
+                    serverStatus.Text = "Online";
+                }
                 else
-                    this.serverStatus.Text = "No Connection";
+                {
+                    serverStatus.Text = "No Connection";
+                }
             }
             catch (Exception)
             { serverStatus.Text = "No Connection"; }
@@ -84,51 +87,41 @@ namespace Behave_Tool
             {
                 Properties.Settings.Default["Sign_In"] = (UserName.Text + "," + PassWord.Text);
             }
-            new Thread(new ThreadStart(startLoading))
-            {
-                IsBackground = true
-            }.Start();
-
             attempts += 1;
-            if (!this.loginSuccess())
+            if (!loginSuccess())
             {
-                                
+
                 if (attempts <= 2)
                 {
-                    this.AttemptCount.Text = "Attempts left: " + (3 - attempts);
-                    this.loading.Visible = false;
-                    new Thread(new ThreadStart(this.stopLoading))
-                    {
-                        IsBackground = true
-                    }.Start();
+                    AttemptCount.Text = "Attempts left: " + (3 - attempts);
                 }
                 else
                 {
                     MessageBox.Show("You have ran out of attempts!");
                     Program.failLogin = true;
-                    Close();
-                    Dispose();
+                    Environment.Exit(0);
+                    
                 }
             }
             else
             {
                 Program.failLogin = false;
-                loggedInAss = UserName.Text;
+                loggedInAs = UserName.Text;
                 Close();
-                Dispose();
+                
             }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            this.PassWord.PasswordChar = this.randChar();
+            PassWord.PasswordChar = randChar();
             CheckForIllegalCrossThreadCalls = false;
             StartPosition = FormStartPosition.Manual;
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+            Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - Height) / 2);
 
             new Thread(new ThreadStart(setSave)) { IsBackground = true }.Start();
-            new Thread(new ThreadStart(this.getServerStatus)) { IsBackground = true }.Start();
+            new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
         }
 
         private bool loginSuccess()
@@ -173,7 +166,7 @@ namespace Behave_Tool
             }
             else if (serverStatus.Text == "No Connection")
             {
-                this.serverStatus.ForeColor = Color.Red;
+                serverStatus.ForeColor = Color.Red;
                 Thread.Sleep(20000);
                 new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
             }
@@ -182,7 +175,7 @@ namespace Behave_Tool
         private bool sqlConnect()
         {
             bool success = false;
-            SqlConnection connection = new SqlConnection("server=mysql2.gear.host;database=behave;user id=behave423;password=vYcB487Dd8eWZFGb^;Trusted_Connection=yes;connection timeout=10");
+            SqlConnection connection = new SqlConnection("server=59.98.168.25,3306;database=behave;User id=behave_admin;Password=Ksia29@#sis!2;Trusted_Connection=yes;connection timeout=10");
             try
             {
                 connection.Open();
@@ -197,7 +190,7 @@ namespace Behave_Tool
             }
             else
             {
-                SqlDataReader sqlDataReader = new SqlCommand("SELECT * FROM users WHERE username='" + this.UserName.Text + "' AND password='" + this.PassWord.Text + "'", connection).ExecuteReader();
+                SqlDataReader sqlDataReader = new SqlCommand("SELECT * FROM users WHERE username='" + UserName.Text + "' AND password='" + this.PassWord.Text + "'", connection).ExecuteReader();
                 while (sqlDataReader.Read())
                 {
                     if (sqlDataReader.HasRows)
@@ -223,15 +216,6 @@ namespace Behave_Tool
             return success;
         }
 
-        private void startLoading()
-        {
-            this.loading.Image = Properties.Resources.Loading_Gif;
-        }
-
-        private void stopLoading()
-        {
-            this.loading.BackgroundImage = null;
-        }
 
         private void saveLogIn_CheckedChanged(object sender, EventArgs e)
         {

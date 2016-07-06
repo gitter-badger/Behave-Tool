@@ -15,8 +15,8 @@ namespace Behave_Tool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            // Application.Run(new Behave());
+            
+            //Application.Run(new Behave());
             while (true)
             {
                 for (int i = 0; i <=10; i++)
@@ -26,12 +26,11 @@ namespace Behave_Tool
                     if (Properties.Settings.Default.Agreement == false)
                     {
                         Application.Run(new Usage_Agreement());
-
-                        if (Properties.Settings.Default.Agreement == false)
+                        if(Usage_Agreement.agreement() == false)
                         {
-                            Application.Exit();
+                            return; // incase someone modifies agreement form;
                         }
-                    }
+                    } 
                     // if Agreement agreed
 
                     Application.Run(new Login());
@@ -65,6 +64,8 @@ namespace Behave_Tool
                     break;
                 }
                 Application.Exit();
+                
+                
             }
         }
 

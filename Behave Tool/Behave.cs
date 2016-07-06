@@ -26,19 +26,18 @@ namespace Behave_Tool
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private static bool networkTrafficMonitoring = true;
-        private static bool systemUsageOn = true;
-        private bool stopflicker = false;
+        //private static bool networkTrafficMonitoring = true;
+        //private static bool systemUsageOn = true;
 
         public Behave()
         {
+            CheckForIllegalCrossThreadCalls = false; // this is bad!
             InitializeComponent();
 
         }
         private void Behave_Load(object sender, EventArgs e)
         {
-            Hide();
-            Username.Text = "Hello " + Login.loggedInAss;
+            Username.Text = Login.loggedInAs;
             startupProceedure();
 
             bool done = false;
@@ -52,13 +51,14 @@ namespace Behave_Tool
                         Application.DoEvents();
                     }
                     splashForm.Close();
-                    splashForm.Dispose();
+                    //splashForm.Dispose();
                 }
             });
 
             Thread.Sleep(3000); // Emulate hardwork
             done = true;
             Show();
+
         }
         //private void AvailableDrives()
         //{
@@ -127,17 +127,17 @@ namespace Behave_Tool
         //    }
         //}
 
-        private void systemUsage()
-        {
-            new Thread(new ThreadStart(getCPUusage))
-            {
-                IsBackground = true
-            }.Start();
-            new Thread(new ThreadStart(getRamUsage))
-            {
-                IsBackground = true
-            }.Start();
-        }
+        //private void systemUsage()
+        //{
+        //    new Thread(new ThreadStart(getCPUusage))
+        //    {
+        //        IsBackground = true
+        //    }.Start();
+        //    //new Thread(new ThreadStart(getRamUsage))
+        //    //{
+        //    //    IsBackground = true
+        //    //}.Start();
+        //}
 
         private void UpdatePublicIP()
         {
@@ -176,49 +176,49 @@ namespace Behave_Tool
 
         private void Close_Click(object sender, EventArgs e)
         {
-            Environment.Exit(Environment.ExitCode);
+            Application.Exit();
         }
 
-        private void getCPUusage()
-        {
+        //private void getCPUusage()
+        //{
 
-            while (systemUsageOn)
-            {
-                PerformanceCounter cpuCounter = new PerformanceCounter();
-                cpuCounter.CategoryName = "Processor";
-                cpuCounter.CounterName = "% Processor Time";
-                cpuCounter.InstanceName = "_Total";
-                // will always start at 0
-                dynamic firstValue = cpuCounter.NextValue();
-                Thread.Sleep(1000);
-                // now matches task manager reading
-                dynamic secondValue = cpuCounter.NextValue();
-                secondValue = Math.Round(secondValue, 2);
-                cpuUsage.Text = secondValue + "%";
+        //    while (systemUsageOn)
+        //    {
+        //        PerformanceCounter cpuCounter = new PerformanceCounter();
+        //        cpuCounter.CategoryName = "Processor";
+        //        cpuCounter.CounterName = "% Processor Time";
+        //        cpuCounter.InstanceName = "_Total";
+        //        // will always start at 0
+        //        dynamic firstValue = cpuCounter.NextValue();
+        //        Thread.Sleep(1000);
+        //        // now matches task manager reading
+        //        dynamic secondValue = cpuCounter.NextValue();
+        //        secondValue = Math.Round(secondValue, 2);
+        //        cpuUsage.Text = secondValue + "%";
 
-                CPUbar.Value = (int)secondValue;
-            }
-        }
+        //        CPUbar.Value = (int)secondValue;
+        //    }
+        //}
 
-        private void getRamUsage()
-        {
-            double memAvailable, memPhysical, memUsing;
-            int percentage;
+        //private void getRamUsage()
+        //{
+        //    double memAvailable, memPhysical, memUsing;
+        //    int percentage;
 
-            while (true)
-            {
-                memAvailable = System_Information.RAM.GetUsingMemoryInBytes();
-                memPhysical = System_Information.RAM.GetTotalMemoryInBytes();
-                memUsing = memPhysical - memAvailable;
+        //    while (true)
+        //    {
+        //        memAvailable = System_Information.RAM.GetUsingMemoryInBytes();
+        //        memPhysical = System_Information.RAM.GetTotalMemoryInBytes();
+        //        memUsing = memPhysical - memAvailable;
 
-                percentage = Convert.ToInt16(memUsing / memPhysical * 100);
+        //        percentage = Convert.ToInt16(memUsing / memPhysical * 100);
 
-                ramUsage.Text = Math.Round((memUsing / 1024), 2) + " GB" + " / " + Math.Round((memPhysical / 1024), 2) + " GB";
+        //        ramUsage.Text = Math.Round((memUsing / 1024), 2) + " GB" + " / " + Math.Round((memPhysical / 1024), 2) + " GB";
 
-                RAMbar.Value = percentage;
-                Thread.Sleep(4000);
-            }
-        }
+        //        RAMbar.Value = percentage;
+        //        Thread.Sleep(4000);
+        //    }
+        //}
 
         private void htmlDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -242,7 +242,7 @@ namespace Behave_Tool
 
         private void label5_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            stopflicker = true;
+            //stopflicker = true;
         }
 
         private void Load_Settings()
@@ -255,21 +255,21 @@ namespace Behave_Tool
             {
                 button.ForeColor = colour3;
             }
-            CPUbar.ForeColor = Color.Red;
-            CPUbar.Style = ProgressBarStyle.Continuous;
-            CPUbar.Maximum = 100;
-            CPUbar.Minimum = 0;
-            RAMbar.ForeColor = Color.Red;
-            RAMbar.Style = ProgressBarStyle.Continuous;
-            RAMbar.Maximum = 100;
-            RAMbar.Minimum = 0;
+            //CPUbar.ForeColor = Color.Red;
+            //CPUbar.Style = ProgressBarStyle.Continuous;
+            //CPUbar.Maximum = 100;
+            //CPUbar.Minimum = 0;
+            //RAMbar.ForeColor = Color.Red;
+            //RAMbar.Style = ProgressBarStyle.Continuous;
+            //RAMbar.Maximum = 100;
+            //RAMbar.Minimum = 0;
 
-            Menu.ForeColor = colour1;
-            IPdisplay.ForeColor = colour2;
-            CPU_Label.ForeColor = colour2;
-            RAM_Label.ForeColor = colour2;
-            Download_Label.ForeColor = colour2;
-            Upload_Label.ForeColor = colour2;
+            //Menu.ForeColor = colour1;
+            //IPdisplay.ForeColor = colour2;
+            //CPU_Label.ForeColor = colour2;
+            //RAM_Label.ForeColor = colour2;
+            //Download_Label.ForeColor = colour2;
+            //Upload_Label.ForeColor = colour2;
             //Storage_Label.ForeColor = colour2;
             SessionTimer.ForeColor = colour2;
             TotalSessionTime.ForeColor = colour2;
@@ -280,7 +280,7 @@ namespace Behave_Tool
             StartPosition = FormStartPosition.Manual;
             Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Width) / 2, 0);
             TopMost = Properties.Settings.Default.KeepWindowOnTop;
-            CheckForIllegalCrossThreadCalls = false; // this is bad!
+            
             Opacity = Properties.Settings.Default.BehaveOpacity; // default 0.9;
         }
 
@@ -411,23 +411,23 @@ namespace Behave_Tool
 
         private void Settings_MouseLeave(object sender, EventArgs e)
         {
-            Settings.Image = Properties.Resources.Gear_;
+            Settings.Image = Properties.Resources.Gear_Static;
         }
 
-        private void ShowNetworkTraffic()
-        {
-            PerformanceCounterCategory performanceCounterCategory = new PerformanceCounterCategory("Network Interface");
-            string instanceName = performanceCounterCategory.GetInstanceNames()[0];
-            PerformanceCounter performanceCounter1 = new PerformanceCounter("Network Interface", "Bytes Sent/sec", instanceName);
-            PerformanceCounter performanceCounter2 = new PerformanceCounter("Network Interface", "Bytes Received/sec", instanceName);
-            while (networkTrafficMonitoring == true)
-            {
-                NetworkTrafficDown.Text = Math.Round((float)(performanceCounter2.NextValue() / 1024.0), 2) + " kb/s";
-                NetworkTrafficUp.Text = Math.Round((float)(performanceCounter1.NextValue() / 1024.0), 2) + " kb/s";
-                //Console.WriteLine("Down: " + (float)(performanceCounter2.NextValue() / 1024.0) + " | Up: " + (float)(performanceCounter1.NextValue() / 1024.0));
-                Thread.Sleep(2000);
-            }
-        }
+        //private void ShowNetworkTraffic()
+        //{
+        //    PerformanceCounterCategory performanceCounterCategory = new PerformanceCounterCategory("Network Interface");
+        //    string instanceName = performanceCounterCategory.GetInstanceNames()[0];
+        //    PerformanceCounter performanceCounter1 = new PerformanceCounter("Network Interface", "Bytes Sent/sec", instanceName);
+        //    PerformanceCounter performanceCounter2 = new PerformanceCounter("Network Interface", "Bytes Received/sec", instanceName);
+        //    while (networkTrafficMonitoring == true)
+        //    {
+        //        NetworkTrafficDown.Text = Math.Round((float)(performanceCounter2.NextValue() / 1024.0), 2) + " kb/s";
+        //        NetworkTrafficUp.Text = Math.Round((float)(performanceCounter1.NextValue() / 1024.0), 2) + " kb/s";
+        //        //Console.WriteLine("Down: " + (float)(performanceCounter2.NextValue() / 1024.0) + " | Up: " + (float)(performanceCounter1.NextValue() / 1024.0));
+        //        Thread.Sleep(2000);
+        //    }
+        //}
 
         private void startupProceedure()
         {
@@ -441,14 +441,14 @@ namespace Behave_Tool
                 IsBackground = true
             }.Start();
 
-            new Thread(new ThreadStart(ShowNetworkTraffic))
-            {
-                IsBackground = true
-            }.Start();
-            new Thread(new ThreadStart(systemUsage))
-            {
-                IsBackground = true
-            }.Start();
+            //new Thread(new ThreadStart(ShowNetworkTraffic))
+            //{
+            //    IsBackground = true
+            //}.Start();
+            //new Thread(new ThreadStart(systemUsage))
+            //{
+            //    IsBackground = true
+            //}.Start();
             new Thread(new ThreadStart(sessionTimer))
             {
                 IsBackground = true
@@ -588,25 +588,5 @@ namespace Behave_Tool
             new WidgetAssembly().Show();
         }
     }
-    public class MenuColorTable : ProfessionalColorTable
-    {
-        public MenuColorTable()
-        {
-            // see notes
-            base.UseSystemColors = false;
-        }
-        public override System.Drawing.Color MenuBorder
-        {
-            get { return Color.Fuchsia; }
-        }
-        public override System.Drawing.Color MenuItemBorder
-        {
-            get { return Color.DarkViolet; }
-        }
-        public override Color MenuItemSelected
-        {
-            get { return Color.Cornsilk; }
-        }
-    } 
-    
+   
 }
