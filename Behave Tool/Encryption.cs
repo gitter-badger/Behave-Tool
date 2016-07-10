@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Behave_Tool
 {
@@ -101,6 +104,24 @@ namespace Behave_Tool
                 rngCsp.GetBytes(randomBytes);
             }
             return randomBytes;
+        }
+    } 
+    class encrypt
+    {
+        public static string encriptString(string str, string str2) // str = string to encrypt, str2 = username
+        {
+            string version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
+            string str3 = DateTime.Now.ToString("MMdd") + str2 + version + DateTime.Now.ToString("yyyyMM");
+            StringBuilder str4 = new StringBuilder();
+            foreach (char c in str3)
+            {
+                if (!(c == ' ' || c == ',' || c == '.' || c == ':' || c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'))
+                {
+                    str4.Append(c);
+                }
+            }
+            //MessageBox.Show(str4.ToString());
+            return StringCipher.Encrypt(str, str4.ToString());
         }
     }
 }

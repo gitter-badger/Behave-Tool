@@ -161,7 +161,8 @@
             // ToolBar
             // 
             this.ToolBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.ToolBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ToolBar.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.ToolBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Close,
@@ -188,7 +189,7 @@
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(23, 22);
             this.Close.Text = "X";
-            this.Close.Click += new System.EventHandler(this.Close_Click_1);
+            this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // Minimize
             // 
@@ -246,6 +247,7 @@
             this.Name = "ToolDefaultForm";
             this.Opacity = 0.95D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1Default";
             this.Load += new System.EventHandler(this.ToolDefaultForm_Load);
             this.ToolBar.ResumeLayout(false);
@@ -278,11 +280,11 @@
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip ToolBar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton Username;
         private System.Windows.Forms.ToolStripLabel ToolName;
         private new System.Windows.Forms.ToolStripButton Close;
         private System.Windows.Forms.ToolStripButton Minimize;
+        public System.Windows.Forms.ToolStrip ToolBar;
     }
 }

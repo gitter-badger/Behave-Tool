@@ -32,6 +32,7 @@ namespace Behave_Tool.Tools.Network
 
         private void IndepthIPinfo_Load(object sender, EventArgs e)
         {
+            
             new Thread(new ThreadStart(startupProcedure)) { IsBackground = true }.Start();
         }
 
@@ -87,7 +88,10 @@ namespace Behave_Tool.Tools.Network
             {
                 WebConnection.ForeColor = Color.Green;
             }
-            else if (WebConnection.Text == "Ping'ing...") { WebConnection.ForeColor = Color.Yellow; }
+            else if (WebConnection.Text == "Ping'ing...")
+            {
+                WebConnection.ForeColor = Color.Yellow;
+            }
             else { WebConnection.ForeColor = Color.Red; }
         }
 
@@ -152,7 +156,7 @@ namespace Behave_Tool.Tools.Network
             Console.WriteLine("=GetPublicIP= Start");
             try
             {
-                string ip = new StreamReader(WebRequest.Create("http://checkip.dyndns.org").GetResponse().GetResponseStream()).ReadToEnd().Trim().Split(':')[1].Substring(1).Split('<')[0];
+                string ip = new WebClient().DownloadString(@"http://icanhazip.com").Trim();
 
                 Console.WriteLine("=GetPublicIP= Returned " + ip);
                 return ip;
@@ -171,7 +175,7 @@ namespace Behave_Tool.Tools.Network
             {
                 using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
                 {
-                    socket.Connect("10.0.2.4", 65530);
+                    socket.Connect("10.0.1.20", 1337);
                     IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
                     Console.WriteLine("=GetIPv4= Done");
                     return endPoint.Address.ToString(); //ipv4

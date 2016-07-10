@@ -9,8 +9,7 @@ namespace Behave_Tool
         public Usage_Agreement()
         {
             InitializeComponent();
-            FormBorderStyle = FormBorderStyle.None;
-            StartPosition = FormStartPosition.CenterScreen;
+
         }
 
         private void Agree_Click(object sender, EventArgs e)
@@ -23,9 +22,6 @@ namespace Behave_Tool
 
         private void Disagree_Click(object sender, EventArgs e)
         {
-            // exit application
-            //Application.Exit();
-            // incase did not exit
             _agreement = false;
             Close();
         }
@@ -35,13 +31,29 @@ namespace Behave_Tool
         }
         private void Checkbox_CheckStateChanged(object sender, EventArgs e)
         {
-            if(Checkbox.Checked)
+            if (Checkbox.Checked)
             {
                 Agree.Enabled = true;
-            }else
+            }
+            else
             {
                 Agree.Enabled = false;
             }
+        }
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            // mouse in window or in Border and max, close & min buttons     
+            if (m.Msg == 0xa0 || m.Msg == 0x200)
+            {
+                Activate();
+            }
+        }
+        private void Usage_Agreement_Load(object sender, EventArgs e)
+        {
+            Icon = Properties.Resources.Behave_Icon;
+            FormBorderStyle = FormBorderStyle.None;
+            StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

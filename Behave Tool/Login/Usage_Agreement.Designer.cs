@@ -117,7 +117,9 @@
             this.Controls.Add(this.richTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Usage_Agreement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usage_Agreement";
+            this.Load += new System.EventHandler(this.Usage_Agreement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

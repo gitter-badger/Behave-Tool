@@ -48,32 +48,33 @@ namespace Behave_Tool
             }
         }
 
-        private void Close_Click_1(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void Minimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
-        private void ToolDefaultForm_Load(object sender, EventArgs e)
+        protected override void WndProc(ref Message m)
         {
-            Username.Text = Login.loggedInAss;
-            ToolName.Text = getFormName();
-            ToolBar.Renderer = new MySR();
-        }
-        public class MySR : ToolStripSystemRenderer
-        {
-            public MySR() { }
-
-            protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+            base.WndProc(ref m);
+            // mouse in window or in Border and max, close & min buttons     
+            if (m.Msg == 0xa0 || m.Msg == 0x200)
             {
-                
-                //base.OnRenderToolStripBorder(e);
+                Activate();
             }
         }
+        private void ToolDefaultForm_Load(object sender, EventArgs e)
+        {
+            
+            Icon = Properties.Resources.Behave_Icon;
+            BringToFront();
+            Username.Text = Login.loggedInAs;
+            ToolName.Text = getFormName();
+            if (ToolName.Text == "Change Log")
+            {
+                Minimize.Enabled = false;
+            }
+                ToolBar.Renderer = new MySR();
+        }
+        
     }
 
 }

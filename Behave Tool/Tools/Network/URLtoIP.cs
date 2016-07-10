@@ -16,7 +16,6 @@ namespace Behave_Tool.Tools.Network
         public UrlToIP()
         {
             InitializeComponent();
-            TopMost = true;
         }
 
 

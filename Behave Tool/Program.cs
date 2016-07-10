@@ -13,6 +13,7 @@ namespace Behave_Tool
         [STAThread]
         private static void Main()
         {
+            //MessageBox.Show(encrypt.encriptString("robin is really homo i say sir", "acoop133"));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
@@ -32,7 +33,6 @@ namespace Behave_Tool
                         }
                     } 
                     // if Agreement agreed
-
                     Application.Run(new Login());
                     if (failLogin == true)
                     {
@@ -64,8 +64,6 @@ namespace Behave_Tool
                     break;
                 }
                 Application.Exit();
-                
-                
             }
         }
 

@@ -55,6 +55,7 @@
             this.spotifyControllerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.specialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sandboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.IPdisplay = new System.Windows.Forms.ToolStripSplitButton();
             this.releaseIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +76,7 @@
             // 
             // ToolBar
             // 
-            this.ToolBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.ToolBar.BackColor = System.Drawing.Color.Transparent;
             this.ToolBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -107,7 +108,8 @@
             this.toysToolStripMenuItem,
             this.systemToolStripMenuItem,
             this.otherToolStripMenuItem,
-            this.specialToolStripMenuItem});
+            this.specialToolStripMenuItem,
+            this.changeLogToolStripMenuItem});
             this.Menu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu.ForeColor = System.Drawing.Color.White;
             this.Menu.Image = ((System.Drawing.Image)(resources.GetObject("Menu.Image")));
@@ -130,7 +132,7 @@
             this.stuffToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
             this.stuffToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
             this.stuffToolStripMenuItem.Text = "Network";
             // 
             // LocalNetworkToolStripMenuItem
@@ -256,7 +258,7 @@
             this.toysToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.toysToolStripMenuItem.Name = "toysToolStripMenuItem";
             this.toysToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.toysToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.toysToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
             this.toysToolStripMenuItem.Text = "Toys";
             // 
             // entertainMeToolStripMenuItem
@@ -281,7 +283,7 @@
             this.systemToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             this.systemToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
             this.systemToolStripMenuItem.Text = "System";
             // 
             // performanceMonitorToolStripMenuItem
@@ -303,6 +305,7 @@
             this.widgetMakerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.widgetMakerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.widgetMakerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.widgetMakerToolStripMenuItem.Enabled = false;
             this.widgetMakerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.widgetMakerToolStripMenuItem.Name = "widgetMakerToolStripMenuItem";
             this.widgetMakerToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
@@ -325,6 +328,7 @@
             this.softwareInstallerToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.softwareInstallerToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.softwareInstallerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.softwareInstallerToolStripMenuItem.Enabled = false;
             this.softwareInstallerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.softwareInstallerToolStripMenuItem.Name = "softwareInstallerToolStripMenuItem";
             this.softwareInstallerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
@@ -355,7 +359,7 @@
             this.otherToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.otherToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.otherToolStripMenuItem.Text = "Other";
             // 
             // soundcloudDownloaderToolStripMenuItem
@@ -391,7 +395,7 @@
             this.specialToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.specialToolStripMenuItem.ForeColor = System.Drawing.Color.Fuchsia;
             this.specialToolStripMenuItem.Name = "specialToolStripMenuItem";
-            this.specialToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.specialToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.specialToolStripMenuItem.Text = "Special";
             // 
             // sandboxToolStripMenuItem
@@ -404,6 +408,18 @@
             this.sandboxToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.sandboxToolStripMenuItem.Text = "Sandbox";
             this.sandboxToolStripMenuItem.Click += new System.EventHandler(this.sandboxToolStripMenuItem_Click);
+            // 
+            // changeLogToolStripMenuItem
+            // 
+            this.changeLogToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.changeLogToolStripMenuItem.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.changeLogToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.changeLogToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.changeLogToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.changeLogToolStripMenuItem.Name = "changeLogToolStripMenuItem";
+            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.changeLogToolStripMenuItem.Text = "Change Log";
+            this.changeLogToolStripMenuItem.Click += new System.EventHandler(this.changeLogToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -556,7 +572,11 @@
             // notifyIcon1
             // 
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "Behave Succesfuly Started";
+            this.notifyIcon1.BalloonTipTitle = "Behave";
+            this.notifyIcon1.Text = "Behave";
             this.notifyIcon1.Visible = true;
+            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -646,6 +666,7 @@
         private StorageDrives storageDrives1;
         private System.Windows.Forms.ToolStripButton Username;
         private System.Windows.Forms.ToolStripMenuItem widgetMakerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeLogToolStripMenuItem;
     }
 }
 

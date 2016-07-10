@@ -30,7 +30,7 @@ namespace Behave_Tool
             }
             catch (Exception ex)
             {
-                Tools.Misc.SaveError(ex.ToString());
+                Misc.SaveError(ex.ToString());
             }
         }
 
@@ -53,7 +53,7 @@ namespace Behave_Tool
             }
             catch (Exception ex)
             {
-                Tools.Misc.SaveError(ex.ToString());
+                Misc.SaveError(ex.ToString());
             }
         }
     }

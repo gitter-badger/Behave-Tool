@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>I've broke the widgets, Again..... GG
+
+- Added
+	- Taskbar notification Icon. (bottom right)
+		This will have functions in the future
+
+	- All Application windows now have a taskbar icon
+	- Application is now dragable via the bar on top
+
+	- Application auto focuses when mouse enters.  (buggy)
+		!This Does not apply to Login and Widgets!
+
+	  	This means it no longer requires the first 
+		click to activate the window after it lost its focus.
+
+	- Loading screen
+
+	- Cryptography for sensitive information
+		Activated when server is ready
+
+	- Database Login
+		Activated when server is ready
+
+- Improvement
+	- Theme update
+	- All tools are no longer permanently on top of everything
+	- Public IP is now near instant
+	- Login UI
+	- User Agreement UI
+
+- Bug fix
+	- Settings
+		- keep on top
+	- Log in
+	- Main Menu
+	- User Agreement
+	- Network Tools
+
+- Removal
+	- Performance Information on Main Menu
+		Causing performance issue
+		and also will be in widgets.  
+		When i fix it that is &gt;.&gt;</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
+        AAAFBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wMEAv8FBgT/AwQC/wMEAv8HCAb/BAUD/wYH
+        Bf8EBQP/BgcE/wQFA/8CAwL/BQYE/wUGBP8GBwX/AgMB/xUWFP9PUE7/QUJA/0lKSP9JSkj/Ozw6/0RF
+        Q/9AQT//KCkn/wABAP8ICQf/DxAO/wUGBP8FBgT/BwgG/wAAAP88PTv/dnd1/2praf93eHb/VldV/2hp
+        aP9hYmD/dnd1/2doZv9XWFb/b3Bu/05PTf8AAAD/BgcF/wgJB/8AAAD/QEE//4aHhf9iY2L/VFRT/z8/
+        Pv9FRkT/Ly8u/1BRT/88PTv/P0A+/15fXf85Ojj/AAEA/wYHBf8GBwX/AQIA/xkaGP9YWVf/QkNB/zk6
+        OP8+Pz3/Nzc2/zw9O/83ODb/Ozw6/zk6OP88PTv/Nzg2/wYHBf8FBgT/BQYE/wUGBP8GBwX/CAkH/wwN
+        C/8ODw3/DQ4M/w8PDf8ODw3/Dg8N/w4PDf8ODw3/Dg8N/wwNC/8FBgT/BQYE/wUGBP8FBgT/BQYE/wQF
+        A/8DBAL/AwQC/wMEAv8DBAL/AwQC/wMEAv8DBAL/AwQC/wMEAv8DBAL/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUGBP8FBgT/BQYE/wUG
+        BP8FBgT/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
+</root>

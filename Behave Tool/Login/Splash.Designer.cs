@@ -48,7 +48,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(337, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "We\'re Getting Things Ready For You!";
+            this.label1.Text = "We're Getting Things Ready For You!";
             // 
             // pictureBox1
             // 

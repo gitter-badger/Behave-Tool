@@ -37,6 +37,8 @@ namespace Behave_Tool
         }
         private void Behave_Load(object sender, EventArgs e)
         {
+            notifyIcon1.ShowBalloonTip(2000);
+            Icon = Properties.Resources.Behave_Icon;
             Username.Text = Login.loggedInAs;
             startupProceedure();
 
@@ -51,14 +53,12 @@ namespace Behave_Tool
                         Application.DoEvents();
                     }
                     splashForm.Close();
-                    //splashForm.Dispose();
                 }
             });
 
-            Thread.Sleep(3000); // Emulate hardwork
+            Thread.Sleep(6000); // Emulate hardwork
             done = true;
-            Show();
-
+            new ChangeLog().Show();
         }
         //private void AvailableDrives()
         //{
@@ -169,8 +169,15 @@ namespace Behave_Tool
             }
 
             base.WndProc(ref m);
+            // mouse in window or in Border and max, close & min buttons     
+            if (m.Msg == 0xa0 || m.Msg == 0x200)
+            {
+                Activate();
+            }
             if (m.Msg != 132)
+            {
                 return;
+            }
             m.Result = (IntPtr)2;
         }
 
@@ -247,6 +254,7 @@ namespace Behave_Tool
 
         private void Load_Settings()
         {
+            notifyIcon1.Icon = Properties.Resources.Behave_Icon;
             setBackground();
             var colour1 = ColorTranslator.FromHtml(Properties.Settings.Default.Text1_Colour);
             var colour2 = ColorTranslator.FromHtml(Properties.Settings.Default.Text2_Colour);
@@ -291,6 +299,7 @@ namespace Behave_Tool
 
         private void localPortScannerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            new LocalPortScanner().Show();
         }
 
         private void Main_Resize(object sender, EventArgs e)
@@ -564,11 +573,6 @@ namespace Behave_Tool
             new BetterTaskManager().Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            new ShowHide().Show();
-        }
-
         private void storageDrives1_Load(object sender, EventArgs e)
         {
 
@@ -586,6 +590,16 @@ namespace Behave_Tool
         private void widgetMakerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new WidgetAssembly().Show();
+        }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void changeLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ChangeLog().Show();
         }
     }
    

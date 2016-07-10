@@ -1,31 +1,49 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices;
 
 namespace Behave_Tool
 {
     public partial class Login : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        public static bool _onlineMode = false;
         public bool success;
         private static int attempts = 0;
         public static string loggedInAs;
-
+        public string _version = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion;
         public Login()
         {
             InitializeComponent();
         }
-
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
-            if (m.Msg != 132)
-                return;
-            m.Result = (IntPtr)2;
+            // mouse in window or in Border and max, close & min buttons     
+            if (m.Msg == 0xa0 || m.Msg == 0x200)
+            {
+                Activate();
+            }
+        }
+        private void toolStrip1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
 
         private void setSave()
@@ -48,13 +66,16 @@ namespace Behave_Tool
         {
             Program.failLogin = true;
             Environment.Exit(0);
-            //Application.Exit();
         }
 
         private void err()
         {
+            Color oldColour = AttemptCount.ForeColor;
+            Error.Show();
+            AttemptCount.ForeColor = Color.Red;
             Thread.Sleep(3000);
-            Error.Visible = false;
+            AttemptCount.ForeColor = oldColour;
+            Error.Hide();
         }
 
         private void getServerStatus()
@@ -62,17 +83,17 @@ namespace Behave_Tool
             try
             {
                 serverStatus.Text = "Checking Server...";
-                if (new Ping().Send(IPAddress.Parse("31.170.162.63")).Status == IPStatus.Success)
+                if (new Ping().Send(("behave.noip.me")).Status == IPStatus.Success)
                 {
-                    serverStatus.Text = "Online";
+                    serverStatus.Text = "Domain Is Online";
                 }
                 else
                 {
-                    serverStatus.Text = "No Connection";
+                    serverStatus.Text = "Cant Reach Domain";
                 }
             }
             catch (Exception)
-            { serverStatus.Text = "No Connection"; }
+            { serverStatus.Text = "No Network Connection"; }
         }
 
         private void Log_In_Click(object sender, EventArgs e)
@@ -82,25 +103,26 @@ namespace Behave_Tool
 
         private void login()
         {
-
+            attempts += 1;
             if (saveLogIn.Checked == true)
             {
                 Properties.Settings.Default["Sign_In"] = (UserName.Text + "," + PassWord.Text);
             }
-            attempts += 1;
+
             if (!loginSuccess())
             {
 
                 if (attempts <= 2)
                 {
                     AttemptCount.Text = "Attempts left: " + (3 - attempts);
+                    new Thread(new ThreadStart(err)) { IsBackground = true }.Start();
                 }
                 else
                 {
                     MessageBox.Show("You have ran out of attempts!");
                     Program.failLogin = true;
                     Environment.Exit(0);
-                    
+
                 }
             }
             else
@@ -108,12 +130,21 @@ namespace Behave_Tool
                 Program.failLogin = false;
                 loggedInAs = UserName.Text;
                 Close();
-                
+
             }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
+            if(_onlineMode == false)
+            {
+                UserName.Text = "Tester";
+                PassWord.Text = "ddr3";
+            }
+            Icon = Properties.Resources.Behave_Icon;
+            toolStrip1.Renderer = new MySR();
+            version.Text = "Alpha: " + _version;
+            Error.Hide();
             PassWord.PasswordChar = randChar();
             CheckForIllegalCrossThreadCalls = false;
             StartPosition = FormStartPosition.Manual;
@@ -126,16 +157,25 @@ namespace Behave_Tool
 
         private bool loginSuccess()
         {
-            //if (sqlConnect())
-            if (UserName.Text == "admin" && PassWord.Text == "ddr3")
+            if (_onlineMode == true)
             {
-                Properties.Settings.Default.Save();
-                return true;
+                if (sqlConnect(UserName.Text, PassWord.Text))
+                {
+                    Properties.Settings.Default.Save();
+                    return true;
+                }
             }
             else
             {
-                return false;
+                if (UserName.Text == "Tester" && PassWord.Text == "ddr3")
+                {
+                    Properties.Settings.Default.Save();
+                    return true;
+                }
             }
+
+            return false; // if failed
+
         }
 
         private void PassWord_KeyDown(object sender, KeyEventArgs e)
@@ -154,80 +194,133 @@ namespace Behave_Tool
 
         private void serverStatus_TextChanged(object sender, EventArgs e)
         {
-            if (serverStatus.Text == "Online")
+            if (serverStatus.Text == "Domain Is Online")
             {
-                this.serverStatus.ForeColor = Color.Green;
+                serverStatus.ForeColor = Color.Green;
                 Thread.Sleep(20000);
                 new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
             }
-            else if (this.serverStatus.Text == "Checking Server...")
+            else if (serverStatus.Text == "Checking Server...")
             {
-                this.serverStatus.ForeColor = Color.Yellow;
-            }
-            else if (serverStatus.Text == "No Connection")
-            {
-                serverStatus.ForeColor = Color.Red;
-                Thread.Sleep(20000);
-                new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
-            }
-        }
-
-        private bool sqlConnect()
-        {
-            bool success = false;
-            SqlConnection connection = new SqlConnection("server=59.98.168.25,3306;database=behave;User id=behave_admin;Password=Ksia29@#sis!2;Trusted_Connection=yes;connection timeout=10");
-            try
-            {
-                connection.Open();
-            }
-            catch (Exception ex)
-            {
-                int num = (int)MessageBox.Show(ex.ToString());
-            }
-            if (connection != null && connection.State == ConnectionState.Closed)
-            {
-                success = false;
+                serverStatus.ForeColor = Color.Yellow;
             }
             else
             {
-                SqlDataReader sqlDataReader = new SqlCommand("SELECT * FROM users WHERE username='" + UserName.Text + "' AND password='" + this.PassWord.Text + "'", connection).ExecuteReader();
-                while (sqlDataReader.Read())
-                {
-                    if (sqlDataReader.HasRows)
-                    {
-                        int num = (int)MessageBox.Show("Login Successfully Done");
-                        success = true;
-                    }
-                }
-                if (!sqlDataReader.HasRows)
-                {
-                    int num = (int)MessageBox.Show("Access Denied, password username mismatched");
-                    success = false;
-                }
+                serverStatus.ForeColor = Color.Red;
+                Thread.Sleep(5000);
+                new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
+            }
+        }
+        const string myConnectionString = "Server=127.0.0.1;Database=behave;Uid=root;Pwd=Awsomekids6";
+
+        private bool sqlConnect(string username, string password)
+        {
+
+            string ip = Tools.Network.IPinfo.getPublicIP();
+            using (var connection = new MySqlConnection(myConnectionString))
+            using (MySqlCommand command = connection.CreateCommand())
+            {
                 try
                 {
-                    connection.Close();
+                    connection.Open();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show(ex.ToString());
+                }
+                if (connection != null && connection.State == ConnectionState.Closed)
+                {
+                    return false;
+                }
+                else
+                {
+                    using (MySqlDataReader sqlDataReader = new MySqlCommand("SELECT * FROM users WHERE username='" + username + "' AND password='" + password + "'", connection).ExecuteReader())
+                    {
+                        try
+                        {
+                            while (sqlDataReader.Read())
+                            {
+
+                                if (sqlDataReader.HasRows)
+                                {
+                                    string update = "UPDATE users SET lastIP='" + ip + "',lastLogin='" + DateTime.Now + "',queries= queries + 1 WHERE username='" + UserName.Text + "' AND password= '" + PassWord.Text + "';";
+                                    updateCommand(update);
+                                    getFirstName();
+                                    return true;
+                                }
+
+
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+
+                        string update1 = "UPDATE users SET lastIP='" + ip + "',lastLogin='" + DateTime.Now + "',badQueries= badQueries + 1 WHERE username='" + UserName.Text + "';";
+                        updateCommand(update1);
+                        return false;
+
+                    }
                 }
             }
-            return success;
         }
-
-
-        private void saveLogIn_CheckedChanged(object sender, EventArgs e)
+        private void updateCommand(string update)
         {
-            if (saveLogIn.Checked)
+            try
             {
-                Properties.Settings.Default.KeepWindowOnTop = true;
+                using (MySqlConnection MyConn2 = new MySqlConnection(myConnectionString))
+                {
+                    MySqlCommand MyCommand2 = new MySqlCommand(update, MyConn2);
+                    MySqlDataReader MyReader2;
+                    MyConn2.Open();
+                    MyReader2 = MyCommand2.ExecuteReader();
+
+                    while (MyReader2.Read())
+                    {
+                        MyCommand2.ExecuteNonQuery();
+                    }
+                    //Connection closed here  
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Properties.Settings.Default.KeepWindowOnTop = false;
+                MessageBox.Show(ex.Message);
             }
-            Properties.Settings.Default.Save();
         }
+        public string displayCommand(string query, string cell)
+        {
+            try
+            {
+                using (MySqlConnection MyConn2 = new MySqlConnection(myConnectionString))
+                {
+                    MySqlCommand MyCommand2 = new MySqlCommand(query, MyConn2);
+                    MySqlDataReader MyReader2;
+                    MyConn2.Open();
+                    using (MyReader2 = MyCommand2.ExecuteReader())
+                    {
+                        while (MyReader2.Read())
+                        {
+                            return MyReader2.GetString(MyReader2.GetOrdinal(cell));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
+        }
+        public static string firstName;
+        public void getFirstName()
+        {
+            string query = "SELECT * FROM users WHERE username= '" + UserName.Text + "';";
+            firstName = displayCommand(query, "firstname");
+        }
+
+       
+
     }
+
 }

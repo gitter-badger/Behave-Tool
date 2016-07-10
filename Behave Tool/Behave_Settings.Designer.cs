@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Behave_Settings));
             this.SaveSettings = new System.Windows.Forms.Button();
             this.ColourDiag3 = new System.Windows.Forms.Button();
             this.Text3_Label = new System.Windows.Forms.Label();
@@ -288,8 +289,10 @@
             this.ClientSize = new System.Drawing.Size(547, 295);
             this.Controls.Add(this.SaveSettings);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Behave_Settings";
             this.Text = "clone";
+            this.Load += new System.EventHandler(this.Behave_Settings_Load);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.SaveSettings, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

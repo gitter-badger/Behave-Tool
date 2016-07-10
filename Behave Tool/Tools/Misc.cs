@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace Behave_Tool.Tools
+namespace Behave_Tool
 {
     internal class Misc
     {
@@ -45,6 +45,16 @@ namespace Behave_Tool.Tools
                 }
                 Process.Start(savefile.FileName);
             }
+        }
+
+    }
+    public class MySR : ToolStripSystemRenderer
+    {
+        public MySR() { }
+
+        protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+        {
+            //base.OnRenderToolStripBorder(e);
         }
     }
 }

@@ -1,13 +1,8 @@
-﻿using Behave_Tool.Tools;
+﻿
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Behave_Tool
@@ -21,25 +16,6 @@ namespace Behave_Tool
         public Behave_Settings()
         {
             InitializeComponent();
-            TopMost = Properties.Settings.Default.KeepWindowOnTop;
-            var colour1 = ColorTranslator.FromHtml(Properties.Settings.Default.Text1_Colour);
-            var colour2 = ColorTranslator.FromHtml(Properties.Settings.Default.Text2_Colour);
-            var colour3 = ColorTranslator.FromHtml(Properties.Settings.Default.Text3_Colour);
-            Text1_Label.ForeColor = colour1;
-            Text2_Label.ForeColor = colour2;
-            Text3_Label.ForeColor = colour3;
-            Text1_Colour.Text = Properties.Settings.Default.Text1_Colour;
-            Text2_Colour.Text = Properties.Settings.Default.Text2_Colour;
-            Text3_Colour.Text = Properties.Settings.Default.Text3_Colour;
-            checkBox1.Checked = Properties.Settings.Default.KeepWindowOnTop;
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg != 132)
-                return;
-            m.Result = (IntPtr)2;
         }
 
         private void SaveSettings_Click(object sender, EventArgs e)
@@ -49,6 +25,14 @@ namespace Behave_Tool
                 Properties.Settings.Default["Text1_Colour"] = Text1_Colour.Text;
                 Properties.Settings.Default["Text2_Colour"] = Text2_Colour.Text;
                 Properties.Settings.Default["Text3_Colour"] = Text3_Colour.Text;
+                if(checkBox1.Checked)
+                {
+                    Properties.Settings.Default["KeepWindowOnTop"] = true;
+                }
+                else
+                {
+                    Properties.Settings.Default["KeepWindowOnTop"] = false;
+                }
                 Properties.Settings.Default.Save();
                 new Restarting().Show();
                 Restarting.restartNow();
@@ -61,7 +45,7 @@ namespace Behave_Tool
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.checkBox1.Checked)
+            if (checkBox1.Checked)
             {
                 Properties.Settings.Default.KeepWindowOnTop = true;
             }
@@ -192,6 +176,21 @@ namespace Behave_Tool
         private void Text3_Colour_TextChanged(object sender, EventArgs e)
         {
             Text3_Label.ForeColor = ColorTranslator.FromHtml(Text3_Colour.Text);
+        }
+
+        private void Behave_Settings_Load(object sender, EventArgs e)
+        {
+            TopMost = Properties.Settings.Default.KeepWindowOnTop;
+            var colour1 = ColorTranslator.FromHtml(Properties.Settings.Default.Text1_Colour);
+            var colour2 = ColorTranslator.FromHtml(Properties.Settings.Default.Text2_Colour);
+            var colour3 = ColorTranslator.FromHtml(Properties.Settings.Default.Text3_Colour);
+            Text1_Label.ForeColor = colour1;
+            Text2_Label.ForeColor = colour2;
+            Text3_Label.ForeColor = colour3;
+            Text1_Colour.Text = Properties.Settings.Default.Text1_Colour;
+            Text2_Colour.Text = Properties.Settings.Default.Text2_Colour;
+            Text3_Colour.Text = Properties.Settings.Default.Text3_Colour;
+            checkBox1.Checked = Properties.Settings.Default.KeepWindowOnTop;
         }
     }
 }

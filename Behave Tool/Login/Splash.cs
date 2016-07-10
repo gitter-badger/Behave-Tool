@@ -7,24 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using static Behave_Tool.rainbow;
+using static Behave_Tool.Rainbow;
 
 namespace Behave_Tool
 {
     public partial class Splash : Form
     {   // morning
-        TimeSpan morningStart = new TimeSpan(02, 0, 0);
+        TimeSpan morningStart = new TimeSpan(02, 00, 00);
         TimeSpan morningEnd = new TimeSpan(11, 59, 59);
         // afternoon
-        TimeSpan afternoonStart = new TimeSpan(13, 0, 0);
+        TimeSpan afternoonStart = new TimeSpan(13, 00, 00);
         TimeSpan afternoonEnd = new TimeSpan(17, 59, 59);
         // evening
-        TimeSpan eveningStart = new TimeSpan(18, 0, 0);
+        TimeSpan eveningStart = new TimeSpan(18, 00, 00);
         TimeSpan eveningEnd = new TimeSpan(22, 59, 59);
         TimeSpan nightStart = new TimeSpan(23, 00, 00);
         TimeSpan nightEnd = new TimeSpan(01, 59, 59);
 
-        TimeSpan now = DateTime.Now.TimeOfDay;
+        public static TimeSpan now = DateTime.Now.TimeOfDay;
         Image loading = (Image)Properties.Resources.Loading_Gif.Clone();
 
         public Splash()
@@ -45,10 +45,13 @@ namespace Behave_Tool
         }
 
 
+
+
         private void Splash_Load(object sender, EventArgs e)
         {
+            Icon = Properties.Resources.Behave_Icon;
             SmartLabel.Text = remark();
-            
+
             pictureBox1.Image = loading;
             new Thread(new ThreadStart(animation))
             {
@@ -58,6 +61,7 @@ namespace Behave_Tool
 
         private string remark()
         {
+            string _name;
             string remark = null;
             Random rand = new Random();
             int randomNumber = rand.Next(0, 1);
@@ -66,20 +70,31 @@ namespace Behave_Tool
                 if ((now >= morningStart) && (now <= morningEnd)) { remark = "Good Morning"; }
                 else if ((now >= afternoonStart) && (now <= afternoonEnd)) { remark = "Good Afternoon"; }
                 else if ((now >= eveningStart) && (now <= eveningEnd)) { remark = "Good Evening"; }
-                else if ((now >= nightStart) && (now <= eveningEnd)) { remark = "Late are we?"; }
+                //else if ((now >= nightStart) && (now <= nightEnd)) { remark = "Late are we?"; }
+                else
+                {
+                    remark = "Late Night Huh...";
+                }
             }
-            else if (randomNumber == 1)
+            else
             {
                 string[] greetings = { "Greetings", "Hello", "Howdy", "G'day" };
                 remark = greetings[rand.Next(greetings.Length)];
             }
-            MessageBox.Show(remark);
-            return remark + " " + Login.loggedInAs;
+            if (Login._onlineMode == true)
+            {
+                 _name = Login.firstName;
+            }
+            else
+            {
+                _name = Login.loggedInAs;
+            }
+            return remark + " " + _name;
         }
-    } 
-    class rainbow
+    }
+    class Rainbow
     {
-        
+
         public struct ColorRGB
         {
             public byte R;

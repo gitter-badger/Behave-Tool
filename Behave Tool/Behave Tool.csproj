@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,6 +73,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>mysql-connector-net-6.9.9-noinstall\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -113,7 +117,26 @@
     <Compile Include="CustomControls\WidgetMakerList.Designer.cs">
       <DependentUpon>WidgetMakerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeLog.Designer.cs">
+      <DependentUpon>ChangeLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultProperties\ShowHide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefaultProperties\ShowHide.Designer.cs">
+      <DependentUpon>ShowHide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultProperties\ToolDefaultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefaultProperties\ToolDefaultForm.Designer.cs">
+      <DependentUpon>ToolDefaultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Encryption.cs" />
+    <Compile Include="tcpProtocol.cs" />
     <Compile Include="Tools\System\SoftwareInstaller.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,12 +154,6 @@
     </Compile>
     <Compile Include="CustomControls\CustomProgressBar.Designer.cs">
       <DependentUpon>CustomProgressBar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InheritForms\ToolDefaultForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InheritForms\ToolDefaultForm.Designer.cs">
-      <DependentUpon>ToolDefaultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Splash.cs">
       <SubType>Form</SubType>
@@ -268,13 +285,7 @@
       <DependentUpon>Restarting.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="InheritForms\ShowHide.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InheritForms\ShowHide.Designer.cs">
-      <DependentUpon>ShowHide.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\System Info.cs" />
+    <Compile Include="Tools\System Info.cs" />
     <Compile Include="Login\Usage_Agreement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,20 +301,26 @@
     <EmbeddedResource Include="Behave_Settings.resx">
       <DependentUpon>Behave_Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeLog.resx">
+      <DependentUpon>ChangeLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\WidgetList.resx">
       <DependentUpon>WidgetList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\WidgetMakerList.resx">
       <DependentUpon>WidgetMakerList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DefaultProperties\ShowHide.resx">
+      <DependentUpon>ShowHide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultProperties\ToolDefaultForm.resx">
+      <DependentUpon>ToolDefaultForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\System\SoftwareInstaller.resx">
       <DependentUpon>SoftwareInstaller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CpuRam.resx">
       <DependentUpon>CpuRam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InheritForms\ToolDefaultForm.resx">
-      <DependentUpon>ToolDefaultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -371,9 +388,6 @@
     </Compile>
     <EmbeddedResource Include="Restarting.resx">
       <DependentUpon>Restarting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InheritForms\ShowHide.resx">
-      <DependentUpon>ShowHide.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Usage_Agreement.resx">
       <DependentUpon>Usage_Agreement.cs</DependentUpon>

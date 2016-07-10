@@ -55,8 +55,9 @@
             this.ShowHideToggle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ShowHideToggle.Location = new System.Drawing.Point(222, 0);
             this.ShowHideToggle.Margin = new System.Windows.Forms.Padding(1);
+            this.ShowHideToggle.MinimumSize = new System.Drawing.Size(23, 23);
             this.ShowHideToggle.Name = "ShowHideToggle";
-            this.ShowHideToggle.Size = new System.Drawing.Size(23, 111);
+            this.ShowHideToggle.Size = new System.Drawing.Size(23, 113);
             this.ShowHideToggle.TabIndex = 0;
             this.ShowHideToggle.Text = ">";
             this.ShowHideToggle.UseVisualStyleBackColor = false;
@@ -64,24 +65,28 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panel1.Controls.Add(this.ShowHideToggle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 111);
+            this.panel1.Size = new System.Drawing.Size(245, 113);
             this.panel1.TabIndex = 1;
             // 
             // toolStrip1
             // 
             this.toolStrip1.AllowMerge = false;
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.toolStrip1.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.WidgetName,
             this.Close});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.ShowItemToolTips = false;
             this.toolStrip1.Size = new System.Drawing.Size(245, 25);
             this.toolStrip1.TabIndex = 0;
@@ -100,6 +105,7 @@
             // Close
             // 
             this.Close.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.Close.AutoToolTip = false;
             this.Close.BackgroundImage = global::Behave_Tool.Properties.Resources.Button;
             this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Close.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -117,13 +123,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(245, 138);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShowHide";
-            this.Opacity = 0.97D;
+            this.Opacity = 0.95D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.ShowHide_Load);
             this.panel1.ResumeLayout(false);
