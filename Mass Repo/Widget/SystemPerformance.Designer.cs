@@ -34,11 +34,11 @@
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Controls.Add(this.cpuRam1);
+            this.panel1.Controls.Add(cpuRam1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.None;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Size = new System.Drawing.Size(227, 62);
-            this.panel1.Controls.SetChildIndex(this.cpuRam1, 0);
+            this.panel1.Controls.SetChildIndex(cpuRam1, 0);
             // 
             // cpuRam1
             // 
@@ -48,7 +48,7 @@
             this.cpuRam1.Name = "cpuRam1";
             this.cpuRam1.Size = new System.Drawing.Size(204, 62);
             this.cpuRam1.TabIndex = 0;
-            this.cpuRam1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cpuRam1_MouseDown);
+            this.cpuRam1.MouseDown += new System.Windows.Forms.MouseEventHandler(cpuRam1_MouseDown);
             // 
             // SystemPerformance
             // 

@@ -39,6 +39,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SignupBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.saveLogIn = new System.Windows.Forms.CheckBox();
@@ -48,7 +49,6 @@
             this.Close = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.version = new System.Windows.Forms.ToolStripLabel();
-            this.SignupBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -187,8 +187,24 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(-1, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(508, 106);
+            this.panel1.Size = new System.Drawing.Size(508, 98);
             this.panel1.TabIndex = 42;
+            // 
+            // SignupBtn
+            // 
+            this.SignupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SignupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SignupBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SignupBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignupBtn.ForeColor = System.Drawing.Color.White;
+            this.SignupBtn.Image = global::MassRepo.Properties.Resources.Button;
+            this.SignupBtn.Location = new System.Drawing.Point(62, 63);
+            this.SignupBtn.Name = "SignupBtn";
+            this.SignupBtn.Size = new System.Drawing.Size(75, 23);
+            this.SignupBtn.TabIndex = 50;
+            this.SignupBtn.Text = "Sign Up";
+            this.SignupBtn.UseVisualStyleBackColor = true;
+            this.SignupBtn.Click += new System.EventHandler(this.SignupBtn_Click);
             // 
             // label4
             // 
@@ -219,7 +235,7 @@
             this.saveLogIn.BackColor = System.Drawing.Color.Transparent;
             this.saveLogIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.saveLogIn.ForeColor = System.Drawing.Color.White;
-            this.saveLogIn.Location = new System.Drawing.Point(209, 73);
+            this.saveLogIn.Location = new System.Drawing.Point(209, 69);
             this.saveLogIn.Name = "saveLogIn";
             this.saveLogIn.Size = new System.Drawing.Size(106, 17);
             this.saveLogIn.TabIndex = 43;
@@ -235,7 +251,7 @@
             this.AutoLogin.Enabled = false;
             this.AutoLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.AutoLogin.ForeColor = System.Drawing.Color.White;
-            this.AutoLogin.Location = new System.Drawing.Point(321, 73);
+            this.AutoLogin.Location = new System.Drawing.Point(321, 69);
             this.AutoLogin.Name = "AutoLogin";
             this.AutoLogin.Size = new System.Drawing.Size(77, 17);
             this.AutoLogin.TabIndex = 44;
@@ -306,29 +322,13 @@
             this.version.Size = new System.Drawing.Size(45, 22);
             this.version.Text = "Version";
             // 
-            // SignupBtn
-            // 
-            this.SignupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SignupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SignupBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SignupBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SignupBtn.ForeColor = System.Drawing.Color.White;
-            this.SignupBtn.Image = global::MassRepo.Properties.Resources.Button;
-            this.SignupBtn.Location = new System.Drawing.Point(419, 80);
-            this.SignupBtn.Name = "SignupBtn";
-            this.SignupBtn.Size = new System.Drawing.Size(75, 23);
-            this.SignupBtn.TabIndex = 50;
-            this.SignupBtn.Text = "Sign Up";
-            this.SignupBtn.UseVisualStyleBackColor = true;
-            this.SignupBtn.Click += new System.EventHandler(this.SignupBtn_Click);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(512, 140);
+            this.ClientSize = new System.Drawing.Size(512, 131);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;

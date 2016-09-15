@@ -104,7 +104,7 @@ namespace MassRepo
         private void addAccount()
         {
             string ip = Tools.Network.IPinfo.getPublicIP();
-            string Query = "INSERT into users(username,password,email,firstname,lastname,lastIP) values('" + Username.Text + "','" + encrypt(Password.Text) + "','" + Email.Text + "','" + Firstname.Text + "','" + Lastname.Text +"','" + ip + "');";
+            string Query = "INSERT into users(username,password,email,firstname,lastname,ip) values('" + Username.Text + "','" + encrypt(Password.Text) + "','" + Email.Text + "','" + Firstname.Text + "','" + Lastname.Text +"','" + ip + "');";
             //This is  MySqlConnection here i have created the object and pass my connection string. 
             try
             {

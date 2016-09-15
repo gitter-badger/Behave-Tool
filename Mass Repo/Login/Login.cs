@@ -181,7 +181,7 @@ namespace MassRepo
 
         private void serverStatus_TextChanged(object sender, EventArgs e)
         {
-            if (serverStatus.Text == "Domain Is Online")
+            if (serverStatus.Text == "Domain Is Reachable")
             {
                 serverStatus.ForeColor = Color.Green;
                 Thread.Sleep(20000);
@@ -198,7 +198,7 @@ namespace MassRepo
                 new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
             }
         }
-        const string myConnectionString = "Server=massrepo.com;Database=massrepo;Uid=massrepo_client;Pwd=Ksia29@#sis!2";
+        const string myConnectionString = "Server=massrepo.com;Database=massrepo;Uid=root;Pwd=9vXcr8epuswBjmLH";
 
         private bool sqlConnect()
         {
@@ -230,7 +230,7 @@ namespace MassRepo
 
                                 if (sqlDataReader.HasRows)
                                 {
-                                    string update = "UPDATE users SET lastIP='" + ip + "',lastLogin='" + DateTime.Now + "',logins= logins + 1, queries= queries + 1 WHERE username='" + UserName.Text + "' AND password= '" + encrypt(PassWord.Text) + "';";
+                                    string update = "UPDATE users SET ip='" + ip + "',lastLogin='" + DateTime.Now + "',logins= logins + 1, queries= queries + 1 WHERE username='" + UserName.Text + "' AND password= '" + encrypt(PassWord.Text) + "';";
                                     updateCommand(update);
                                     getFirstName();
                                     return true;
@@ -244,7 +244,7 @@ namespace MassRepo
                             MessageBox.Show(ex.ToString());
                         }
 
-                        string update1 = "UPDATE users SET lastIP='" + ip + "',lastLogin='" + DateTime.Now + "',badQueries= badQueries + 1 WHERE username='" + UserName.Text + "';";
+                        string update1 = "UPDATE users SET ip='" + ip + "',lastLogin='" + DateTime.Now + "',badQueries= badQueries + 1 WHERE username='" + UserName.Text + "';";
                         updateCommand(update1);
                         return false;
 

@@ -128,7 +128,7 @@
 	- Application is now dragable via the bar on top
 
 	- Application auto focuses when mouse enters.  (buggy)
-		!This Does not apply to Login and Widgets!
+		&gt;&gt; This Does not apply to Login and Widgets &lt;&lt;
 
 	  	This means it no longer requires the first 
 		click to activate the window after it lost its focus.
