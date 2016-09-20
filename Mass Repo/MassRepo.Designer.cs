@@ -65,7 +65,10 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Settings = new System.Windows.Forms.ToolStripButton();
             this.IPrefresh = new System.Windows.Forms.ToolStripButton();
-            this.Username = new System.Windows.Forms.ToolStripButton();
+            this.Username = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SessionTimer = new System.Windows.Forms.Label();
             this.TotalSessionTime = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -449,7 +452,7 @@
             this.releaseIPToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.releaseIPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.releaseIPToolStripMenuItem.Name = "releaseIPToolStripMenuItem";
-            this.releaseIPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.releaseIPToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.releaseIPToolStripMenuItem.Text = "Release IP";
             this.releaseIPToolStripMenuItem.Click += new System.EventHandler(this.releaseIPToolStripMenuItem_Click);
             // 
@@ -462,7 +465,7 @@
             this.renewIPToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.renewIPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.renewIPToolStripMenuItem.Name = "renewIPToolStripMenuItem";
-            this.renewIPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.renewIPToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.renewIPToolStripMenuItem.Text = "Renew IP";
             this.renewIPToolStripMenuItem.Click += new System.EventHandler(this.renewIPToolStripMenuItem_Click);
             // 
@@ -535,12 +538,35 @@
             this.Username.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.Username.AutoToolTip = false;
             this.Username.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Username.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator3,
+            this.settingsToolStripMenuItem,
+            this.logOutToolStripMenuItem});
             this.Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Username.Image = ((System.Drawing.Image)(resources.GetObject("Username.Image")));
             this.Username.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(64, 30);
+            this.Username.Size = new System.Drawing.Size(73, 30);
             this.Username.Text = "Username";
+            this.Username.Click += new System.EventHandler(this.Username_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // SessionTimer
             // 
@@ -663,9 +689,12 @@
         private System.Windows.Forms.ToolStripMenuItem softwareInstallerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem betterTaskManagerToolStripMenuItem;
         private StorageDrives storageDrives1;
-        private System.Windows.Forms.ToolStripButton Username;
         private System.Windows.Forms.ToolStripMenuItem widgetMakerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeLogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton Username;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }
 

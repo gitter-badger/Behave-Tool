@@ -600,6 +600,16 @@ namespace MassRepo
         {
             new ChangeLog().Show();
         }
+
+        private void Username_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }
