@@ -29,6 +29,38 @@ namespace MassRepo
         //private static bool networkTrafficMonitoring = true;
         //private static bool systemUsageOn = true;
 
+
+        protected override void WndProc(ref Message m)
+        {
+            const int wmNcHitTest = 0x84;
+            const int htBottomLeft = 16;
+            const int htBottomRight = 17;
+            if (m.Msg == wmNcHitTest)
+            {
+                int x = (int)(m.LParam.ToInt64() & 0xFFFF);
+                int y = (int)((m.LParam.ToInt64() & 0xFFFF0000) >> 16);
+                Point pt = PointToClient(new Point(x, y));
+                Size clientSize = ClientSize;
+                if (pt.X >= clientSize.Width - 16 && pt.Y >= clientSize.Height - 16 && clientSize.Height >= 16)
+                {
+                    m.Result = (IntPtr)(IsMirrored ? htBottomLeft : htBottomRight);
+                    return;
+                }
+            }
+
+            base.WndProc(ref m);
+            // mouse in window or in Border and max, close & min buttons     
+            if (m.Msg == 0xa0 || m.Msg == 0x200)
+            {
+                Activate();
+            }
+            if (m.Msg != 132)
+            {
+                return;
+            }
+            m.Result = (IntPtr)2;
+        }
+
         public MassRepo()
         {
             CheckForIllegalCrossThreadCalls = false; // this is bad!
@@ -150,36 +182,7 @@ namespace MassRepo
             Console.WriteLine("=Done= UpdatePublicIP");
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            const int wmNcHitTest = 0x84;
-            const int htBottomLeft = 16;
-            const int htBottomRight = 17;
-            if (m.Msg == wmNcHitTest)
-            {
-                int x = (int)(m.LParam.ToInt64() & 0xFFFF);
-                int y = (int)((m.LParam.ToInt64() & 0xFFFF0000) >> 16);
-                Point pt = PointToClient(new Point(x, y));
-                Size clientSize = ClientSize;
-                if (pt.X >= clientSize.Width - 16 && pt.Y >= clientSize.Height - 16 && clientSize.Height >= 16)
-                {
-                    m.Result = (IntPtr)(IsMirrored ? htBottomLeft : htBottomRight);
-                    return;
-                }
-            }
-
-            base.WndProc(ref m);
-            // mouse in window or in Border and max, close & min buttons     
-            if (m.Msg == 0xa0 || m.Msg == 0x200)
-            {
-                Activate();
-            }
-            if (m.Msg != 132)
-            {
-                return;
-            }
-            m.Result = (IntPtr)2;
-        }
+        
 
         private void Close_Click(object sender, EventArgs e)
         {
@@ -608,7 +611,7 @@ namespace MassRepo
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Restarting.restartNow();
         }
     }
    

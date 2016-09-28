@@ -8,7 +8,7 @@ namespace MassRepo
     {
         public static void SaveError(string ex)
         {
-            MessageBox.Show("MassRepo has hit an error. \nPlease choose a location to save the error log and send it to COOP");
+            MessageBox.Show("MassRepo has hit an error. \nPlease choose a location to save the error log");
             string error = ex;
             SaveFileDialog savefile = new SaveFileDialog();
             // set a default file name

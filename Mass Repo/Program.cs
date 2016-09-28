@@ -16,7 +16,7 @@ namespace MassRepo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new MassRepo());
+            Application.Run(new MassRepo());
             while (true)
             {
                 for (int i = 0; i <= 10; i++)

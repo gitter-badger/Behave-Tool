@@ -12,6 +12,14 @@ namespace MassRepo
 {
     public partial class Login : Form
     {
+        public bool success;
+        private static int attempts = 0;
+        public static string loggedInAs;
+        public static string firstName;
+        public static string userName;
+        const string myConnectionString = "Server=massrepo.com;Database=massrepo;Uid=massrepo_client;Pwd=Ksia29@#sis!2";
+        public string _version = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion;
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -20,15 +28,6 @@ namespace MassRepo
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-
-        public bool success;
-        private static int attempts = 0;
-        public static string loggedInAs;
-        public string _version = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion;
-        public Login()
-        {
-            InitializeComponent();
-        }
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
@@ -37,6 +36,28 @@ namespace MassRepo
             {
                 Activate();
             }
+        }
+
+        public Login()
+        {
+            InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+            //Icon = Properties.Resources.MassRepo_Icon;
+            toolStrip1.Renderer = new MySR();
+            version.Text = "Alpha: " + _version;
+            Error.Hide();
+            PassWord.PasswordChar = randChar();
+            CheckForIllegalCrossThreadCalls = false;
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - Height) / 2);
+
+            new Thread(new ThreadStart(setSave)) { IsBackground = true }.Start();
+            new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
         }
         private void toolStrip1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -54,7 +75,7 @@ namespace MassRepo
                 saveLogIn.Checked = true;
                 string s = Properties.Settings.Default.Sign_In;
                 string[] details = s.Split(',');
-                UserName.Text = details[0];
+                Email.Text = details[0];
                 PassWord.Text = details[1];
             }
             else
@@ -84,7 +105,7 @@ namespace MassRepo
             try
             {
                 serverStatus.Text = "Checking Server...";
-                if (new Ping().Send(("massrepo.com")).Status == IPStatus.Success)
+                if (new Ping().Send(("www.massrepo.com")).Status == IPStatus.Success)
                 {
                     serverStatus.Text = "Domain Is Reachable";
                 }
@@ -107,7 +128,7 @@ namespace MassRepo
             attempts += 1;
             if (saveLogIn.Checked == true)
             {
-                Properties.Settings.Default["Sign_In"] = (UserName.Text + "," + PassWord.Text);
+                Properties.Settings.Default["Sign_In"] = (Email.Text + "," + PassWord.Text);
             }
 
             if (!loginSuccess())
@@ -129,27 +150,10 @@ namespace MassRepo
             else
             {
                 Program.failLogin = false;
-                loggedInAs = UserName.Text;
+                loggedInAs = userName;
                 Close();
 
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-            //Icon = Properties.Resources.MassRepo_Icon;
-            toolStrip1.Renderer = new MySR();
-            version.Text = "Alpha: " + _version;
-            Error.Hide();
-            PassWord.PasswordChar = randChar();
-            CheckForIllegalCrossThreadCalls = false;
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - Height) / 2);
-
-            new Thread(new ThreadStart(setSave)) { IsBackground = true }.Start();
-            new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
         }
 
         private bool loginSuccess()
@@ -175,7 +179,7 @@ namespace MassRepo
 
         private char randChar()
         {
-            string[] strArray = new string[] { "≡", "☻", "£", "ƒ", "⌛", "◙", "§", "Θ", "✌" };
+            string[] strArray = new string[] { "≡", "☻", "£", "ƒ", "◙", "§", "Θ", "✌" };
             return Convert.ToChar(strArray[new Random().Next(0, strArray.Length)]);
         }
 
@@ -198,7 +202,7 @@ namespace MassRepo
                 new Thread(new ThreadStart(getServerStatus)) { IsBackground = true }.Start();
             }
         }
-        const string myConnectionString = "Server=massrepo.com;Database=massrepo;Uid=root;Pwd=9vXcr8epuswBjmLH";
+
 
         private bool sqlConnect()
         {
@@ -221,7 +225,7 @@ namespace MassRepo
                 }
                 else
                 {
-                    using (MySqlDataReader sqlDataReader = new MySqlCommand("SELECT id FROM users WHERE username='" + UserName.Text + "' AND password='" + encrypt(PassWord.Text) + "'", connection).ExecuteReader())
+                    using (MySqlDataReader sqlDataReader = new MySqlCommand("SELECT id FROM users WHERE email='" + Email.Text + "' AND password='" + encrypt(PassWord.Text) + "'", connection).ExecuteReader())
                     {
                         try
                         {
@@ -230,9 +234,10 @@ namespace MassRepo
 
                                 if (sqlDataReader.HasRows)
                                 {
-                                    string update = "UPDATE users SET ip='" + ip + "',lastLogin='" + DateTime.Now + "',logins= logins + 1, queries= queries + 1 WHERE username='" + UserName.Text + "' AND password= '" + encrypt(PassWord.Text) + "';";
+                                    string update = "UPDATE users SET ip='" + ip + "',lastLogin='" + DateTime.Now + "',logins= logins + 1, queries= queries + 1 WHERE email='" + Email.Text + "' AND password= '" + encrypt(PassWord.Text) + "';";
                                     updateCommand(update);
                                     getFirstName();
+                                    getUserName();
                                     return true;
                                 }
 
@@ -244,7 +249,7 @@ namespace MassRepo
                             MessageBox.Show(ex.ToString());
                         }
 
-                        string update1 = "UPDATE users SET ip='" + ip + "',lastLogin='" + DateTime.Now + "',badQueries= badQueries + 1 WHERE username='" + UserName.Text + "';";
+                        string update1 = "UPDATE users SET ip='" + ip + "',lastLogin='" + DateTime.Now + "',badQueries= badQueries + 1 WHERE email='" + Email.Text + "';";
                         updateCommand(update1);
                         return false;
 
@@ -299,11 +304,16 @@ namespace MassRepo
             }
             return null;
         }
-        public static string firstName;
+
         public void getFirstName()
         {
-            string query = "SELECT * FROM users WHERE username= '" + UserName.Text + "';";
+            string query = "SELECT * FROM users WHERE email= '" + Email.Text + "';";
             firstName = displayCommand(query, "firstname");
+        }
+        public void getUserName()
+        {
+            string query = "SELECT * FROM users WHERE email= '" + Email.Text + "';";
+            userName = displayCommand(query, "username");
         }
 
         public string encrypt(string input)

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.UserName = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
             this.PassWord = new System.Windows.Forms.TextBox();
             this.Log_In = new System.Windows.Forms.Button();
             this.AttemptCount = new System.Windows.Forms.Label();
@@ -61,11 +61,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 9);
+            this.label1.Location = new System.Drawing.Point(22, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            this.label1.Text = "Email";
             // 
             // label2
             // 
@@ -79,16 +79,16 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // UserName
+            // Email
             // 
-            this.UserName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UserName.ForeColor = System.Drawing.Color.White;
-            this.UserName.Location = new System.Drawing.Point(86, 9);
-            this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(94, 13);
-            this.UserName.TabIndex = 2;
+            this.Email.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Email.ForeColor = System.Drawing.Color.White;
+            this.Email.Location = new System.Drawing.Point(86, 9);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(94, 13);
+            this.Email.TabIndex = 2;
             // 
             // PassWord
             // 
@@ -149,7 +149,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.80582F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.19418F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.UserName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Email, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.PassWord, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(214, 3);
@@ -368,7 +368,7 @@
         private System.Windows.Forms.ToolStripLabel version;
         private System.Windows.Forms.CheckBox saveLogIn;
         private System.Windows.Forms.CheckBox AutoLogin;
-        private System.Windows.Forms.TextBox UserName;
+        private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button SignupBtn;

@@ -22,7 +22,7 @@ namespace MassRepo
             _spotify.OnTrackChange += _spotify_OnTrackChange;
             _spotify.OnTrackTimeChange += _spotify_OnTrackTimeChange;
             _spotify.OnVolumeChange += _spotify_OnVolumeChange;
-            _spotify.SynchronizingObject = this;
+            //_spotify.SynchronizingObject = this;
 
             artistLinkLabel.Click += (sender, args) => Process.Start(artistLinkLabel.Tag.ToString());
             albumLinkLabel.Click += (sender, args) => Process.Start(albumLinkLabel.Tag.ToString());
