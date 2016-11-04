@@ -50,6 +50,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar = new System.Windows.Forms.ToolStrip();
+            this.Icon = new System.Windows.Forms.ToolStripButton();
             this.Close = new System.Windows.Forms.ToolStripButton();
             this.Minimize = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -165,6 +166,7 @@
             this.ToolBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Icon,
             this.Close,
             this.Minimize,
             this.toolStripSeparator6,
@@ -175,6 +177,15 @@
             this.ToolBar.Size = new System.Drawing.Size(460, 25);
             this.ToolBar.TabIndex = 0;
             this.ToolBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ToolBar_MouseDown);
+            // 
+            // Icon
+            // 
+            this.Icon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Icon.Image = global::MassRepo.Properties.Resources.Mass_Repo_Logo;
+            this.Icon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Icon.Name = "Icon";
+            this.Icon.Size = new System.Drawing.Size(23, 22);
+            this.Icon.Text = "toolStripButton1";
             // 
             // Close
             // 
@@ -230,10 +241,9 @@
             // 
             this.ToolName.BackColor = System.Drawing.Color.Transparent;
             this.ToolName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ToolName.ForeColor = System.Drawing.Color.White;
-            //this.ToolName.Image = global::MassRepo.Properties.Resources.MassRepo;
+            this.ToolName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ToolName.Name = "ToolName";
-            this.ToolName.Size = new System.Drawing.Size(81, 22);
+            this.ToolName.Size = new System.Drawing.Size(65, 22);
             this.ToolName.Text = "Tool Name";
             // 
             // ToolDefaultForm
@@ -286,5 +296,6 @@
         private new System.Windows.Forms.ToolStripButton Close;
         private System.Windows.Forms.ToolStripButton Minimize;
         public System.Windows.Forms.ToolStrip ToolBar;
+        private new System.Windows.Forms.ToolStripButton Icon;
     }
 }

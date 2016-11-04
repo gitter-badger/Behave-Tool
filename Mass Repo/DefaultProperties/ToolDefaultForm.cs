@@ -25,7 +25,7 @@ namespace MassRepo
         {
             string formname = GetType().Name;
             formname = Regex.Replace(formname, "([a-z])([A-Z])", "$1 $2");
-            return formname;
+            return formname + " - Mass Repo";
         }
 
         private void Close_Click(object sender, EventArgs e)

@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Performance", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Utilities", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Performance", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Utilities", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Clock",
             "Utilities"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "CPU",
             "Performance"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "RAM",
             "Performance"}, -1);
             this.widgetList = new System.Windows.Forms.ListView();
@@ -54,24 +54,24 @@
             this.widgetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.widgetList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.widgetList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            listViewGroup3.Header = "Performance";
-            listViewGroup3.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup3.Name = "Performance";
-            listViewGroup4.Header = "Utilities";
-            listViewGroup4.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup4.Name = "Utilities";
+            listViewGroup1.Header = "Performance";
+            listViewGroup1.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup1.Name = "Performance";
+            listViewGroup2.Header = "Utilities";
+            listViewGroup2.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup2.Name = "Utilities";
             this.widgetList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup1,
+            listViewGroup2});
             this.widgetList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.widgetList.HoverSelection = true;
-            listViewItem4.Group = listViewGroup4;
-            listViewItem5.Group = listViewGroup3;
-            listViewItem6.Group = listViewGroup3;
+            listViewItem1.Group = listViewGroup2;
+            listViewItem2.Group = listViewGroup1;
+            listViewItem3.Group = listViewGroup1;
             this.widgetList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.widgetList.Location = new System.Drawing.Point(389, 51);
             this.widgetList.MultiSelect = false;
             this.widgetList.Name = "widgetList";
@@ -173,7 +173,7 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Widget List";
             // 
-            // WidgetMaker
+            // WidgetAssembly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(596, 418);
@@ -185,7 +185,7 @@
             this.Controls.Add(this.PresetsList);
             this.Controls.Add(this.widgetCollectionList);
             this.Controls.Add(this.widgetList);
-            this.Name = "WidgetMaker";
+            this.Name = "WidgetAssembly";
             this.Load += new System.EventHandler(this.WidgetMaker_Load);
             this.Controls.SetChildIndex(this.widgetList, 0);
             this.Controls.SetChildIndex(this.widgetCollectionList, 0);
